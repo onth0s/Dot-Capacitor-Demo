@@ -2,7 +2,7 @@ export const SVG = ({
 	onClick,
 	route,
 	top, bottom, left, right,
-	size,
+	size, position = 'CENTER',
 	isIcon, noShadow, noClickable,
 	alt = '',
 }) => {
@@ -13,12 +13,27 @@ export const SVG = ({
 		iconStyles = 'rounded-full ' + shadow;
 	}
 
+	let position_ = '';
+	switch (position) {
+		case 'CENTER':
+			position_ = 'justify-center';
+			break;
+		case 'LEFT':
+			position_ = 'justify-start';
+			break;
+		case 'RIGHT':
+			position_ = 'justify-end';
+			break;
+		default:
+			console.log('Error: invalid <SVG/> position prop.');
+	}
+
 	return (
-		<div className="
-			flex justify-center items-center
-			w-full r
+		<div className={`
+			flex ${position_} items-center
+			w-full 
 			absolute
-		"
+		`}
 			style={{
 				top: top ? top : 'auto',
 				bottom: bottom ? bottom : 'auto',

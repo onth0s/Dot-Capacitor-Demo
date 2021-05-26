@@ -5,6 +5,8 @@ const icons_noext = {
 	user_map: 'Map/user-map',
 	library: 'Map/library',
 	stop: 'Map/stop',
+	center_view: 'Map/center-view',
+	location_enabled: 'Map/location-enabled',
 }
 export const icons = {}
 

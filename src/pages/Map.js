@@ -1,8 +1,6 @@
 import { useState, useCallback } from "react";
 
-import {
-	GoogleMap,
-} from '@react-google-maps/api';
+import { GoogleMap } from '@react-google-maps/api';
 
 import { mapStyles, containerStyle } from '../resources/mapSettings.js';
 
@@ -12,7 +10,8 @@ export const Map = () => {
 	// TODO ↓ I believe this fixes some error when the map doesn't load properly
 	// const google = window.google;
 
-	const [map, setMap] = useState(null);
+	let [map, setMap] = useState(null);
+	if (false) console.log(map); // TODO ← remove this
 	const onMapLoad = useCallback((map) => setMap(map), []);
 
 	const [currentCenter, setCurrentCenter] = useState({

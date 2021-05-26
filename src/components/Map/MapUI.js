@@ -11,6 +11,9 @@ glide({ name: 'glide-bottom', direction: 'bottom' });
 export const MapUI = ({ onClick }) => {
 	const history = useHistory();
 
+	const handleCenterView = () => {}
+	const handleLocationToggle = () => {}
+
 	return (
 		<div className="
 			w-full h-full
@@ -22,15 +25,17 @@ export const MapUI = ({ onClick }) => {
 			<SVG route={icons.user_map}
 				isIcon 
 
+				position={'LEFT'}
+
 				size={['15vw']}
-				top={'3%'} left={'-38vw'}
+				top={'5vw'} left={'5vw'}
 
 				alt={'user'}
 			/>
 
 			<Link to="/library" transition='glide-top'>
 				<SVG route={icons.library}
-					isIcon
+					isIcon 
 
 					size={['15vw']}
 					bottom={'5%'}
@@ -49,6 +54,31 @@ export const MapUI = ({ onClick }) => {
 				bottom={'20%'}
 
 				alt={'library'}
+			/>
+			
+			<SVG route={icons.location_enabled}
+				isIcon noShadow 
+
+				position={'RIGHT'}
+
+				size={['18vw']}
+				bottom={'28%'}
+
+				alt={'library'}
+
+				onClick={handleLocationToggle}
+			/>
+			<SVG route={icons.center_view}
+				isIcon noShadow 
+
+				position={'RIGHT'}
+
+				size={['18vw']}
+				bottom={'20%'}
+
+				alt={'library'}
+
+				onClick={handleCenterView}
 			/>
 		</div>
 	);
