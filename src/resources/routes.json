@@ -1,0 +1,79 @@
+{
+	"backgrounds": {
+		"top": "../assets/background-arc.svg",
+		"big_cirle": "../assets/background-arc.svg",
+		"clouds": {
+			"library": "../assets/Library/cloud-library.svg"
+		},
+		"settings": "../assets/bg-reader-settings.svg"
+	},
+	"icons": {
+		"location_enabled": "../assets/location-enable.svg",
+		"location_disabled": "../assets/location-disable.svg",
+		"library": "../assets/library.svg",
+		"center_view": "../assets/center-view.svg",
+		"your_position": "../assets/your-position.svg",
+		"mountain_placeholder": "../assets/mountain-placeholder.svg",
+		"filter": "../assets/filter.svg",
+		"stops": "../assets/stops.svg",
+		"dots": "../assets/Home/dots.svg",
+		"arrow": "../assets/ArrowBack.svg",
+		"arrow_w": "../assets/arrow-w.svg",
+		"cross": "../assets/cross.svg",
+		"tick": "../assets/tick.svg",
+		"settings_w": "../assets/settings-w.svg",
+		"settings": "../assets/settings.svg",
+		"bookmark_on": "../assets/bookmark-on.svg",
+		"bookmark_off": "../assets/bookmark-off.svg",
+		"star": "../assets/star.svg",
+		"star_b": "../assets/star-round.svg",
+		"reader_settings": [
+			"../assets/font-size.svg",
+			"../assets/line-spacing.svg",
+			"../assets/margin.svg",
+			"../assets/brightness.svg"
+		],
+		"search": "../assets/search.svg",
+		"search_w": "../assets/search-w.svg",
+		"genres": [
+			"..\\assets\\genre\\comedia.svg",
+			"..\\assets\\genre\\comic.svg",
+			"..\\assets\\genre\\drama.svg",
+			"..\\assets\\genre\\fabula.svg",
+			"..\\assets\\genre\\fantasia.svg",
+			"..\\assets\\genre\\historica.svg",
+			"..\\assets\\genre\\poesia.svg",
+			"..\\assets\\genre\\romance.svg",
+			"..\\assets\\genre\\sci-fi.svg",
+			"..\\assets\\genre\\suspense.svg"
+		],
+		"genres_w": [
+			"..\\assets\\genre\\W-comedia.svg",
+			"..\\assets\\genre\\W-comic.svg",
+			"..\\assets\\genre\\W-drama.svg",
+			"..\\assets\\genre\\W-fabula.svg",
+			"..\\assets\\genre\\W-fantasia.svg",
+			"..\\assets\\genre\\W-historica.svg",
+			"..\\assets\\genre\\W-poesia.svg",
+			"..\\assets\\genre\\W-romance.svg",
+			"..\\assets\\genre\\W-sci-fi.svg",
+			"..\\assets\\genre\\W-suspense.svg"
+		],
+		"genres_no_text": [
+			"..\\assets\\genre-no-text\\comedia.svg",
+			"..\\assets\\genre-no-text\\comic.svg",
+			"..\\assets\\genre-no-text\\drama.svg",
+			"..\\assets\\genre-no-text\\fabula.svg",
+			"..\\assets\\genre-no-text\\fantasia.svg",
+			"..\\assets\\genre-no-text\\historica.svg",
+			"..\\assets\\genre-no-text\\poesia.svg",
+			"..\\assets\\genre-no-text\\romance.svg",
+			"..\\assets\\genre-no-text\\sci-fi.svg",
+			"..\\assets\\genre-no-text\\suspense.svg"
+		],
+		"friend_add": "../assets/add-friend.svg",
+		"friend_invite": "../assets/invite-friend.svg",
+		"share": "../assets/share.svg",
+		"share_w": "../assets/share-w.svg"
+	}
+}
