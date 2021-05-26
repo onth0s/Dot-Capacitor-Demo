@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="102" height="102" viewBox="0 0 102 102">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #6154c1;
+        stroke-width: 6px;
+        opacity: 0.96;
+      }
+
+      .cls-2 {
+        fill: #6154c1;
+      }
+    </style>
+  </defs>
+  <g id="Boton_usuario" data-name="Boton usuario" transform="translate(3 3)">
+    <g id="Grupo_412" data-name="Grupo 412">
+      <path id="Trazado_209" data-name="Trazado 209" class="cls-1" d="M48,0A48,48,0,1,1,0,48,48,48,0,0,1,48,0Z"/>
+      <g id="Grupo_411" data-name="Grupo 411">
+        <path id="Trazado_1" data-name="Trazado 1" class="cls-2" d="M-272.535,969.911c-7.065,9.07-21.4,12.829-29.508,12.829-8.9,0-20.291-3.341-30.149-13.545,0,0,5.107-31.038,30.149-31.038C-278.257,938.157-272.535,969.911-272.535,969.911Z" transform="translate(350.364 -885.659)"/>
+        <circle id="Elipse_2" data-name="Elipse 2" class="cls-2" cx="15.731" cy="15.731" r="15.731" transform="translate(32.59 15.519)"/>
+      </g>
+    </g>
+  </g>
+</svg>

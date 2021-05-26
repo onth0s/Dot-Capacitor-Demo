@@ -1,9 +1,13 @@
+import path from 'path';
+
 const icons_noext = {
-	library: './assets/Map/library',
-	stop: './assets/Map/stop',
+	current_position: 'Map/current-position',
+	user_map: 'Map/user-map',
+	library: 'Map/library',
+	stop: 'Map/stop',
 }
 export const icons = {}
 
 Object.keys(icons_noext).forEach(el => {
-	icons[el] = icons_noext[el] + '.svg';
+	icons[el] = path.join('./assets', icons_noext[el] + '.svg');
 });

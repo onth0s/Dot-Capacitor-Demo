@@ -1,7 +1,11 @@
-import { Icon } from '../common/Icon.js';
+import { useHistory } from 'react-router';
+
+import { SVG } from '../common/SVG.js';
 import { icons } from '../../resources/icons.js';
 
 export const MapUI = ({ onClick }) => {
+	const history = useHistory();
+	
 	return (
 		<div className="
 			w-full h-full
@@ -10,10 +14,33 @@ export const MapUI = ({ onClick }) => {
 		"
 			onClick={onClick}
 		>
-			<Icon route={icons.library} 
+			<SVG route={icons.user_map}
+				isIcon
+
 				size={['15vw']}
-				bottom={'5%'} 
-				// right={'-30%'}
+				top={'3%'} left={'-38vw'}
+
+				alt={'user'}
+			/>
+
+			<SVG route={icons.library}
+				isIcon
+
+				size={['15vw']}
+				bottom={'5%'}
+				
+				alt={'library'}
+
+				onClick={() => history.push('/library')}
+			/>
+			
+			<SVG route={icons.current_position}
+				isIcon noShadow noClickable
+
+				size={['15vw']}
+				bottom={'20%'}
+				
+				alt={'library'}
 			/>
 		</div>
 	);

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="118" height="118" viewBox="0 0 118 118">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e6772b;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        filter: url(#Elipse_136);
+      }
+    </style>
+    <filter id="Elipse_136" x="0" y="0" width="118" height="118" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="boto_geolocalitzacio" data-name="boto geolocalitzacio" transform="translate(19.5 17.5)">
+    <g id="Componente_35_1" data-name="Componente 35 – 1">
+      <g class="cls-4" transform="matrix(1, 0, 0, 1, -19.5, -17.5)">
+        <circle id="Elipse_136-2" data-name="Elipse 136" class="cls-1" cx="36.5" cy="36.5" r="36.5" transform="translate(19.5 17.5)"/>
+      </g>
+      <g id="Grupo_425" data-name="Grupo 425" transform="translate(8 8)">
+        <path id="Trazado_234" data-name="Trazado 234" class="cls-2" d="M0,0H56.415V56.415H0Z"/>
+        <path id="Trazado_235" data-name="Trazado 235" class="cls-3" d="M26.485,4.012A16.443,16.443,0,0,0,10.03,20.466c0,12.341,16.455,30.559,16.455,30.559S42.939,32.807,42.939,20.466A16.442,16.442,0,0,0,26.485,4.012ZM14.731,20.466a11.753,11.753,0,0,1,23.507,0c0,6.771-6.771,16.9-11.753,23.225C21.6,37.415,14.731,27.166,14.731,20.466Z" transform="translate(1.723 0.689)"/>
+        <circle id="Elipse_137" data-name="Elipse 137" class="cls-3" cx="5.877" cy="5.877" r="5.877" transform="translate(22.331 15.279)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -4,10 +4,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import './styles/.global.css';
+import 'react-tiger-transition/styles/main.min.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<App />,
+	document.getElementById('root')
 );

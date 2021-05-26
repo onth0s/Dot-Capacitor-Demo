@@ -2,7 +2,6 @@ import { useState, useCallback } from "react";
 
 import {
 	GoogleMap,
-	useJsApiLoader,
 } from '@react-google-maps/api';
 
 import { mapStyles, containerStyle } from '../resources/mapSettings.js';
@@ -12,11 +11,6 @@ import { MapUI } from '../components/Map/MapUI.js';
 export const Map = () => {
 	// TODO ↓ I believe this fixes some error when the map doesn't load properly
 	// const google = window.google;
-
-	const { isLoaded } = useJsApiLoader({
-		id: 'google-map-script',
-		googleMapsApiKey: 'AIzaSyAJ5dr1lCBf385oMdnC_v6AF05q01DTK_Y'
-	});
 
 	const [map, setMap] = useState(null);
 	const onMapLoad = useCallback((map) => setMap(map), []);
@@ -30,7 +24,7 @@ export const Map = () => {
 	const [currentZoom, setCurrentZoom] = useState(15.5);
 	if (false) setCurrentZoom();
 
-	return isLoaded ? (
+	return (
 		<div className="">
 			<GoogleMap
 				onLoad={onMapLoad}
@@ -50,11 +44,7 @@ export const Map = () => {
 
 			</GoogleMap>
 
-			<MapUI 
-				onClick={() => {
-					console.log('test');
-				}}
-			/>
+			<MapUI/>
 		</div>
-	) : <></>
+	);
 }
