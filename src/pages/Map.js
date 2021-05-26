@@ -44,7 +44,7 @@ export const Map = () => {
 
 			</GoogleMap>
 
-			<MapUI/>
+			<MapUI />
 		</div>
 	);
 }
