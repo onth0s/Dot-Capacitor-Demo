@@ -3,20 +3,18 @@ import { BrowserRouter } from 'react-router-dom';
 import { Map } from './pages/Map.js';
 import { Library } from './pages/Library.js';
 
-import { Navigation, Route } from "react-tiger-transition";
+import { Navigation, Route, glide } from "react-tiger-transition";
+
+glide({ name: 'glide-top', direction: 'top' });
+glide({ name: 'glide-bottom', direction: 'bottom' });
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Navigation>
-				<Route
-					exact path="/"
-				><Map /></Route>
+				<Route exact path="/"><Map /></Route>
 
-				<Route
-					exact path="/library"
-					screen // shorthand to wrap children with screen
-				><Library /></Route>
+				<Route exact path="/library"><Library /></Route>
 			</Navigation>
 		</BrowserRouter>
 	);
