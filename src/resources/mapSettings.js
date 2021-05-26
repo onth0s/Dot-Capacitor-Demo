@@ -1,12 +1,11 @@
-const mapStyles = require('./mapStyles.json');
-exports.mapStyles = mapStyles;
+export const mapStyles = require('./mapStyles.json');
 
-exports.containerStyle = {
-	width: '100%',
+export const containerStyle = {
+	width: '100vw',
 	height: '100vh'
 };
 
-exports.center = {
+export const center = {
 	lat: 41.3945,
 	lng: 2.18
 };
