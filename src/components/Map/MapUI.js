@@ -45,16 +45,6 @@ export const MapUI = ({ onClick }) => {
 					onClick={() => history.push('/library')}
 				/>
 			</Link>
-
-
-			<SVG route={icons.current_position}
-				isIcon noShadow noClickable
-
-				size={['15vw']}
-				bottom={'20%'}
-
-				alt={'library'}
-			/>
 			
 			<SVG route={icons.location_enabled}
 				isIcon noShadow 

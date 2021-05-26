@@ -7,7 +7,7 @@ import { Navigation, Route, glide } from "react-tiger-transition";
 
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
-/* test */
+/*  */
 function App() {
 	return (
 		<BrowserRouter>
