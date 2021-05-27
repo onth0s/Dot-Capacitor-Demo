@@ -1,0 +1,15 @@
+<svg id="Flecha_atras" data-name="Flecha atras" xmlns="http://www.w3.org/2000/svg" width="52.108" height="50.487" viewBox="0 0 52.108 50.487">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Trazado_97" data-name="Trazado 97" class="cls-1" d="M.293-.016H52.4V50.471H.293Z" transform="translate(-0.293 0.016)"/>
+  <path id="Trazado_98" data-name="Trazado 98" class="cls-2" d="M61.6,42.767H35.792L47.066,31.493a2.329,2.329,0,0,0,0-3.281,2.3,2.3,0,0,0-3.257,0L28.584,43.437a2.3,2.3,0,0,0,0,3.257L43.809,61.92a2.3,2.3,0,0,0,3.257-3.257L35.792,47.388H61.6a2.31,2.31,0,1,0,0-4.62Z" transform="translate(-19.854 -19.823)"/>
+</svg>
