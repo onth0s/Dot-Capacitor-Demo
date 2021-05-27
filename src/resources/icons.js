@@ -1,6 +1,8 @@
 import path from 'path';
 
 const icons_noext = {
+	arrow_left: 'common/arrow-left',
+	// ↓ Map -----------------------------------------------
 	current_position: 'Map/current-position',
 	user_map: 'Map/user-map',
 	library: 'Map/library',

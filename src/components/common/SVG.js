@@ -1,7 +1,8 @@
 export const SVG = ({
-	onClick,
+	onClick, style = {},
 	route,
 	top, bottom, left, right,
+	zIndex = 0,
 	size = ['100%', 'auto'], position = 'CENTER',
 	isIcon, noShadow, noClickable,
 	alt = '',
@@ -28,6 +29,8 @@ export const SVG = ({
 			console.log('Error: invalid <SVG/> position prop.');
 	}
 
+	console.log('style:', style);
+	
 	return (
 		<div className={`
 			flex ${position_} items-center
@@ -35,10 +38,14 @@ export const SVG = ({
 			absolute
 		`}
 			style={{
+				...style,
+
 				top: top ? top : 'auto',
 				bottom: bottom ? bottom : 'auto',
 				left: left ? left : 'auto',
 				right: right ? right : 'auto',
+
+				zIndex: zIndex,
 			}}
 		>
 			<img className={`

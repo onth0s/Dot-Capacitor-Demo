@@ -13,7 +13,14 @@ export const Library = () => {
 			<SVG route={backgrounds.cloud_library}
 				alt={'library background cloud'}
 			/>
-			
+
+			<SVG route={icons.arrow_left}
+				style={{
+					backgroudColor: '#F0F'
+				}}
+				alt={'go back arrow'}
+			/>
+
 			<Link to="/" transition='glide-bottom'>
 				<SVG route={icons.library}
 					isIcon
