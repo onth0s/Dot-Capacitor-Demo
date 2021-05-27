@@ -2,7 +2,7 @@ export const SVG = ({
 	onClick,
 	route,
 	top, bottom, left, right,
-	size, position = 'CENTER',
+	size = ['100%', 'auto'], position = 'CENTER',
 	isIcon, noShadow, noClickable,
 	alt = '',
 }) => {
