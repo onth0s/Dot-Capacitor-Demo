@@ -10,6 +10,7 @@ const icons_noext = {
 	stop: 'Map/stop',
 	center_view: 'Map/center-view',
 	location_enabled: 'Map/location-enabled',
+	location_disabled: 'Map/location-disabled',
 }
 export const icons = {}
 

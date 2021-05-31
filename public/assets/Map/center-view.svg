@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="118" height="118" viewBox="0 0 118 118">
+<svg id="centrar_ubicacion_no_sombra" data-name="centrar ubicacion no sombra" xmlns="http://www.w3.org/2000/svg" width="73" height="73" viewBox="0 0 73 73">
   <defs>
     <style>
       .cls-1 {
-        fill: #fff;
+        fill: #6f65bb;
       }
 
       .cls-2 {
@@ -10,28 +10,13 @@
       }
 
       .cls-3 {
-        fill: #6f65bb;
-      }
-
-      .cls-4 {
-        filter: url(#Elipse_136);
+        fill: #fff;
       }
     </style>
-    <filter id="Elipse_136" x="0" y="0" width="118" height="118" filterUnits="userSpaceOnUse">
-      <feOffset dx="3" dy="5" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="7.5" result="blur"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
   </defs>
-  <g id="centrar_ubicacion" data-name="centrar ubicacion" transform="translate(19.5 17.5)">
-    <g class="cls-4" transform="matrix(1, 0, 0, 1, -19.5, -17.5)">
-      <circle id="Elipse_136-2" data-name="Elipse 136" class="cls-1" cx="36.5" cy="36.5" r="36.5" transform="translate(19.5 17.5)"/>
-    </g>
-    <g id="Grupo_561" data-name="Grupo 561" transform="translate(8.927 8.927)">
-      <path id="Trazado_287" data-name="Trazado 287" class="cls-2" d="M.073.073h56v56h-56Z" transform="translate(0 0)"/>
-      <path id="Trazado_288" data-name="Trazado 288" class="cls-3" d="M28.073,18.616a9.457,9.457,0,1,0,9.457,9.457A9.454,9.454,0,0,0,28.073,18.616Zm21.136,7.093A21.264,21.264,0,0,0,30.437,6.937V2.067H25.709v4.87A21.264,21.264,0,0,0,6.937,25.709H2.067v4.729h4.87A21.264,21.264,0,0,0,25.709,49.209v4.87h4.729v-4.87A21.264,21.264,0,0,0,49.209,30.437h4.87V25.709ZM28.073,44.623a16.55,16.55,0,1,1,16.55-16.55A16.538,16.538,0,0,1,28.073,44.623Z" transform="translate(0 0)"/>
-    </g>
+  <circle id="Elipse_136" data-name="Elipse 136" class="cls-1" cx="36.5" cy="36.5" r="36.5"/>
+  <g id="Grupo_561" data-name="Grupo 561" transform="translate(8.927 8.927)">
+    <path id="Trazado_287" data-name="Trazado 287" class="cls-2" d="M.073.073h56v56h-56Z" transform="translate(0 0)"/>
+    <path id="Trazado_288" data-name="Trazado 288" class="cls-3" d="M28.073,18.616a9.457,9.457,0,1,0,9.457,9.457A9.454,9.454,0,0,0,28.073,18.616Zm21.136,7.093A21.264,21.264,0,0,0,30.437,6.937V2.067H25.709v4.87A21.264,21.264,0,0,0,6.937,25.709H2.067v4.729h4.87A21.264,21.264,0,0,0,25.709,49.209v4.87h4.729v-4.87A21.264,21.264,0,0,0,49.209,30.437h4.87V25.709ZM28.073,44.623a16.55,16.55,0,1,1,16.55-16.55A16.538,16.538,0,0,1,28.073,44.623Z" transform="translate(0 0)"/>
   </g>
 </svg>

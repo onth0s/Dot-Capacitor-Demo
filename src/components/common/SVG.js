@@ -29,8 +29,6 @@ export const SVG = ({
 			console.log('Error: invalid <SVG/> position prop.');
 	}
 
-	console.log('style:', style);
-	
 	return (
 		<div className={`
 			flex ${position_} items-center

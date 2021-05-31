@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useHistory } from 'react-router';
 
 import { Link, glide } from "react-tiger-transition";
@@ -11,8 +12,12 @@ glide({ name: 'glide-bottom', direction: 'bottom' });
 export const MapUI = ({ onClick }) => {
 	const history = useHistory();
 
-	const handleCenterView = () => {}
-	const handleLocationToggle = () => {}
+	const handleCenterView = () => { }
+	const handleLocationToggle = () => {
+		setIsLocationEnabled(!isLocationEnabled);
+	}
+
+	const [isLocationEnabled, setIsLocationEnabled] = useState(true);
 
 	return (
 		<div className="
@@ -23,7 +28,7 @@ export const MapUI = ({ onClick }) => {
 			onClick={onClick}
 		>
 			<SVG route={icons.user_map}
-				isIcon 
+				isIcon
 
 				position={'LEFT'}
 
@@ -35,7 +40,7 @@ export const MapUI = ({ onClick }) => {
 
 			<Link to="/library" transition='glide-top'>
 				<SVG route={icons.library}
-					isIcon 
+					isIcon
 
 					size={['15vw']}
 					bottom={'5%'}
@@ -45,27 +50,35 @@ export const MapUI = ({ onClick }) => {
 					onClick={() => history.push('/library')}
 				/>
 			</Link>
-			
-			<SVG route={icons.location_enabled}
-				isIcon noShadow 
+
+			<SVG route={
+				isLocationEnabled
+					? icons.location_enabled
+					: icons.location_disabled
+			}
+				isIcon 
 
 				position={'RIGHT'}
 
-				size={['18vw']}
+				size={['12vw']}
+				
 				bottom={'28%'}
-
+				right={'3%'}
+				
 				alt={'library'}
 
 				onClick={handleLocationToggle}
 			/>
 			<SVG route={icons.center_view}
-				isIcon noShadow 
+				isIcon 
 
 				position={'RIGHT'}
 
-				size={['18vw']}
+				size={['12vw']}
+				
 				bottom={'20%'}
-
+				right={'3%'}
+				
 				alt={'library'}
 
 				onClick={handleCenterView}
