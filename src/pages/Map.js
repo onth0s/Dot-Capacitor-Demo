@@ -58,8 +58,8 @@ export const Map = () => {
 	const circleOptions = {
 		strokeWeight: 0,
 		fillColor: circleColorBlue,
-		fillOpacity: 0.2,
-		// fillOpacity: 0,
+		// fillOpacity: 0.2,
+		fillOpacity: 0, // TODO change
 		clickable: false,
 		draggable: false,
 		editable: false,
