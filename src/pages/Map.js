@@ -39,11 +39,11 @@ export const Map = () => {
 		new google.maps.Point(20, 40),
 		new google.maps.Size(40, 40),
 	);
-	const currentPositionIcon = new google.maps.MarkerImage(icons.current_position,
-		new google.maps.Size(60, 60),
+	const currentPositionIcon = new google.maps.MarkerImage(icons.current_position_circle,
+		new google.maps.Size(30, 30),
 		new google.maps.Point(0, 0),
-		new google.maps.Point(30, 33),
-		new google.maps.Size(60, 60),
+		new google.maps.Point(15, 15),
+		new google.maps.Size(30, 30),
 	);
 
 	const circleRadius = 50;
