@@ -6,12 +6,17 @@ import { Link, glide } from "react-tiger-transition";
 import { SVG } from '../common/SVG.js';
 import { icons } from '../../resources/icons.js';
 
+import {
+	showGeolocationError,
+} from '../../utils/mapUtils.js';
+
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
 
 export const MapUI = ({
 	map,
-	currentPosition, setCurrentCenter,
+	currentPosition, setCurrentPosition,
+	setCurrentCenter,
 }) => {
 	const history = useHistory();
 
@@ -21,8 +26,31 @@ export const MapUI = ({
 			lng: currentPosition.lng,
 		});
 	}
+
+	
+	const isUserLocked = false; // TODO ← hardcoded, to implement
+	const [watchID, setWatchID] = useState(0);
+
 	const handleLocationToggle = () => {
 		setIsLocationEnabled(!isLocationEnabled);
+
+		if (isLocationEnabled) {
+			const watchID_ = navigator.geolocation.watchPosition((position) => {
+				setCurrentPosition({
+					lat: position.coords.latitude,
+					lng: position.coords.longitude,
+				});
+			}, (error) => {
+				showGeolocationError(error);
+			}, {
+				enableHighAccuracy: true,
+				// timeout: 100,
+				// maximumAge: 0, // ← default value
+			});
+			setWatchID(watchID_);
+		} else {
+			navigator.geolocation.clearWatch(watchID);
+		}
 	}
 
 	const [isLocationEnabled, setIsLocationEnabled] = useState(true);
@@ -33,7 +61,7 @@ export const MapUI = ({
 			absolute top-0 left-0
 			pointer-events-none
 		">
-			<SVG route={icons.user_map}
+			<SVG route={isUserLocked ? icons.user_map_locked : icons.user_map}
 				isIcon
 
 				position={'LEFT'}

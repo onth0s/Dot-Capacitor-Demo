@@ -1,9 +1,12 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 import { GoogleMap, Marker } from '@react-google-maps/api';
 import { mapStyles, containerStyle } from '../resources/mapSettings.js';
 
-import { measure } from '../utils/mapUtils.js';
+import {
+	measure,
+	getLocation
+} from '../utils/mapUtils.js';
 
 import { MapUI } from '../components/Map/MapUI.js';
 
@@ -13,6 +16,23 @@ import stops from '../resources/h6-stops-v1.json';
 
 export const Map = () => {
 	const google = window.google;
+
+	useEffect(() => {
+		// TODO ↓ temporary "fix"
+		(function () {
+			if (typeof EventTarget !== "undefined") {
+				let func = EventTarget.prototype.addEventListener;
+				EventTarget.prototype.addEventListener = function (type, fn, capture) {
+					this.func = func;
+					if (typeof capture !== "boolean") {
+						capture = capture || {};
+						capture.passive = false;
+					}
+					this.func(type, fn, capture);
+				};
+			};
+		}());
+	}, []);
 
 	let [map, setMap] = useState(null);
 	if (false) console.log(map); // TODO ← remove this
@@ -75,17 +95,16 @@ export const Map = () => {
 					}}
 
 					onClick={() => {
-						
+						getLocation().then(val => {
+							setCurrentPosition({ lat: val.lat, lng: val.lng })
+						});
 					}}
 				/>
 
 				{stops.map((el, i) => {
 					return (<div key={i}>
 						<Marker position={el}
-							icon={i % 2 === 0
-								? stopsLockedIcon
-								: stopsUnlockedIcon
-							}
+							icon={i % 2 === 0 ? stopsLockedIcon : stopsUnlockedIcon}
 							zIndex={5} />
 					</div>)
 				})}
@@ -93,7 +112,7 @@ export const Map = () => {
 
 			<MapUI
 				map={map}
-				currentPosition={currentPosition}
+				currentPosition={currentPosition} setCurrentPosition={setCurrentPosition}
 				setCurrentCenter={setCurrentCenter}
 			/>
 		</div>

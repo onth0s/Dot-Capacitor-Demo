@@ -7,6 +7,7 @@ const icons_noext = {
 	current_position: 'Map/current-position',
 	current_position_circle: 'Map/current-position-circle',
 	user_map: 'Map/user-map',
+	user_map_locked: 'Map/user-map-locked',
 	library: 'Map/library',
 	stop_locked: 'Map/stop-locked',
 	stop_unlocked: 'Map/stop-unlocked',
