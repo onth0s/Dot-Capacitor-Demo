@@ -9,10 +9,18 @@ import { icons } from '../../resources/icons.js';
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
 
-export const MapUI = ({ onClick }) => {
+export const MapUI = ({
+	map,
+	currentPosition, setCurrentCenter,
+}) => {
 	const history = useHistory();
 
-	const handleCenterView = () => { }
+	const handleCenterView = () => {
+		setCurrentCenter({
+			lat: currentPosition.lat,
+			lng: currentPosition.lng,
+		});
+	}
 	const handleLocationToggle = () => {
 		setIsLocationEnabled(!isLocationEnabled);
 	}
@@ -24,9 +32,7 @@ export const MapUI = ({ onClick }) => {
 			w-full h-full
 			absolute top-0 left-0
 			pointer-events-none
-		"
-			onClick={onClick}
-		>
+		">
 			<SVG route={icons.user_map}
 				isIcon
 
@@ -51,34 +57,33 @@ export const MapUI = ({ onClick }) => {
 				/>
 			</Link>
 
-			<SVG route={
-				isLocationEnabled
-					? icons.location_enabled
-					: icons.location_disabled
+			<SVG route={isLocationEnabled
+				? icons.location_enabled
+				: icons.location_disabled
 			}
-				isIcon 
+				isIcon
 
 				position={'RIGHT'}
 
 				size={['12vw']}
-				
+
 				bottom={'28%'}
 				right={'3%'}
-				
+
 				alt={'library'}
 
 				onClick={handleLocationToggle}
 			/>
 			<SVG route={icons.center_view}
-				isIcon 
+				isIcon
 
 				position={'RIGHT'}
 
 				size={['12vw']}
-				
+
 				bottom={'20%'}
 				right={'3%'}
-				
+
 				alt={'library'}
 
 				onClick={handleCenterView}

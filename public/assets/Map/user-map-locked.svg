@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="102" height="102" viewBox="0 0 102 102">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #3e3b8a;
+        stroke-width: 6px;
+        opacity: 0.96;
+      }
+
+      .cls-2 {
+        fill: #3e3b8a;
+      }
+
+      .cls-3 {
+        fill: #6f65bb;
+      }
+    </style>
+  </defs>
+  <g id="usuario_candado" data-name="usuario candado" transform="translate(3 3)">
+    <g id="Grupo_412" data-name="Grupo 412">
+      <path id="Trazado_209" data-name="Trazado 209" class="cls-1" d="M48,0A48,48,0,1,1,0,48,48,48,0,0,1,48,0Z"/>
+    </g>
+    <g id="Grupo_655" data-name="Grupo 655" transform="translate(0 -4)">
+      <g id="candado_perfil" data-name="candado perfil" transform="translate(21 13)">
+        <path id="Trazado_322" data-name="Trazado 322" class="cls-2" d="M787.546-92.188h-3.428v-6.785a17.06,17.06,0,0,0-17.143-16.963,17.059,17.059,0,0,0-17.142,16.963v6.785H746.4a6.842,6.842,0,0,0-6.857,6.786v33.927A6.841,6.841,0,0,0,746.4-44.69h41.141a6.842,6.842,0,0,0,6.857-6.785V-85.4A6.842,6.842,0,0,0,787.546-92.188ZM756.69-98.974a10.218,10.218,0,0,1,10.285-10.178,10.219,10.219,0,0,1,10.286,10.178v6.785H756.69Zm10.285,40.841c-6.977,0-10.482-6.575-10.415-10.307a10.524,10.524,0,0,1,10.415-10.307c6.507.242,10.416,5.081,10.416,10.307A10.232,10.232,0,0,1,766.975-58.132Z" transform="translate(-739.548 115.937)"/>
+      </g>
+      <circle id="Elipse_160" data-name="Elipse 160" class="cls-3" cx="11" cy="11" r="11" transform="translate(37.427 49.348)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="63.962" height="103.237" viewBox="0 0 63.962 103.237">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3e3b8a;
+        stroke: rgba(0,0,0,0);
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #a093ee;
+      }
+    </style>
+  </defs>
+  <g id="parada_reciente" data-name="parada reciente" transform="translate(0.5 0.5)">
+    <path id="Sustracción_74" data-name="Sustracción 74" class="cls-1" d="M31.5,102.237h0a2.131,2.131,0,0,1-2.1-1.6C24.269,81.781,16.55,68.341,10.347,57.542,4.566,47.478,0,39.528,0,31.481A31.489,31.489,0,0,1,60.487,19.23a31.263,31.263,0,0,1,2.475,12.251c0,8.174-4.563,16.129-10.34,26.2C46.468,68.408,38.81,81.759,33.6,100.643A2.127,2.127,0,0,1,31.5,102.237Zm.024-85.512a14.5,14.5,0,1,0,14.5,14.5A14.516,14.516,0,0,0,31.527,16.725Z"/>
+    <path id="Trazado_318" data-name="Trazado 318" class="cls-2" d="M14.593,0A14.593,14.593,0,1,1,0,14.593,14.593,14.593,0,0,1,14.593,0Z" transform="translate(16.856 16.598)"/>
+  </g>
+</svg>

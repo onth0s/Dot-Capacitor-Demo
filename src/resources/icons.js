@@ -1,13 +1,15 @@
 import path from 'path';
 
 const icons_noext = {
+	// ↓ commor 
 	arrow_left: 'common/arrow-left',
 	// ↓ Map -----------------------------------------------
 	current_position: 'Map/current-position',
 	current_position_circle: 'Map/current-position-circle',
 	user_map: 'Map/user-map',
 	library: 'Map/library',
-	stop: 'Map/stop',
+	stop_locked: 'Map/stop-locked',
+	stop_unlocked: 'Map/stop-unlocked',
 	center_view: 'Map/center-view',
 	location_enabled: 'Map/location-enabled',
 	location_disabled: 'Map/location-disabled',
