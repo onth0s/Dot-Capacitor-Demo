@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 
-import { GoogleMap, Marker } from '@react-google-maps/api';
+import { GoogleMap, Marker, Circle } from '@react-google-maps/api';
 import { mapStyles, containerStyle } from '../resources/mapSettings.js';
 
 import {
@@ -18,7 +18,7 @@ export const Map = () => {
 	const google = window.google;
 
 	useEffect(() => {
-		// TODO ↓ temporary "fix"
+		// TODO ↓ temporary "fix" (not even that)
 		(function () {
 			if (typeof EventTarget !== "undefined") {
 				let func = EventTarget.prototype.addEventListener;
@@ -103,6 +103,21 @@ export const Map = () => {
 
 				{stops.map((el, i) => {
 					return (<div key={i}>
+						<Circle
+							center={el}
+							options={{
+								strokeWeight: 0,
+								fillColor: '#000',
+								fillOpacity: 0.1,
+								clickable: false,
+								draggable: false,
+								editable: false,
+								visible: true,
+								radius: 35,
+								zIndex: 1,
+							}}
+						/>
+
 						<Marker position={el}
 							icon={i % 2 === 0 ? stopsLockedIcon : stopsUnlockedIcon}
 							zIndex={5} />

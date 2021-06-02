@@ -1,10 +1,11 @@
 export const SVG = ({
+	children,
 	onClick, style = {},
 	route,
 	top, bottom, left, right,
 	zIndex = 0,
 	size = ['100%', 'auto'], position = 'CENTER',
-	isIcon, noShadow, noClickable,
+	isIcon, noShadow, noClickable, maxContent,
 	alt = '',
 }) => {
 	let iconStyles = '';
@@ -32,7 +33,7 @@ export const SVG = ({
 	return (
 		<div className={`
 			flex ${position_} items-center
-			w-full 
+			${maxContent ? 'w-max' : 'w-full'}
 			absolute
 		`}
 			style={{
@@ -55,6 +56,8 @@ export const SVG = ({
 				src={route} alt={alt}
 				onClick={onClick}
 			/>
+
+			{children}
 		</div>
 	);
 }

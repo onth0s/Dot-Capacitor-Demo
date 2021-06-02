@@ -21,20 +21,16 @@ export const MapUI = ({
 	const history = useHistory();
 
 	const handleCenterView = () => {
-		setCurrentCenter({
-			lat: currentPosition.lat,
-			lng: currentPosition.lng,
-		});
+		setCurrentCenter({ lat: currentPosition.lat, lng: currentPosition.lng });
 	}
 
-	
 	const isUserLocked = false; // TODO ← hardcoded, to implement
 	const [watchID, setWatchID] = useState(0);
 
 	const handleLocationToggle = () => {
 		setIsLocationEnabled(!isLocationEnabled);
 
-		if (isLocationEnabled) {
+		if (!isLocationEnabled) {
 			const watchID_ = navigator.geolocation.watchPosition((position) => {
 				setCurrentPosition({
 					lat: position.coords.latitude,
@@ -53,7 +49,7 @@ export const MapUI = ({
 		}
 	}
 
-	const [isLocationEnabled, setIsLocationEnabled] = useState(true);
+	const [isLocationEnabled, setIsLocationEnabled] = useState(false);
 
 	return (
 		<div className="
@@ -61,11 +57,8 @@ export const MapUI = ({
 			absolute top-0 left-0
 			pointer-events-none
 		">
-			<SVG route={isUserLocked ? icons.user_map_locked : icons.user_map}
-				isIcon
-
+			<SVG route={isUserLocked ? icons.user_map_locked : icons.user_map} isIcon
 				position={'LEFT'}
-
 				size={['15vw']}
 				top={'5vw'} left={'5vw'}
 
@@ -73,46 +66,28 @@ export const MapUI = ({
 			/>
 
 			<Link to="/library" transition='glide-top'>
-				<SVG route={icons.library}
-					isIcon
-
+				<SVG route={icons.library} alt={'library'} isIcon
 					size={['15vw']}
 					bottom={'5%'}
-
-					alt={'library'}
 
 					onClick={() => history.push('/library')}
 				/>
 			</Link>
 
-			<SVG route={isLocationEnabled
-				? icons.location_enabled
-				: icons.location_disabled
-			}
-				isIcon
+			<SVG route={isLocationEnabled ? icons.location_enabled : icons.location_disabled}
+				alt={'library'} isIcon
 
 				position={'RIGHT'}
 
 				size={['12vw']}
-
-				bottom={'28%'}
-				right={'3%'}
-
-				alt={'library'}
+				bottom={'28%'} right={'3%'}
 
 				onClick={handleLocationToggle}
 			/>
-			<SVG route={icons.center_view}
-				isIcon
-
+			<SVG route={icons.center_view} alt={'library'} isIcon
 				position={'RIGHT'}
-
 				size={['12vw']}
-
-				bottom={'20%'}
-				right={'3%'}
-
-				alt={'library'}
+				bottom={'20%'} right={'3%'}
 
 				onClick={handleCenterView}
 			/>
