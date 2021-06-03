@@ -11,7 +11,7 @@ import { useState } from "react";
 
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
-
+//dsg
 export const Library = () => {
 	const history = useHistory();
 
@@ -282,8 +282,8 @@ export const Library = () => {
 		switch (i) {
 			case 0:
 				return (shelfList.map((el, i) => (
-					<Link to={'/reader/' + i} transition='glide-top'>
-						<div key={i} className="
+					<Link to={'/reader/' + i} transition='glide-top' key={i}>
+						<div className="
 						flex
 						h-20
 						pl-8

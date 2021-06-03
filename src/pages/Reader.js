@@ -11,15 +11,15 @@ export const Reader = () => {
 	return (
 		<div className="flex flex-col h-full overflow-auto relative">
 			<Link to="/library" transition='glide-bottom'>
-				<SVG route={icons.arrow_left}
-					size={['13vw', '13vw']} maxContent
+				<SVG route={'../' + icons.arrow_left}
+					size={[consts.corner_btn.size.width]} maxContent
 					top={consts.corner_btn.top}
 					left={consts.corner_btn.left}
-					style={{ backgroundColor: 'blue' }}
+					style={{ backgroundColor: 'blue', borderRadius: '100%' }}
 				/>
 			</Link>
-			<SVG route={icons.arrow_left}
-				size={['13vw', '13vw']} maxContent
+			<SVG route={'../' + icons.arrow_left}
+				size={[consts.corner_btn.size.width]} maxContent
 				top={consts.corner_btn.top}
 				right={consts.corner_btn.right}
 				style={{ backgroundColor: 'blue' }}
