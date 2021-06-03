@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="115" height="94" viewBox="0 0 115 94">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #dfdede;
+      }
+
+      .cls-3 {
+        fill: #e3e2e2;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_44" data-name="Grupo 44" transform="translate(-230.684 -165.026)">
+    <path id="Polígono_4" data-name="Polígono 4" class="cls-1" d="M18,0,36,70H0Z" transform="translate(254.684 189.026)"/>
+    <path id="Polígono_3" data-name="Polígono 3" class="cls-2" d="M39.5,0,79,94H0Z" transform="translate(266.684 165.026)"/>
+    <circle id="Elipse_20" data-name="Elipse 20" class="cls-3" cx="12" cy="12" r="12" transform="translate(230.684 169.026)"/>
+  </g>
+</svg>

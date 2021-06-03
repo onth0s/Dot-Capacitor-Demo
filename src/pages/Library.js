@@ -17,108 +17,91 @@ export const Library = () => {
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
 		{
 			image: icons.mountain_placeholder,
 			title: 'Título de la obra',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
+			author: 'Nombre Author',
 			tipology: 'Tipología',
 			genre: icons.fable
 		},
@@ -328,7 +311,48 @@ export const Library = () => {
 					</div>
 				)));
 			case 1:
-				return <p>second tab</p>;
+				return (<>
+					<p className="text-2xl pt-2 pl-2">Catálogo semanal</p>
+
+					<div className="
+						grid grid-cols-2 gap-4
+						p-4
+					">
+						{catalogItems.map((el, i) => (
+							<div key={i} className="
+								w-full h-48 relative
+								bg-red-100
+								rounded-xl shadow-md
+								overflow-hidden
+							">
+								<img className="
+									w-full
+									p-12 -mt-6
+									bg-gray-400 opacity-60
+								" src={icons.mountain_placeholder} alt="mountain placeholder" />
+
+								<div className="
+									flex
+									w-full h-20
+									p-2 space-x-2
+									absolute bottom-0
+									rounded-xl 
+									bg-white
+								">
+									<div className="flex flex-col">
+										<p className="font-semibold">{el.title}</p>
+										<p className="text-sm">{el.author}</p>
+										<p className="text-xs">{el.tipology}</p>
+									</div>
+
+									<img className="
+										w-9
+									" src={icons.fable} alt="genre" />
+								</div>
+							</div>
+						))}
+					</div>
+				</>);
 			case 2:
 				return <p>third tab</p>;
 			default:
@@ -362,6 +386,7 @@ export const Library = () => {
 				size={['13vw']}
 				position={'RIGHT'}
 				right={'10vw'} bottom={'8vh'}
+				zIndex={'10'}
 				innerStyle={{ backgroundColor: 'blue', borderRadius: '100%' }}
 			/>
 

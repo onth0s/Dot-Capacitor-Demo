@@ -17,6 +17,8 @@ const icons_noext = {
 	center_view: 'Map/center-view',
 	location_enabled: 'Map/location-enabled',
 	location_disabled: 'Map/location-disabled',
+	// ↓ Library
+	mountain_placeholder: 'Library/mountain-placeholder',
 }
 export const icons = {}
 
