@@ -57,13 +57,14 @@ export const MapUI = ({
 			absolute top-0 left-0
 			pointer-events-none
 		">
-			<SVG route={isUserLocked ? icons.user_map_locked : icons.user_map} isIcon
-				position={'LEFT'}
-				size={['15vw']} maxSize={['80px']}
-				top={'5vw'} left={'5vw'}
-
-				alt={'user'}
-			/>
+			<Link to="/user-profile" transition='glide-top'>
+				<SVG route={isUserLocked ? icons.user_map_locked : icons.user_map} isIcon
+					position={'LEFT'}
+					size={['15vw']} maxSize={['80px']}
+					top={'5vw'} left={'5vw'}
+					alt={'user'}
+				/>
+			</Link>
 
 			<Link to="/library" transition='glide-top'>
 				<SVG route={icons.library} alt={'library'} isIcon

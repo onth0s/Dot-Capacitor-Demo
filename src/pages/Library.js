@@ -1,5 +1,7 @@
 import { Link, glide } from "react-tiger-transition";
 
+import { useHistory } from 'react-router-dom';
+
 import { SVG } from '../components/common/SVG.js';
 import { icons } from '../resources/icons.js';
 import { backgrounds } from '../resources/backgrounds.js';
@@ -11,6 +13,8 @@ glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
 
 export const Library = () => {
+	const history = useHistory();
+
 	const tabList = ['Estantería', 'Catálogo', 'Favoritos']
 
 	const catalogItems = [
@@ -194,80 +198,79 @@ export const Library = () => {
 		},
 	]
 
-	const favoritesList = [
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-	]
+	// const favoritesList = [
+	// 	{
+	// 		icon: icons.romance,
+	// 		image: icons.mountain_placeholder,
+	// 		title: 'Título de la obra',
+	// 		author: 'Autor',
+	// 		score: 0.85
+	// 	},
+	// 	{
+	// 		icon: icons.romance,
+	// 		image: icons.mountain_placeholder,
+	// 		title: 'Título de la obra',
+	// 		author: 'Autor',
+	// 		score: 0.85
+	// 	},
+	// 	{
+	// 		icon: icons.romance,
+	// 		image: icons.mountain_placeholder,
+	// 		title: 'Título de la obra',
+	// 		author: 'Autor',
+	// 		score: 0.85
+	// 	},
+	// 	{
+	// 		icon: icons.romance,
+	// 		image: icons.mountain_placeholder,
+	// 		title: 'Título de la obra',
+	// 		author: 'Autor',
+	// 		score: 0.85
+	// 	},
+	// 	{
+	// 		icon: icons.romance,
+	// 		image: icons.mountain_placeholder,
+	// 		title: 'Título de la obra',
+	// 		author: 'Autor',
+	// 		score: 0.85
+	// 	},
+	// 	{
+	// 		icon: icons.romance,
+	// 		image: icons.mountain_placeholder,
+	// 		title: 'Título de la obra',
+	// 		author: 'Autor',
+	// 		score: 0.85
+	// 	},
+	// 	{
+	// 		icon: icons.romance,
+	// 		image: icons.mountain_placeholder,
+	// 		title: 'Título de la obra',
+	// 		author: 'Autor',
+	// 		score: 0.85
+	// 	},
+	// 	{
+	// 		icon: icons.romance,
+	// 		image: icons.mountain_placeholder,
+	// 		title: 'Título de la obra',
+	// 		author: 'Autor',
+	// 		score: 0.85
+	// 	},
+	// 	{
+	// 		icon: icons.romance,
+	// 		image: icons.mountain_placeholder,
+	// 		title: 'Título de la obra',
+	// 		author: 'Autor',
+	// 		score: 0.85
+	// 	},
+	// 	{
+	// 		icon: icons.romance,
+	// 		image: icons.mountain_placeholder,
+	// 		title: 'Título de la obra',
+	// 		author: 'Autor',
+	// 		score: 0.85
+	// 	},
+	// ]
 
-	const starsList = [1, 1, 1, 1, 1]
 
 	const [tabCurrentIndex, setTabCurrentIndex] = useState(0);
 
@@ -289,6 +292,8 @@ export const Library = () => {
 						style={{
 							borderBottom: '1px solid grey'
 						}}
+
+						onClick={() => history.push('/reader/' + i)}
 					>
 						<img className="
 							w-9 mr-8
@@ -323,6 +328,7 @@ export const Library = () => {
 								w-full h-48 relative
 								bg-red-100
 								rounded-xl shadow-md
+								cursor-pointer
 								overflow-hidden
 							">
 								<img className="
