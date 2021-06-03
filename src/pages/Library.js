@@ -282,38 +282,38 @@ export const Library = () => {
 		switch (i) {
 			case 0:
 				return (shelfList.map((el, i) => (
-					<div key={i} className="
+					<Link to={'/reader/' + i} transition='glide-top'>
+						<div key={i} className="
 						flex
 						h-20
 						pl-8
 						w-full
 						cursor-pointer
 					"
-						style={{
-							borderBottom: '1px solid grey'
-						}}
-
-						onClick={() => history.push('/reader/' + i)}
-					>
-						<img className="
+							style={{
+								borderBottom: '1px solid grey'
+							}}
+						>
+							<img className="
 							w-9 mr-8
 						" src={icons.fable} alt="genre" />
 
-						<div className="
+							<div className="
 							flex flex-col justify-center items-start
 							w-8/12 h-20
 						">
-							<p className="font-semibold">{el.title}</p>
-							<p>{el.author}</p>
-						</div>
+								<p className="font-semibold">{el.title}</p>
+								<p>{el.author}</p>
+							</div>
 
-						<div className="
+							<div className="
 							flex flex-col justify-center space-y-2
 						">
-							<p>{el.time_ago} h</p>
-							<p className="text-xs -ml-4">{el.time_lenght} min</p>
+								<p>{el.time_ago} h</p>
+								<p className="text-xs -ml-4">{el.time_lenght} min</p>
+							</div>
 						</div>
-					</div>
+					</Link>
 				)));
 			case 1:
 				return (<>
@@ -413,9 +413,7 @@ export const Library = () => {
 							cursor-pointer
 						"
 							onClick={() => handleTabClick(i)}
-						>
-							{el}
-
+						>{el}
 							{i === tabCurrentIndex && <div className="
 								w-1/3 h-0.5
 								absolute bottom-0
