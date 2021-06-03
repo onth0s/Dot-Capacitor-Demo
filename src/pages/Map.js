@@ -4,7 +4,7 @@ import { GoogleMap, Marker, Circle } from '@react-google-maps/api';
 import { mapStyles, containerStyle } from '../resources/mapSettings.js';
 
 import {
-	measure,
+	// measure,
 	getLocation
 } from '../utils/mapUtils.js';
 

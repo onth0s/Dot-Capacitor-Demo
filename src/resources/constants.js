@@ -6,6 +6,6 @@ export const consts = {
 		},
 		
 		top: '4vh', bottom: '4vh',
-		left: '7vw', bottom: '7vw',
+		left: '7vw', right: '7vw',
 	}
 }

@@ -1,11 +1,12 @@
 export const SVG = ({
 	children,
-	onClick, style = {},
+	onClick, style = {}, innerStyle = {},
 	route,
 	top, bottom, left, right,
 	zIndex = 0,
-	size = ['100%', 'auto'], position = 'CENTER',
-	isIcon, noShadow, noClickable, maxContent,
+	size = ['100%', 'auto'], maxSize = ['100%', 'auto'],
+	position = 'CENTER',
+	isIcon, noShadow, noClickable, maxContent, 
 	alt = '',
 }) => {
 	let iconStyles = '';
@@ -34,7 +35,7 @@ export const SVG = ({
 		<div className={`
 			flex ${position_} items-center
 			${maxContent ? 'w-max' : 'w-full'}
-			absolute
+			absolute 
 		`}
 			style={{
 				...style,
@@ -51,7 +52,12 @@ export const SVG = ({
 				${iconStyles} ${noClickable ? '' : 'cursor-pointer'}
 				pointer-events-auto
 			`}
-				style={{ width: size[0], height: size[1] }}
+				style={{
+					...innerStyle,
+
+					width: size[0], height: size[1],
+					maxWidth: maxSize[0], maxHeight: maxSize[1],
+				}}
 
 				src={route} alt={alt}
 				onClick={onClick}

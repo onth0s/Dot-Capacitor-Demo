@@ -3,6 +3,9 @@ import path from 'path';
 const icons_noext = {
 	// ↓ commor 
 	arrow_left: 'common/arrow-left',
+	// ↓ genres
+	romance: 'common/genres/romance',
+	fable: 'common/genres/fable',
 	// ↓ Map -----------------------------------------------
 	current_position: 'Map/current-position',
 	current_position_circle: 'Map/current-position-circle',

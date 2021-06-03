@@ -59,7 +59,7 @@ export const MapUI = ({
 		">
 			<SVG route={isUserLocked ? icons.user_map_locked : icons.user_map} isIcon
 				position={'LEFT'}
-				size={['15vw']}
+				size={['15vw']} maxSize={['80px']}
 				top={'5vw'} left={'5vw'}
 
 				alt={'user'}
@@ -67,7 +67,7 @@ export const MapUI = ({
 
 			<Link to="/library" transition='glide-top'>
 				<SVG route={icons.library} alt={'library'} isIcon
-					size={['15vw']}
+					size={['15vw']} maxSize={['80px']}
 					bottom={'5%'}
 
 					onClick={() => history.push('/library')}
@@ -79,14 +79,14 @@ export const MapUI = ({
 
 				position={'RIGHT'}
 
-				size={['12vw']}
+				size={['12vw']} maxSize={['50px']}
 				bottom={'28%'} right={'3%'}
 
 				onClick={handleLocationToggle}
 			/>
 			<SVG route={icons.center_view} alt={'library'} isIcon
 				position={'RIGHT'}
-				size={['12vw']}
+				size={['12vw']} maxSize={['50px']}
 				bottom={'20%'} right={'3%'}
 
 				onClick={handleCenterView}
