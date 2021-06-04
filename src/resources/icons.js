@@ -20,6 +20,7 @@ const icons_noext = {
 	// ↓ Library
 	mountain_placeholder: 'Library/mountain-placeholder',
 	search: 'Library/search',
+	filter: 'Library/filter',
 	// ↓ Reader
 	bookmark_on: 'Reader/bookmark_on',
 	bookmark_off: 'Reader/bookmark_off',

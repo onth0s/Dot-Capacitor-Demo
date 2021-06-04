@@ -33,11 +33,11 @@ export const Reader = () => {
 				onClick={() => setIsBookmarked(!isBookmarked)}
 			/>
 
-			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12 mb-4">
+			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12">
 				Título aquí <br />y aquí si es muy largo
 			</p>
 
-			<div className="m-auto mt-8 w-10/12
+			<div className="m-auto mt-8 mb-8 w-10/12
 				bg-red-100
 			">
 				<p>

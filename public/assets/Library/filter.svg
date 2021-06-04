@@ -1,0 +1,15 @@
+<svg id="ordenar_por" data-name="ordenar por" xmlns="http://www.w3.org/2000/svg" width="48.146" height="48.146" viewBox="0 0 48.146 48.146">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #6f65bb;
+      }
+    </style>
+  </defs>
+  <path id="Trazado_274" data-name="Trazado 274" class="cls-1" d="M-.073-.073H48.073V48.073H-.073Z" transform="translate(0.073 0.073)"/>
+  <path id="Trazado_275" data-name="Trazado 275" class="cls-2" d="M32.024,34.05V21.994a2.006,2.006,0,0,0-4.012,0V34.05H24.421a.993.993,0,0,0-.7,1.705l5.6,5.577a1.03,1.03,0,0,0,1.424,0l5.6-5.577a1,1,0,0,0-.7-1.705ZM17.28,6.648l-5.6,5.6a.993.993,0,0,0,.7,1.7h3.591V26.006a2.006,2.006,0,0,0,4.012,0V13.95h3.591a.993.993,0,0,0,.7-1.7l-5.6-5.6A1,1,0,0,0,17.28,6.648Z" transform="translate(0.073 0.073)"/>
+</svg>

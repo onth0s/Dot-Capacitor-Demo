@@ -425,8 +425,10 @@ export const Library = () => {
 
 				<div className="
 					flex items-center justify-center
-					w-2/12 h-10
-				">x</div>
+					w-2/12 h-10 
+				">
+					<img className="cursor-pointer w-6 p-2 box-content" src={icons.filter} alt="filter" />
+				</div>
 			</div>
 
 			<div className="
