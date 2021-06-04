@@ -19,6 +19,10 @@ const icons_noext = {
 	location_disabled: 'Map/location-disabled',
 	// ↓ Library
 	mountain_placeholder: 'Library/mountain-placeholder',
+	search: 'Library/search',
+	// ↓ Reader
+	bookmark_on: 'Reader/bookmark_on',
+	bookmark_off: 'Reader/bookmark_off',
 }
 export const icons = {}
 

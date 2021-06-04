@@ -3,13 +3,20 @@ import { icons } from '../resources/icons.js';
 import { consts } from '../resources/constants.js';
 
 import { Link, glide } from "react-tiger-transition";
+import { Lightbox } from '../components/common/Lightbox.js';
+import { useState } from 'react';
 
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
-//sdg
+//s
 export const Reader = () => {
-	return (
+	const [isBookmarked, setIsBookmarked] = useState(false);
+	
+	return (<>
+		{/* <Lightbox /> */}
+
 		<div className="flex flex-col h-full overflow-auto relative">
+
 			<Link to="/library" transition='glide-bottom'>
 				<SVG route={'../' + icons.arrow_left}
 					size={[consts.corner_btn.size.width]} maxContent
@@ -18,14 +25,15 @@ export const Reader = () => {
 					style={{ backgroundColor: 'blue', borderRadius: '100%' }}
 				/>
 			</Link>
-			<SVG route={'../' + icons.arrow_left}
+			<SVG route={isBookmarked ? '../' + icons.bookmark_on : '../' + icons.bookmark_off}
 				size={[consts.corner_btn.size.width]} maxContent
 				top={consts.corner_btn.top}
 				right={consts.corner_btn.right}
-				style={{ backgroundColor: 'blue' }}
+				style={{ backgroundColor: 'blue', borderRadius: '100%' }}
+				onClick={() => setIsBookmarked(!isBookmarked)}
 			/>
 
-			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12">
+			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12 mb-4">
 				Título aquí <br />y aquí si es muy largo
 			</p>
 
@@ -43,5 +51,5 @@ export const Reader = () => {
 				</p>
 			</div>
 		</div>
-	);
+	</>);
 }

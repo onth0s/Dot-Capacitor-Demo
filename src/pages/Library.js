@@ -388,7 +388,7 @@ export const Library = () => {
 				</SVG>
 			</Link>
 
-			<SVG route={icons.arrow_left} alt={'search'}
+			<SVG route={icons.search} alt={'search'}
 				size={['13vw']}
 				position={'RIGHT'}
 				right={'10vw'} bottom={'8vh'}
