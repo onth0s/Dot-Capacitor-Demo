@@ -267,12 +267,12 @@ export const Library = () => {
 		},
 	]
 
-	const renderScore = () => {
+	const renderScore = (score_, classes) => {
 		let score = [];
 		for (let i = 1; i <= 5; i++) {
 			// TODO  
 			score.push(
-				<img key={i} className="w-4" src={icons.star_library} alt="star" />
+				<img key={i} className={classes} src={icons.star_library} alt="star" />
 			);
 		}
 		return score;
@@ -368,20 +368,22 @@ export const Library = () => {
 			case 2:
 				return (favoritesList.map((el, i) => (
 					<div className="flex cursor-pointer" key={i}>
-						<img className="w-32 bg-gray-400 bg-opacity-60 p-8" src={icons.mountain_placeholder} alt="content related" />
+						<img className="w-28 h-32 bg-gray-400 bg-opacity-60 p-4" src={icons.mountain_placeholder} alt="content related"
+							style={{borderBottom: '1px solid blue'}}
+						/>
 
-						<div className="flex flex-col flex-grow bg-red-100 justify-between py-2 pl-4">
+						<div className="flex flex-col flex-grow justify-between py-4 pl-4">
 							<div className="flex flex-col">
-								<p>{el.title}</p>
+								<p className="font-semibold">{el.title}</p>
 								<p>{el.author}</p>
 							</div>
 
 							<div className="flex">
-								{renderScore(el.score)}
+								{renderScore(el.score, "w-5")}
 							</div>
 						</div>
 
-						<img className=" mr-6" src={icons.fable} alt="genre" />
+						<img className="mr-6" src={icons.fable} alt="genre" />
 					</div>
 				)));
 			default:
