@@ -3,6 +3,7 @@ import path from 'path';
 const icons_noext = {
 	// ↓ commor 
 	arrow_left: 'common/arrow-left',
+	star: 'Library/star-library',
 	// ↓ genres
 	romance: 'common/genres/romance',
 	fable: 'common/genres/fable',
@@ -21,7 +22,6 @@ const icons_noext = {
 	mountain_placeholder: 'Library/mountain-placeholder',
 	search: 'Library/search',
 	filter: 'Library/filter',
-	star_library: 'Library/star-library',
 	// ↓ Reader
 	bookmark_on: 'Reader/bookmark_on',
 	bookmark_off: 'Reader/bookmark_off',
