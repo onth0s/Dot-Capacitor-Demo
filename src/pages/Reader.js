@@ -38,7 +38,7 @@ export const Reader = () => {
 			</p>
 
 			<div className="m-auto mt-8 mb-8 w-10/12
-				bg-red-100
+				bg-red-100 text-justify
 			">
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsu vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos.

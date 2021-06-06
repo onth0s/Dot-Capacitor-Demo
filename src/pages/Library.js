@@ -1,7 +1,5 @@
 import { Link, glide } from "react-tiger-transition";
 
-import { useHistory } from 'react-router-dom';
-
 import { SVG } from '../components/common/SVG.js';
 import { icons } from '../resources/icons.js';
 import { backgrounds } from '../resources/backgrounds.js';
@@ -13,8 +11,6 @@ glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
 //dsg
 export const Library = () => {
-	const history = useHistory();
-
 	const tabList = ['Estantería', 'Catálogo', 'Favoritos']
 
 	const catalogItems = [
@@ -198,79 +194,89 @@ export const Library = () => {
 		},
 	]
 
-	// const favoritesList = [
-	// 	{
-	// 		icon: icons.romance,
-	// 		image: icons.mountain_placeholder,
-	// 		title: 'Título de la obra',
-	// 		author: 'Autor',
-	// 		score: 0.85
-	// 	},
-	// 	{
-	// 		icon: icons.romance,
-	// 		image: icons.mountain_placeholder,
-	// 		title: 'Título de la obra',
-	// 		author: 'Autor',
-	// 		score: 0.85
-	// 	},
-	// 	{
-	// 		icon: icons.romance,
-	// 		image: icons.mountain_placeholder,
-	// 		title: 'Título de la obra',
-	// 		author: 'Autor',
-	// 		score: 0.85
-	// 	},
-	// 	{
-	// 		icon: icons.romance,
-	// 		image: icons.mountain_placeholder,
-	// 		title: 'Título de la obra',
-	// 		author: 'Autor',
-	// 		score: 0.85
-	// 	},
-	// 	{
-	// 		icon: icons.romance,
-	// 		image: icons.mountain_placeholder,
-	// 		title: 'Título de la obra',
-	// 		author: 'Autor',
-	// 		score: 0.85
-	// 	},
-	// 	{
-	// 		icon: icons.romance,
-	// 		image: icons.mountain_placeholder,
-	// 		title: 'Título de la obra',
-	// 		author: 'Autor',
-	// 		score: 0.85
-	// 	},
-	// 	{
-	// 		icon: icons.romance,
-	// 		image: icons.mountain_placeholder,
-	// 		title: 'Título de la obra',
-	// 		author: 'Autor',
-	// 		score: 0.85
-	// 	},
-	// 	{
-	// 		icon: icons.romance,
-	// 		image: icons.mountain_placeholder,
-	// 		title: 'Título de la obra',
-	// 		author: 'Autor',
-	// 		score: 0.85
-	// 	},
-	// 	{
-	// 		icon: icons.romance,
-	// 		image: icons.mountain_placeholder,
-	// 		title: 'Título de la obra',
-	// 		author: 'Autor',
-	// 		score: 0.85
-	// 	},
-	// 	{
-	// 		icon: icons.romance,
-	// 		image: icons.mountain_placeholder,
-	// 		title: 'Título de la obra',
-	// 		author: 'Autor',
-	// 		score: 0.85
-	// 	},
-	// ]
+	const favoritesList = [
+		{
+			icon: icons.romance,
+			image: icons.mountain_placeholder,
+			title: 'Título de la obra',
+			author: 'Autor',
+			score: 0.85
+		},
+		{
+			icon: icons.romance,
+			image: icons.mountain_placeholder,
+			title: 'Título de la obra',
+			author: 'Autor',
+			score: 0.85
+		},
+		{
+			icon: icons.romance,
+			image: icons.mountain_placeholder,
+			title: 'Título de la obra',
+			author: 'Autor',
+			score: 0.85
+		},
+		{
+			icon: icons.romance,
+			image: icons.mountain_placeholder,
+			title: 'Título de la obra',
+			author: 'Autor',
+			score: 0.85
+		},
+		{
+			icon: icons.romance,
+			image: icons.mountain_placeholder,
+			title: 'Título de la obra',
+			author: 'Autor',
+			score: 0.85
+		},
+		{
+			icon: icons.romance,
+			image: icons.mountain_placeholder,
+			title: 'Título de la obra',
+			author: 'Autor',
+			score: 0.85
+		},
+		{
+			icon: icons.romance,
+			image: icons.mountain_placeholder,
+			title: 'Título de la obra',
+			author: 'Autor',
+			score: 0.85
+		},
+		{
+			icon: icons.romance,
+			image: icons.mountain_placeholder,
+			title: 'Título de la obra',
+			author: 'Autor',
+			score: 0.85
+		},
+		{
+			icon: icons.romance,
+			image: icons.mountain_placeholder,
+			title: 'Título de la obra',
+			author: 'Autor',
+			score: 0.85
+		},
+		{
+			icon: icons.romance,
+			image: icons.mountain_placeholder,
+			title: 'Título de la obra',
+			author: 'Autor',
+			score: 0.85
+		},
+	]
 
+	const renderScore = () => {
+		let score = [];
+		for (let i = 1; i <= 5; i++) {
+			// TODO  
+			score.push(
+				<img key={i} className="w-4" src={icons.star_library} alt="star" />
+			);
+		}
+		return score;
+	}
 
 	const [tabCurrentIndex, setTabCurrentIndex] = useState(0);
 
@@ -360,7 +366,24 @@ export const Library = () => {
 					</div>
 				</>);
 			case 2:
-				return <p>third tab</p>;
+				return (favoritesList.map((el, i) => (
+					<div className="flex cursor-pointer" key={i}>
+						<img className="w-32 bg-gray-400 bg-opacity-60 p-8" src={icons.mountain_placeholder} alt="content related" />
+
+						<div className="flex flex-col flex-grow bg-red-100 justify-between py-2 pl-4">
+							<div className="flex flex-col">
+								<p>{el.title}</p>
+								<p>{el.author}</p>
+							</div>
+
+							<div className="flex">
+								{renderScore(el.score)}
+							</div>
+						</div>
+
+						<img className=" mr-6" src={icons.fable} alt="genre" />
+					</div>
+				)));
 			default:
 				break;
 		}
