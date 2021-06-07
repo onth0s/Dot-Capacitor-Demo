@@ -14,6 +14,8 @@ import { icons } from '../resources/icons.js';
 
 import stops from '../resources/h6-stops-v1.json';
 
+import { Notification } from '../components/common/Notification.js';
+
 export const Map = () => {
 	const google = window.google;
 
@@ -61,7 +63,14 @@ export const Map = () => {
 	);
 
 
-	return (
+	return (<>
+		<Notification>
+			<div className="p-8 space-y-3">
+				<p className="text-yellow-600">Nuevo texto conseguido!</p>
+				<p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p>
+			</div>
+		</Notification>
+
 		<div>
 			<GoogleMap
 				onLoad={onMapLoad}
@@ -131,5 +140,5 @@ export const Map = () => {
 				setCurrentCenter={setCurrentCenter}
 			/>
 		</div>
-	);
+	</>);
 }

@@ -394,7 +394,7 @@ export const Library = () => {
 		}
 	}
 
-	const [isSearchVisible, setIsSearchVisible] = useState(true); // TODO ← change this debbugging default state
+	const [isSearchVisible, setIsSearchVisible] = useState(false); // TODO ← change this debbugging default state
 
 	return (
 		<div className="flex flex-col h-full">
@@ -424,10 +424,14 @@ export const Library = () => {
 				right={'10vw'} bottom={'8vh'}
 				zIndex={'10'}
 				innerStyle={{ backgroundColor: 'blue', borderRadius: '100%' }}
-				onClick={() => setIsSearchVisible(true)}
+				onClick={() => {
+					console.log('NOW!'); 
+					// document.querySelector('#test-01').classList.add('animate__animated');
+					setIsSearchVisible(true);
+				}}
 			/>
 
-			<LibrarySearch isVisible={isSearchVisible} />
+			<LibrarySearch isVisible={isSearchVisible} setIsVisible={setIsSearchVisible} />
 
 			<div className="
 				flex

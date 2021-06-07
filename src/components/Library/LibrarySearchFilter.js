@@ -6,7 +6,7 @@ export const LibrarySearchFilter = ({ title, items, children }) => {
 
 		<div className="flex -ml-2 flex-wrap">
 			{items.map((el, i) => (
-				<div key={i} className="mx-2 my-1.5 rounded-full h-full text-sm px-2.5 py-1.5"
+				<div key={i} className="cursor-pointer mx-2 my-1.5 rounded-full h-full text-sm px-2.5 py-1.5"
 					style={{
 						border: '1px solid' + consts.colors.secondary,
 					}}
