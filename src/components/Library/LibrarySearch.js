@@ -39,14 +39,24 @@ export const LibrarySearch = ({ isVisible }) => {
 
 		<div className="space-y-4 px-6 mt-4">
 			<LibrarySearchFilter title={'Género'}
-				items={['Romance']}
+				items={[
+					'Romance', 'Drama', 'Fantasía',
+					'Sci-Fi', 'Comedia', 'Suspense',
+					'Histórica', 'Fábula', 'Actualidad',
+				]}
 			/>
-			<LibrarySearchFilter title={'Género'}
-				items={['Romance']}
+			<LibrarySearchFilter title={'Tipología'}
+				items={[
+					'Microrelato', 'Poema', 'Cómic', 
+					'Novela', 'Guion', 
+				]}
 			/>
-			<LibrarySearchFilter title={'Género'}
-				items={['Romance']}
-			/>
+			<LibrarySearchFilter title={'Tiempo'}
+				items={[
+					'2', '5', '10', 
+					'15', '20',  
+				]}
+			> min</LibrarySearchFilter>
 		</div>
 	</div>);
 }
