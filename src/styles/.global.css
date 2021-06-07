@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+	font-family: Roboto !important; 
+}
+
 #root {
 	height: 100vh;
+}
+
+#library-search-input input {
+	width: 90%;
 }

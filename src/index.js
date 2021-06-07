@@ -6,7 +6,22 @@ import App from './App';
 import './styles/.global.css';
 import 'react-tiger-transition/styles/main.min.css';
 
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+	palette: {
+		primary: {
+			"500": "#EC6408",
+		},
+		secondary: {
+			"A400": "#6f65bb",
+		},
+	},
+});
+
 ReactDOM.render(
-	<App />,
-	document.getElementById('root')
+	<ThemeProvider theme={theme}>
+		<App />
+	</ThemeProvider>
+	, document.getElementById('root')
 );

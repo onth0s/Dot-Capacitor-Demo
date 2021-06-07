@@ -1,5 +1,7 @@
 import { Link, glide } from "react-tiger-transition";
 
+import { LibrarySearch } from '../components/Library/LibrarySearch.js';
+
 import { SVG } from '../components/common/SVG.js';
 import { icons } from '../resources/icons.js';
 import { backgrounds } from '../resources/backgrounds.js';
@@ -269,10 +271,11 @@ export const Library = () => {
 
 	const renderScore = (score_, classes) => {
 		let score = [];
+
 		for (let i = 1; i <= 5; i++) {
 			// TODO  
 			score.push(
-				<img key={i} className={classes} src={icons.star_library} alt="star" />
+				<img key={i} className={classes} src={icons.star} alt="star" />
 			);
 		}
 		return score;
@@ -369,7 +372,7 @@ export const Library = () => {
 				return (favoritesList.map((el, i) => (
 					<div className="flex cursor-pointer" key={i}>
 						<img className="w-28 h-32 bg-gray-400 bg-opacity-60 p-4" src={icons.mountain_placeholder} alt="content related"
-							style={{borderBottom: '1px solid blue'}}
+							style={{ borderBottom: '1px solid blue' }}
 						/>
 
 						<div className="flex flex-col flex-grow justify-between py-4 pl-4">
@@ -390,6 +393,8 @@ export const Library = () => {
 				break;
 		}
 	}
+
+	const [isSearchVisible, setIsSearchVisible] = useState(true); // TODO ← change this debbugging default state
 
 	return (
 		<div className="flex flex-col h-full">
@@ -419,7 +424,10 @@ export const Library = () => {
 				right={'10vw'} bottom={'8vh'}
 				zIndex={'10'}
 				innerStyle={{ backgroundColor: 'blue', borderRadius: '100%' }}
+				onClick={() => setIsSearchVisible(true)}
 			/>
+
+			<LibrarySearch isVisible={isSearchVisible} />
 
 			<div className="
 				flex

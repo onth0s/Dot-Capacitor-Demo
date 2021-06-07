@@ -99,7 +99,7 @@ export const Reader = () => {
 				<div className="flex justify-center space-x-2">{renderScore(4.5, "w-10 mt-2")}</div>
 			</div>
 
-			<div className="mx-auto p-2 bg-purple-600 text-white rounded-full mb-8 w-40 text-center cursor-pointer">Enviar</div>
+			<div className="mx-auto p-2 bg-purple-600 text-white rounded-full mb-12 w-40 text-center cursor-pointer">Enviar</div>
 		</div>
 	</>);
 }

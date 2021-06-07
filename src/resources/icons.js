@@ -21,6 +21,7 @@ const icons_noext = {
 	// ↓ Library
 	mountain_placeholder: 'Library/mountain-placeholder',
 	search: 'Library/search',
+	search_input: 'Library/search-input',
 	filter: 'Library/filter',
 	// ↓ Reader
 	bookmark_on: 'Reader/bookmark_on',
