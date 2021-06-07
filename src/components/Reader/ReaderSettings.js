@@ -30,15 +30,15 @@ export const ReaderSettings = () => {
 
 	const pills = [
 		{
-			value: 0.5,
+			text: 'Tamaño',
+			value: 0.3,
 		},
 		{
-			value: 0.1,
-		},
-		{
+			text: 'Interliniado',
 			value: 0.8,
 		},
 		{
+			text: 'Margen',
 			value: 0.65,
 		},
 	]
@@ -54,7 +54,7 @@ export const ReaderSettings = () => {
 				left: '50%',
 				transform: 'translateX(-50%)',
 
-				marginBottom: '-30vw',
+				marginBottom: '-22vw',
 
 				borderRadius: '100%',
 				borderBottomRightRadius: '0',
@@ -75,15 +75,18 @@ export const ReaderSettings = () => {
 				</div>
 
 				<div className="flex justify-between" style={{ width: 'calc(100% + 10vw)', marginLeft: '-5vw' }}>{circles.map((el, i) => (
-					<p className="rounded-full w-12 h-12 flex justify-center items-center cursor-pointer"
+					<p key={i} className="rounded-full w-12 h-12 flex justify-center items-center cursor-pointer"
 						style={{ backgroundColor: el.color }}>
 						C{i}
 					</p>
 				))}</div>
 
-				<div className="flex">{pills.map((el, i) => (
-					<div className="w-14 bg-purple-400">PILL</div>
-				))}</div>
+				<div className="flex justify-between">
+					{pills.map((el, i) => (<div className="flex flex-col items-center">
+						<div key={i} className="w-14 h-32 bg-purple-400 rounded-full">PILL</div>
+						<p className="text-xs font-light">{el.text}</p>
+					</div>))}
+				</div>
 			</div>
 		</div>
 	</>);
