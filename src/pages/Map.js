@@ -62,9 +62,10 @@ export const Map = () => {
 		new google.maps.Point(15, 15), new google.maps.Size(30, 30),
 	);
 
+	const [isNotificationVisible, setIsNotificationVisible] = useState(true); // TODO change this
 
 	return (<>
-		<Notification>
+		<Notification isVisible={isNotificationVisible}>
 			<div className="p-8 space-y-3">
 				<p className="text-yellow-600">Nuevo texto conseguido!</p>
 				<p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p>

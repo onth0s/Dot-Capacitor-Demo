@@ -6,6 +6,8 @@ import { Link, glide } from "react-tiger-transition";
 import { Lightbox } from '../components/common/Lightbox.js';
 import { useState } from 'react';
 
+import { ReaderSettings } from '../components/Reader/ReaderSettings.js';
+
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
 //s
@@ -38,7 +40,9 @@ export const Reader = () => {
 	}
 
 	return (<>
-		{/* <Lightbox /> */}
+		<Lightbox hidden />
+
+		<ReaderSettings />
 
 		<div className="flex flex-col h-full overflow-auto relative">
 
