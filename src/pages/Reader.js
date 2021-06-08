@@ -3,7 +3,6 @@ import { icons } from '../resources/icons.js';
 import { consts } from '../resources/constants.js';
 
 import { Link, glide } from "react-tiger-transition";
-import { Lightbox } from '../components/common/Lightbox.js';
 import { useState } from 'react';
 
 import { ReaderSettings } from '../components/Reader/ReaderSettings.js';
@@ -75,7 +74,10 @@ export const Reader = () => {
 		<ReaderSettings isVisible={showSettings} setIsVisible={setShowSettings} />
 
 		<div className="flex flex-col h-full overflow-auto relative"
-			onClick={() => setShowUI(!showUI)}
+			onClick={() => {
+				if (showSettings) setShowSettings(false);
+				else setShowUI(!showUI);
+			}}
 		>
 			{showUI && <>
 				<div onClick={(e) => e.stopPropagation()}>

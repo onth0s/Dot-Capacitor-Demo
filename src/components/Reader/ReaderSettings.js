@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Lightbox } from '../common/Lightbox.js';
 
 export const ReaderSettings = ({ isVisible, setIsVisible }) => {
 	const renderPoints = (index) => {
@@ -54,10 +53,10 @@ export const ReaderSettings = ({ isVisible, setIsVisible }) => {
 
 	return (isVisible ? <>
 
-		<Lightbox 
+		{/* <Lightbox 
 			hidden
 			onClick={() => setIsVisible(false)}
-		/>
+		/> */}
 
 		<div className="bg-purple-800 absolute bottom-0 z-10 text-white"
 			style={{

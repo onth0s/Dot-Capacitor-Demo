@@ -67,7 +67,7 @@ export const MapUI = ({
 			</Link>
 
 			<Link to="/library" transition='glide-top'>
-				<SVG route={icons.library} alt={'library'} isIcon
+				<SVG route={icons.library} alt={'library'} isIcon zIndex={10}
 					size={['15vw']} maxSize={['80px']}
 					bottom={'5%'}
 
@@ -78,15 +78,14 @@ export const MapUI = ({
 			<SVG route={isLocationEnabled ? icons.location_enabled : icons.location_disabled}
 				alt={'library'} isIcon
 
-				position={'RIGHT'}
-
+				position={'RIGHT'} zIndex={10}
 				size={['12vw']} maxSize={['50px']}
 				bottom={'28%'} right={'3%'}
 
 				onClick={handleLocationToggle}
 			/>
 			<SVG route={icons.center_view} alt={'library'} isIcon
-				position={'RIGHT'}
+				position={'RIGHT'} zIndex={10}
 				size={['12vw']} maxSize={['50px']}
 				bottom={'20%'} right={'3%'}
 

@@ -70,7 +70,7 @@ export const Map = () => {
 	</div>);
 
 	return (<>
-		<Notification isVisible={showNotification}>{notification}</Notification>
+		<Notification isVisible={showNotification} setIsVisible={setShowNotification}>{notification}</Notification>
 
 		<div>
 			<GoogleMap
@@ -111,7 +111,7 @@ export const Map = () => {
 						setShowNotification(true);
 						setTimeout(() => {
 							setShowNotification(false)
-						}, 2000);
+						}, 4000);
 
 						getLocation().then(val => {
 							setCurrentPosition({ lat: val.lat, lng: val.lng })
