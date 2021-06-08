@@ -21,7 +21,11 @@ export const Reader = () => {
 
 		for (let i = 0; i < 5; i++) {
 			score.push(
-				<img key={i} className={classes} src={'../' + icons.star} alt="star" />
+				<img key={i} className={classes} src={'../' + icons.star} alt="star"
+					onClick={(e) => {
+						e.stopPropagation();
+					}}
+				/>
 			);
 		}
 
@@ -35,7 +39,7 @@ export const Reader = () => {
 		];
 
 		tags_.forEach((el, i) => {
-			tags.push(<p className="rounded-full bg-red-200 p-2 py-1 text-sm" key={i}>{el}</p>)
+			tags.push(<p className="cursor-pointer rounded-full bg-red-200 p-2 py-1 text-sm" key={i}>{el}</p>)
 		});
 
 		return tags;
@@ -51,20 +55,14 @@ export const Reader = () => {
 				</p><br />
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis.
-				</p>
+			</p>
 		</>);
 	}
 
-	return (<>
-		<Lightbox
-			hidden 
-			onClick={() => {
-				console.log('setShowSettings(false)');
-				setShowSettings(false)
-			}}
-		/>
+	const [showUI, setShowUI] = useState(true);
 
-		<SVG route={'../' + icons.arrow_left}
+	return (<>
+		{showUI && <SVG route={'../' + icons.settings}
 			size={['12vw']} maxContent
 			bottom={'8vh'}
 			right={'10vw'}
@@ -72,34 +70,41 @@ export const Reader = () => {
 			style={{ backgroundColor: 'blue', borderRadius: '100%' }}
 
 			onClick={() => setShowSettings(true)}
-		/>
+		/>}
 
-		<ReaderSettings isVisible={showSettings} />
+		<ReaderSettings isVisible={showSettings} setIsVisible={setShowSettings} />
 
-		<div className="flex flex-col h-full overflow-auto relative">
-
-			<Link to="/library" transition='glide-bottom'>
-				<SVG route={'../' + icons.arrow_left}
+		<div className="flex flex-col h-full overflow-auto relative"
+			onClick={() => setShowUI(!showUI)}
+		>
+			{showUI && <>
+				<div onClick={(e) => e.stopPropagation()}>
+					<Link to="/library" transition='glide-bottom'>
+						<SVG route={'../' + icons.arrow_left}
+							size={[consts.corner_btn.size.width]} maxContent
+							top={consts.corner_btn.top}
+							left={consts.corner_btn.left}
+							style={{ backgroundColor: 'blue', borderRadius: '100%' }}
+						/>
+					</Link>
+				</div>
+				<SVG route={isBookmarked ? '../' + icons.bookmark_on : '../' + icons.bookmark_off}
 					size={[consts.corner_btn.size.width]} maxContent
 					top={consts.corner_btn.top}
-					left={consts.corner_btn.left}
+					right={consts.corner_btn.right}
 					style={{ backgroundColor: 'blue', borderRadius: '100%' }}
+					onClick={(e) => {
+						e.stopPropagation();
+						setIsBookmarked(!isBookmarked)
+					}}
 				/>
-			</Link>
-			<SVG route={isBookmarked ? '../' + icons.bookmark_on : '../' + icons.bookmark_off}
-				size={[consts.corner_btn.size.width]} maxContent
-				top={consts.corner_btn.top}
-				right={consts.corner_btn.right}
-				style={{ backgroundColor: 'blue', borderRadius: '100%' }}
-				onClick={() => setIsBookmarked(!isBookmarked)}
-			/>
+			</>}
 
 			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12">
 				Título aquí <br />y aquí si es muy largo
 			</p>
 
-			<div className="m-auto mt-8 mb-8 w-10/12
-				bg-red-100 text-justify
+			<div className="m-auto mt-8 mb-8 w-10/12 text-justify
 			">{renderText()}</div>
 
 			<div className="flex justify-between items-center px-6 mb-4">
@@ -122,10 +127,14 @@ export const Reader = () => {
 			<div className="px-6 mb-8">
 				<p>¿Qué te ha parecido?</p>
 
-				<div className="flex justify-center space-x-2">{renderScore(4.5, "w-10 mt-2")}</div>
+				<div className="flex justify-center space-x-2">{renderScore(4.5, "w-10 mt-2 cursor-pointer")}</div>
 			</div>
 
-			<div className="mx-auto p-2 bg-purple-600 text-white rounded-full mb-12 w-40 text-center cursor-pointer">Enviar</div>
+			<div className="mx-auto p-2 bg-purple-600 text-white rounded-full mb-12 w-40 text-center cursor-pointer"
+				onClick={(e) => {
+					e.stopPropagation();
+				}}
+			>Enviar</div>
 		</div>
 	</>);
 }

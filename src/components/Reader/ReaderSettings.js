@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import { Lightbox } from '../common/Lightbox.js';
 
-export const ReaderSettings = ({ isVisible }) => {
+export const ReaderSettings = ({ isVisible, setIsVisible }) => {
 	const renderPoints = (index) => {
 		let points = [];
 
@@ -15,20 +16,20 @@ export const ReaderSettings = ({ isVisible }) => {
 
 	const circles = [
 		{
-			color: 'red'
+			color: 'white'
 		},
 		{
-			color: 'blue'
+			color: '#FFA'
 		},
 		{
-			color: 'green'
+			color: '#222'
 		},
 		{
 			color: 'black'
 		}
 	];
 
-	const pills = [
+	const [pills, setPills] = useState([
 		{
 			text: 'Tamaño',
 			value: 0.4,
@@ -39,12 +40,24 @@ export const ReaderSettings = ({ isVisible }) => {
 		},
 		{
 			text: 'Margen',
-			value: 0.65,
+			value: 0.6,
 		},
-	]
+		{
+			text: 'Brillo',
+			value: 0.2,
+		},
+	]);
+
+	const handleSettingsCircle = (i) => {
+		console.log(i);
+	}
 
 	return (isVisible ? <>
-		<Lightbox hidden />
+
+		<Lightbox 
+			hidden
+			onClick={() => setIsVisible(false)}
+		/>
 
 		<div className="bg-purple-800 absolute bottom-0 z-10 text-white"
 			style={{
@@ -83,8 +96,13 @@ export const ReaderSettings = ({ isVisible }) => {
 				/>
 
 				<div className="flex justify-between" style={{ width: 'calc(100% + 10vw)', marginLeft: '-5vw' }}>{circles.map((el, i) => (
-					<p key={i} className="rounded-full w-12 h-12 flex justify-center items-center cursor-pointer"
-						style={{ backgroundColor: el.color }}>
+					<p key={i} className={`rounded-full w-12 h-12 flex justify-center items-center cursor-pointer
+					${i < 2 ? 'text-black' : 'text-white'}
+					`}
+						onClick={() => handleSettingsCircle(i)}
+						style={{
+							backgroundColor: el.color
+						}}>
 						C{i}
 					</p>
 				))}</div>
@@ -98,7 +116,12 @@ export const ReaderSettings = ({ isVisible }) => {
 				/>
 
 				<div className="flex justify-between">
-					{pills.map((el, i) => (<div key={i} className="flex flex-col items-center space-y-1">
+					{pills.map((el, i) => (<div key={i}
+						onClick={() => { 
+							el.value >= 1 ? el.value = 0 : el.value += 0.2;
+							setPills([...pills]); // TODO not sure why this works, gotta check that out
+						}}
+						className="flex flex-col items-center space-y-1 cursor-pointer">
 						<div className="w-14 h-32 bg-purple-900 rounded-full overflow-hidden flex items-end">
 							<div className="w-full bg-yellow-500a from-yellow-400 to-yellow-600 bg-gradient-to-t"
 								style={{ height: el.value * 100 + '%' }}

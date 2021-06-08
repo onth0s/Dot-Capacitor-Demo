@@ -24,6 +24,7 @@ const icons_noext = {
 	search_input: 'Library/search-input',
 	filter: 'Library/filter',
 	// ↓ Reader
+	settings: 'Reader/settings',
 	bookmark_on: 'Reader/bookmark_on',
 	bookmark_off: 'Reader/bookmark_off',
 }
