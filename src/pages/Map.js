@@ -64,7 +64,7 @@ export const Map = () => {
 
 	const [showNotification, setShowNotification] = useState(false);
 
-	const [notification, setNotification] = useState(<div className="p-8 space-y-3">
+	const [notification, setNotification] = useState(<div className="p-8 space-y-1">
 		<p className="text-yellow-600">Nuevo texto conseguido!</p>
 		<p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p>
 	</div>);
@@ -80,6 +80,7 @@ export const Map = () => {
 				options={{
 					disableDefaultUI: true,
 					styles: mapStyles,
+					gestureHandling: "greedy",
 					// minZoom: 15.5, maxZoom: 22,
 					minZoom: 10, maxZoom: 22,
 					rotateControl: true,

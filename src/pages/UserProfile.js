@@ -47,7 +47,7 @@ export const UserProfile = () => {
 
 	return (
 		<div className="h-full">
-			<div className="bg-gradient-to-t from-yellow-500 to-yellow-600 w-full h-72 absolute top-0" style={{ zIndex: -1 }}>
+			<div className="bg-gradient-to-t from-yellow-500 to-yellow-600 w-full absolute top-0" style={{ zIndex: -1 , height: '40vh'}}>
 
 			</div>
 
