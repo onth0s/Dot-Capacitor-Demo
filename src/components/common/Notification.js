@@ -7,7 +7,7 @@ glide({ name: 'glide-bottom', direction: 'bottom' });
 export const Notification = ({ isVisible, setIsVisible, children }) => {
 	return (isVisible ? <>
 		<Lightbox
-			// hidden 
+			hidden 
 			onClick={() => {
 				setIsVisible(false);
 			}}

@@ -27,6 +27,8 @@ const icons_noext = {
 	settings: 'Reader/settings',
 	bookmark_on: 'Reader/bookmark_on',
 	bookmark_off: 'Reader/bookmark_off',
+	// ↓ Reader
+	three_dots: 'UserProfile/three-dots',
 }
 export const icons = {}
 

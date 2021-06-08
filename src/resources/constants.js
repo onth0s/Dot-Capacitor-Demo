@@ -1,8 +1,8 @@
 export const consts = {
 	corner_btn: {
 		size: {
-			width: '8vw',
-			height: '8vw',
+			width: '7vw',
+			height: '7vw',
 		},
 		
 		top: '4vh', bottom: '4vh',
