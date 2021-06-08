@@ -34,7 +34,7 @@ export const SVG = ({
 	return (
 		<div className={`
 			flex ${position_} items-center
-			${maxContent ? 'w-max' : 'w-full'}
+			${maxContent || position !== 'CENTER' ? 'w-max' : 'w-full'}
 			absolute 
 		`}
 			style={{
