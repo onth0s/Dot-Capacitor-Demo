@@ -62,15 +62,15 @@ export const Map = () => {
 		new google.maps.Point(15, 15), new google.maps.Size(30, 30),
 	);
 
-	const [isNotificationVisible, setIsNotificationVisible] = useState(true); // TODO change this
+	const [showNotification, setShowNotification] = useState(false);
+
+	const [notification, setNotification] = useState(<div className="p-8 space-y-3">
+		<p className="text-yellow-600">Nuevo texto conseguido!</p>
+		<p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p>
+	</div>);
 
 	return (<>
-		<Notification isVisible={isNotificationVisible}>
-			<div className="p-8 space-y-3">
-				<p className="text-yellow-600">Nuevo texto conseguido!</p>
-				<p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p>
-			</div>
-		</Notification>
+		<Notification isVisible={showNotification}>{notification}</Notification>
 
 		<div>
 			<GoogleMap
@@ -104,7 +104,15 @@ export const Map = () => {
 						setCurrentPosition({ lat: e.latLng.lat(), lng: e.latLng.lng(), })
 					}}
 
-					onClick={() => {
+					onClick={() => { // TODO Everything here is pretty much just for debugging. Remove eventually.
+						setNotification(<div className="p-4">
+							<p>{new Date().toString()}</p>
+						</div>);
+						setShowNotification(true);
+						setTimeout(() => {
+							setShowNotification(false)
+						}, 2000);
+
 						getLocation().then(val => {
 							setCurrentPosition({ lat: val.lat, lng: val.lng })
 						});

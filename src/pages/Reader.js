@@ -14,6 +14,8 @@ glide({ name: 'glide-bottom', direction: 'bottom' });
 export const Reader = () => {
 	const [isBookmarked, setIsBookmarked] = useState(false);
 
+	const [showSettings, setShowSettings] = useState(false);
+
 	const renderScore = (score_, classes) => {
 		let score = [];
 
@@ -39,10 +41,40 @@ export const Reader = () => {
 		return tags;
 	}
 
-	return (<>
-		<Lightbox hidden />
+	const renderText = () => {
+		return (<>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsu vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos.
+				</p><br />
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.g elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.
+				</p><br />
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis.
+				</p>
+		</>);
+	}
 
-		<ReaderSettings />
+	return (<>
+		<Lightbox
+			hidden 
+			onClick={() => {
+				console.log('setShowSettings(false)');
+				setShowSettings(false)
+			}}
+		/>
+
+		<SVG route={'../' + icons.arrow_left}
+			size={['12vw']} maxContent
+			bottom={'8vh'}
+			right={'10vw'}
+			zIndex={10}
+			style={{ backgroundColor: 'blue', borderRadius: '100%' }}
+
+			onClick={() => setShowSettings(true)}
+		/>
+
+		<ReaderSettings isVisible={showSettings} />
 
 		<div className="flex flex-col h-full overflow-auto relative">
 
@@ -68,17 +100,7 @@ export const Reader = () => {
 
 			<div className="m-auto mt-8 mb-8 w-10/12
 				bg-red-100 text-justify
-			">
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsu vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos.
-				</p><br />
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.g elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.
-				</p><br />
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis.
-				</p>
-			</div>
+			">{renderText()}</div>
 
 			<div className="flex justify-between items-center px-6 mb-4">
 				<div className="text-sm">

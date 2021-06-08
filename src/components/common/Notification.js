@@ -1,7 +1,7 @@
 import { Lightbox } from '../common/Lightbox.js'
 
-export const Notification = ({ children }) => {
-	return (<>
+export const Notification = ({ isVisible, children }) => {
+	return (isVisible ? <>
 		<Lightbox hidden />
 
 		<div className="bg-white absolute z-40 shadow-lg"
@@ -20,5 +20,5 @@ export const Notification = ({ children }) => {
 				marginTop: '60vw',
 			}}>{children}</div>
 		</div>
-	</>);
+	</> : <div></div>);
 }
