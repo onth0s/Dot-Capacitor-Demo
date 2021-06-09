@@ -372,7 +372,6 @@ export const Library = () => {
 				return (favoritesList.map((el, i) => (
 					<div className="flex cursor-pointer" key={i}>
 						<img className="w-28 h-32 bg-gray-400 bg-opacity-60 p-4" src={icons.mountain_placeholder} alt="content related"
-							style={{ borderBottom: '1px solid blue' }}
 						/>
 
 						<div className="flex flex-col flex-grow justify-between py-4 pl-4">
@@ -395,6 +394,17 @@ export const Library = () => {
 	}
 
 	const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+	const filters = [
+		'Recién desbloqueado',
+		'Tiempo de lectura',
+		'Alfabéticamente',
+		'Autor',
+		'Puntuación',
+		'Histórica?',
+	];
+
+	const [showFilters, setShowFilters] = useState(false);
 
 	return (
 		<div className="flex flex-col h-full">
@@ -425,7 +435,7 @@ export const Library = () => {
 				zIndex={'10'}
 				innerStyle={{ backgroundColor: 'blue', borderRadius: '100%' }}
 				onClick={() => {
-					console.log('NOW!'); 
+					console.log('NOW!');
 					// TODO document.querySelector('#test-01').classList.add('animate__animated');
 					setIsSearchVisible(true);
 				}}
@@ -460,11 +470,31 @@ export const Library = () => {
 					))}
 				</div>
 
+				{showFilters && <div className="w-full h-full absolute top-0 z-10"
+					onClick={() => setShowFilters(false)}
+				/>}
+
 				<div className="
 					flex items-center justify-center
-					w-2/12 h-10 
+					w-2/12 h-10 relative
 				">
-					<img className="cursor-pointer w-6 p-2 box-content" src={icons.filter} alt="filter" />
+					<img className="cursor-pointer w-6 p-2 box-content" src={icons.filter} alt="filter"
+						onClick={() => setShowFilters(true)}
+					/>
+
+					{showFilters && <>
+
+
+						<div className="absolute z-20 bg-white rounded-xl top-10 right-4 w-48 py-2"
+							style={{ boxShadow: '0 2px 9px rgba(0,0,0,0.15)' }}
+						>
+							{filters.map((el, i) => (
+								<div key={i} className="font-light text-sm	pl-8 py-2 cursor-pointer"
+								>{el}</div>
+							))
+							}
+						</div>
+					</>}
 				</div>
 			</div>
 
