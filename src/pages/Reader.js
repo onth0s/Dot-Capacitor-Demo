@@ -9,7 +9,7 @@ import { ReaderSettings } from '../components/Reader/ReaderSettings.js';
 
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
-//s
+//sads 	
 export const Reader = () => {
 	const [isBookmarked, setIsBookmarked] = useState(false);
 

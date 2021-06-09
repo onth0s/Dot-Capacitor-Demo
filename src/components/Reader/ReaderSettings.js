@@ -1,6 +1,12 @@
 import { useState } from 'react';
 
 export const ReaderSettings = ({ isVisible, setIsVisible }) => {
+	/* 
+		TODO
+		Para implementar el 'slider' se puede hacer un apaño haciendo que el contenido de la pastilla esté compuesto por 'muchos' <div/>, tal que cuando 'cliques' (o drag, touch, etc) en uno, se ilumine este y todos los que están debajo, creando así la sensación de 'slider'
+		TODO
+	*/ 
+	
 	const renderPoints = (index) => {
 		let points = [];
 
