@@ -1,0 +1,6 @@
+{
+  "appId": "com.dotdotapp.www",
+  "appName": "Dot.",
+  "webDir": "build",
+  "bundledWebRuntime": false
+}
