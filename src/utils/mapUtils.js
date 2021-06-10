@@ -1,7 +1,25 @@
+import { icons } from '../resources/icons.js';
+
+const google = window.google;
+
+export const stopsLockedIcon = new google.maps.MarkerImage(icons.stop_locked,
+	new google.maps.Size(40, 40), new google.maps.Point(0, 0),
+	new google.maps.Point(20, 40), new google.maps.Size(40, 40),
+);
+export const stopsUnlockedIcon = new google.maps.MarkerImage(icons.stop_unlocked,
+	new google.maps.Size(40, 40), new google.maps.Point(0, 0),
+	new google.maps.Point(20, 40), new google.maps.Size(40, 40),
+);
+export const currentPositionIcon = new google.maps.MarkerImage(icons.current_position_circle,
+	new google.maps.Size(30, 30), new google.maps.Point(0, 0),
+	new google.maps.Point(15, 15), new google.maps.Size(30, 30),
+);
+
 export const measure = (lat1, lon1, lat2, lon2) => {
 	var R = 6378.137;
 
 	var dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
+
 	var dLon = lon2 * Math.PI / 180 - lon1 * Math.PI / 180;
 
 	var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +

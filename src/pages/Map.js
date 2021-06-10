@@ -5,20 +5,18 @@ import { mapStyles, containerStyle } from '../resources/mapSettings.js';
 
 import {
 	// measure,
-	getLocation
+	getLocation,
+	stopsLockedIcon, stopsUnlockedIcon, currentPositionIcon,
 } from '../utils/mapUtils.js';
 
 import { MapUI } from '../components/Map/MapUI.js';
 
-import { icons } from '../resources/icons.js';
 
 import stops from '../resources/h6-stops-v1.json';
 
 import { Notification } from '../components/common/Notification.js';
 
 export const Map = () => {
-	const google = window.google;
-
 	useEffect(() => {
 		// TODO ↓ temporary "fix" (not even that)
 		(function () {
@@ -49,19 +47,6 @@ export const Map = () => {
 	const [currentPosition, setCurrentPosition] = useState({ lat: 41.4255, lng: 2.1779 });
 	if (false) setCurrentZoom(); // TODO ← remove this
 
-	const stopsLockedIcon = new google.maps.MarkerImage(icons.stop_locked,
-		new google.maps.Size(40, 40), new google.maps.Point(0, 0),
-		new google.maps.Point(20, 40), new google.maps.Size(40, 40),
-	);
-	const stopsUnlockedIcon = new google.maps.MarkerImage(icons.stop_unlocked,
-		new google.maps.Size(40, 40), new google.maps.Point(0, 0),
-		new google.maps.Point(20, 40), new google.maps.Size(40, 40),
-	);
-	const currentPositionIcon = new google.maps.MarkerImage(icons.current_position_circle,
-		new google.maps.Size(30, 30), new google.maps.Point(0, 0),
-		new google.maps.Point(15, 15), new google.maps.Size(30, 30),
-	);
-
 	const [showNotification, setShowNotification] = useState(false);
 
 	const [notification, setNotification] = useState(<div className="p-8 space-y-1">
@@ -70,7 +55,9 @@ export const Map = () => {
 	</div>);
 
 	return (<>
-		<Notification isVisible={showNotification} setIsVisible={setShowNotification}>{notification}</Notification>
+		<Notification isVisible={showNotification} setIsVisible={setShowNotification}>
+			{notification}
+		</Notification>
 
 		<div>
 			<GoogleMap
@@ -122,7 +109,8 @@ export const Map = () => {
 
 				{stops.map((el, i) => {
 					return (<div key={i}>
-						<Circle
+						{/* TODO ↓ remove this, just for debugging */}
+						<Circle 
 							center={el}
 							options={{
 								strokeWeight: 0,

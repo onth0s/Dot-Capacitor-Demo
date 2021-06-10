@@ -19,6 +19,14 @@ const theme = createMuiTheme({
 	},
 });
 
+// const handlePermission = () => {
+// 	navigator.permissions.query({ name: 'geolocation' }).then(res => {
+// 		// console.log(res.state);
+// 	});
+// }
+
+// handlePermission();
+
 ReactDOM.render(
 	<ThemeProvider theme={theme}>
 		<App />

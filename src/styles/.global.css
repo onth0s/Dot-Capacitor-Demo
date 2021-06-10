@@ -4,6 +4,7 @@
 
 * {
 	font-family: Roboto !important; 
+	user-select: none;
 }
 
 #root {

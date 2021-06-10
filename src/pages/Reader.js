@@ -20,11 +20,7 @@ export const Reader = () => {
 
 		for (let i = 0; i < 5; i++) {
 			score.push(
-				<img key={i} className={classes} src={'../' + icons.star} alt="star"
-					onClick={(e) => {
-						e.stopPropagation();
-					}}
-				/>
+				<img key={i} className={classes} src={'../' + icons.star} alt="star"/>
 			);
 		}
 
@@ -38,7 +34,9 @@ export const Reader = () => {
 		];
 
 		tags_.forEach((el, i) => {
-			tags.push(<p className="cursor-pointer rounded-full bg-red-200 p-2 py-1 text-sm" key={i}>{el}</p>)
+			tags.push(<p className="cursor-pointer rounded-full bg-red-200 p-2 py-1 text-sm" key={i}
+				onClick={(e) => e.stopPropagation()}
+			>{el}</p>)
 		});
 
 		return tags;
