@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 
-import { GoogleMap, Marker, Circle } from '@react-google-maps/api';
+import { GoogleMap, Marker } from '@react-google-maps/api';
 import { mapStyles, containerStyle } from '../resources/mapSettings.js';
 
 import {
@@ -49,15 +49,20 @@ export const Map = () => {
 
 	const [showNotification, setShowNotification] = useState(false);
 
-	const [notification, setNotification] = useState(<div className="p-8 space-y-1">
-		<p className="text-yellow-600">Nuevo texto conseguido!</p>
-		<p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p>
-	</div>);
+	const [notification, setNotification] = useState(
+		<div className="p-8 space-y-1">
+			<p className="text-yellow-600">Nuevo texto conseguido!</p>
+			<p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p>
+		</div>
+	);
+	if (false) setNotification();
 
 	const [timeoutID, setTimeoutID] = useState(0);
 
+	const [stopsStatus, setStopsStatus] = useState(stops.map(() => false));
+
 	const renderStopIcon = (i) => {
-		return stopsLockedIcon;
+		return stopsStatus[i] ? stopsUnlockedIcon : stopsLockedIcon;
 	}
 
 	return (<>
@@ -103,14 +108,16 @@ export const Map = () => {
 							);
 
 							if (measure_ < 35) {
-								console.log('INSIDE');
-								break;
+								const arr = stopsStatus;
+								arr[i] = true;
+								setStopsStatus([...arr]);
+								// break;
 							}
 						};
 					}}
 
 					onClick={() => { // TODO Everything here is pretty much just for debugging. Remove eventually.
-						setShowNotification(true);
+						// setShowNotification(true);
 						const timeoutID_ = setTimeout(() => {
 							setShowNotification(false);
 						}, 4000);
@@ -126,7 +133,7 @@ export const Map = () => {
 				{stops.map((el, i) => {
 					return (<div key={i}>
 						{/* TODO ↓ remove this, just for debugging */}
-						<Circle
+						{/* <Circle
 							center={el}
 							options={{
 								strokeWeight: 0,
@@ -139,10 +146,10 @@ export const Map = () => {
 								radius: 35,
 								zIndex: 1,
 							}}
-						/>
+						/> */}
 
 						<Marker position={el}
-							icon={stopsLockedIcon}
+							icon={renderStopIcon(i)}
 							zIndex={5}
 						/>
 					</div>)
