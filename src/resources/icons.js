@@ -27,7 +27,11 @@ const icons_noext = {
 	settings: 'Reader/settings',
 	bookmark_on: 'Reader/bookmark_on',
 	bookmark_off: 'Reader/bookmark_off',
-	// ↓ Reader
+	line_height: 'Reader/line-height-reader',
+	margin: 'Reader/margin-reader',
+	size: 'Reader/size-reader',
+	selected_circle: 'Reader/selected-circle',
+	// ↓ UserProfile
 	three_dots: 'UserProfile/three-dots',
 	logout: 'UserProfile/logout',
 }

@@ -13,7 +13,7 @@ import { Menu } from "../components/common/Menu.js";
 
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
-//dsg
+//dsgasdf
 export const Library = () => {
 	const tabList = ['Estantería', 'Catálogo', 'Favoritos']
 
@@ -120,7 +120,7 @@ export const Library = () => {
 			time_lenght: 5,
 		},
 		{
-			title: 'Título de la obra',
+			title: 'Título de la obraxxx',
 			author: 'Autor',
 			icon: icons.romance,
 			time_ago: 3,
@@ -294,32 +294,17 @@ export const Library = () => {
 			case 0:
 				return (shelfList.map((el, i) => (
 					<Link to={'/reader/' + i} transition='glide-top' key={i}>
-						<div className="
-						flex
-						h-20
-						pl-8
-						w-full
-						cursor-pointer
-					"
-							style={{
-								borderBottom: '1px solid grey'
-							}}
+						<div className="flex h-20 pl-8 w-full cursor-pointer"
+							style={{ borderBottom: '1px solid grey' }}
 						>
-							<img className="
-							w-9 mr-8
-						" src={icons.fable} alt="genre" />
+							<img className="w-9 mr-8" src={icons.fable} alt="genre" />
 
-							<div className="
-							flex flex-col justify-center items-start
-							w-8/12 h-20
-						">
+							<div className="flex flex-col justify-center items-start w-8/12 h-20">
 								<p className="font-semibold">{el.title}</p>
 								<p>{el.author}</p>
 							</div>
 
-							<div className="
-							flex flex-col justify-center space-y-2
-						">
+							<div className="flex flex-col justify-center space-y-2">
 								<p>{el.time_ago} h</p>
 								<p className="text-xs -ml-4">{el.time_lenght} min</p>
 							</div>
@@ -335,27 +320,11 @@ export const Library = () => {
 						p-4
 					">
 						{catalogItems.map((el, i) => (
-							<div key={i} className="
-								w-full h-48 relative
-								bg-red-100
-								rounded-xl shadow-md
-								cursor-pointer
-								overflow-hidden
-							">
-								<img className="
-									w-full
-									p-12 -mt-6
-									bg-gray-400 opacity-60
+							<div key={i} className="w-full h-48 relative bg-red-100 rounded-xl shadow-md cursor-pointer overflow-hidden">
+								<img className="w-full p-12 -mt-6 bg-gray-400 opacity-60
 								" src={icons.mountain_placeholder} alt="mountain placeholder" />
 
-								<div className="
-									flex
-									w-full h-20
-									p-2 space-x-2
-									absolute bottom-0
-									rounded-xl 
-									bg-white
-								">
+								<div className="flex w-full h-20 p-2 space-x-2 absolute bottom-0   rounded-xl  bg-white">
 									<div className="flex flex-col">
 										<p className="font-semibold">{el.title}</p>
 										<p className="text-sm">{el.author}</p>
@@ -445,11 +414,9 @@ export const Library = () => {
 
 			<LibrarySearch isVisible={isSearchVisible} setIsVisible={setIsSearchVisible} />
 
-			<div className="
-				flex
-				w-full h-10
-				mt-40
-			">
+			<div className="flex w-full h-10"
+				style={{marginTop: '22vh'}}
+			>
 				<div className="
 					flex
 					w-10/12

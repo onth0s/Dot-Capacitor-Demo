@@ -1,0 +1,15 @@
+<svg id="Grupo_120" data-name="Grupo 120" xmlns="http://www.w3.org/2000/svg" width="46.701" height="46.701" viewBox="0 0 46.701 46.701">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #3e3b8a;
+      }
+    </style>
+  </defs>
+  <path id="Trazado_66" data-name="Trazado 66" class="cls-1" d="M0,0H46.7V46.7H0Z"/>
+  <path id="Trazado_67" data-name="Trazado 67" class="cls-2" d="M27.25,53.75h31.5a2.25,2.25,0,1,0,0-4.5H27.25a2.25,2.25,0,1,0,0,4.5Zm0,9h31.5a2.25,2.25,0,1,0,0-4.5H27.25a2.25,2.25,0,1,0,0,4.5Zm0-18h31.5a2.25,2.25,0,1,0,0-4.5H27.25a2.25,2.25,0,1,0,0,4.5ZM25,33.5a2.256,2.256,0,0,0,2.25,2.25h31.5a2.25,2.25,0,1,0,0-4.5H27.25A2.256,2.256,0,0,0,25,33.5Z" transform="translate(-19.649 -21.521)"/>
+</svg>

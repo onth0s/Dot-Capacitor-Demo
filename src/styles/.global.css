@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-	font-family: Roboto !important; 
+	font-family: Roboto; 
 	user-select: none;
 }
 

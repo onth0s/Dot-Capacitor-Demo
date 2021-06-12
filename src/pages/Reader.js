@@ -15,12 +15,18 @@ export const Reader = () => {
 
 	const [showSettings, setShowSettings] = useState(false);
 
-	const renderScore = (score_, classes) => {
+	const [backgroundColor, setBackgroundColor] = useState('white');
+	const [textColor, setTextColor] = useState('black');
+	const [textFont, setTextFont] = useState('Verdana');
+
+	const renderScore = (score_, classes, stopPropagation = false) => {
 		let score = [];
 
 		for (let i = 0; i < 5; i++) {
 			score.push(
-				<img key={i} className={classes} src={'../' + icons.star} alt="star"/>
+				<img key={i} className={classes} src={'../' + icons.star} alt="star"
+					onClick={(e) => stopPropagation && e.stopPropagation()}
+				/>
 			);
 		}
 
@@ -34,7 +40,8 @@ export const Reader = () => {
 		];
 
 		tags_.forEach((el, i) => {
-			tags.push(<p className="cursor-pointer rounded-full bg-red-200 p-2 py-1 text-sm" key={i}
+			tags.push(<p className="cursor-pointer rounded-full p-2 py-1 text-sm" key={i}
+				style={{ backgroundColor: consts.colors.primary_light }}
 				onClick={(e) => e.stopPropagation()}
 			>{el}</p>)
 		});
@@ -64,14 +71,17 @@ export const Reader = () => {
 			bottom={'8vh'}
 			right={'10vw'}
 			zIndex={10}
-			style={{ backgroundColor: 'blue', borderRadius: '100%' }}
+			style={{ backgroundColor: consts.colors.secondary, borderRadius: '100%' }}
 
 			onClick={() => setShowSettings(true)}
 		/>}
 
-		<ReaderSettings isVisible={showSettings} setIsVisible={setShowSettings} />
+		<ReaderSettings isVisible={showSettings} setIsVisible={setShowSettings}
+			setBackgroundColor={setBackgroundColor} setTextColor={setTextColor} setTextFont={setTextFont}
+		/>
 
 		<div className="flex flex-col h-full overflow-auto relative"
+			style={{ backgroundColor }}
 			onClick={() => {
 				if (showSettings) setShowSettings(false);
 				else setShowUI(!showUI);
@@ -84,7 +94,7 @@ export const Reader = () => {
 							size={[consts.corner_btn.size.width]} maxContent
 							top={consts.corner_btn.top}
 							left={consts.corner_btn.left}
-							style={{ backgroundColor: 'blue', borderRadius: '100%' }}
+							style={{ backgroundColor: consts.colors.secondary, borderRadius: '100%' }}
 						/>
 					</Link>
 				</div>
@@ -92,7 +102,7 @@ export const Reader = () => {
 					size={[consts.corner_btn.size.width]} maxContent
 					top={consts.corner_btn.top}
 					right={consts.corner_btn.right}
-					style={{ backgroundColor: 'blue', borderRadius: '100%' }}
+					style={{ backgroundColor: consts.colors.secondary, borderRadius: '100%' }}
 					onClick={(e) => {
 						e.stopPropagation();
 						setIsBookmarked(!isBookmarked)
@@ -100,20 +110,28 @@ export const Reader = () => {
 				/>
 			</>}
 
-			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12">
+			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12"
+				style={{ color: textColor }}
+			>
 				Título aquí <br />y aquí si es muy largo
 			</p>
 
 			<div className="m-auto mt-8 mb-8 w-10/12 text-justify
-			">{renderText()}</div>
+			"
+				style={{ color: textColor, fontFamily: textFont }}
+			>{renderText()}</div>
 
-			<div className="flex justify-between items-center px-6 mb-4">
+			<div className="flex justify-between items-center px-6 mb-4"
+				style={{ color: textColor }}
+			>
 				<div className="text-sm">
 					<p>Libro - año de publicación</p>
 					<p>Autor</p>
 				</div>
 
-				<div className="flex space-x-2 text-sm items-center">
+				<div className="flex space-x-2 text-sm items-center"
+					style={{ color: textColor }}
+				>
 					<p>4.2</p>
 					<div className="flex">
 						{renderScore(4.2, "w-4") /* TODO make this work */}
@@ -125,12 +143,13 @@ export const Reader = () => {
 			<div className="flex space-x-2 px-6 mb-8">{renderTags()}</div>
 
 			<div className="px-6 mb-8">
-				<p>¿Qué te ha parecido?</p>
+				<p style={{ color: textColor }}>¿Qué te ha parecido?</p>
 
-				<div className="flex justify-center space-x-2">{renderScore(4.5, "w-10 mt-2 cursor-pointer")}</div>
+				<div className="flex justify-center space-x-2">{renderScore(4.5, "w-10 mt-2 cursor-pointer", true)}</div>
 			</div>
 
-			<div className="mx-auto p-2 bg-purple-600 text-white rounded-full mb-12 w-40 text-center cursor-pointer"
+			<div className="mx-auto p-2 text-white rounded-full mb-12 w-40 text-center cursor-pointer"
+				style={{ backgroundColor: consts.colors.secondary }}
 				onClick={(e) => {
 					e.stopPropagation();
 				}}

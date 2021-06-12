@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #ffa75a;
+      }
+
+      .cls-3 {
+        stroke: #ffa75a;
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_725" data-name="Grupo 725" transform="translate(-70 -794)">
+    <g id="tick" transform="translate(82 806)">
+      <path id="Trazado_106" data-name="Trazado 106" class="cls-1" d="M.277-.032h48v48h-48Z" transform="translate(-0.277 0.032)"/>
+      <path id="Trazado_107" data-name="Trazado 107" class="cls-2" d="M30.9,57.139,23.449,49.01a2.017,2.017,0,0,0-3.03,0,2.484,2.484,0,0,0,0,3.3L29.4,62.105a2.017,2.017,0,0,0,3.029,0L55.162,37.321a2.484,2.484,0,0,0,0-3.3,2.016,2.016,0,0,0-3.029,0Z" transform="translate(-14.62 -24.061)"/>
+    </g>
+    <g id="Elipse_172" data-name="Elipse 172" class="cls-3" transform="translate(70 794)">
+      <circle class="cls-4" cx="36" cy="36" r="36"/>
+      <circle class="cls-1" cx="36" cy="36" r="35"/>
+    </g>
+  </g>
+</svg>

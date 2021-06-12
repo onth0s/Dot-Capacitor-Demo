@@ -84,18 +84,11 @@ export const Map = () => {
 					zIndex={10}
 
 					onDragStart={(e) => {
-						// console.log('>> drag start - current position:');
-						// console.log(currentPosition);
-						// console.log(e);
+						// TODO remove this
 					}}
-					onDragEnd={(e) => {
-						setCurrentPosition({ lat: e.latLng.lat(), lng: e.latLng.lng(), })
-					}}
+					onDragEnd={(e) => setCurrentPosition({ lat: e.latLng.lat(), lng: e.latLng.lng(), })}
 
 					onClick={() => { // TODO Everything here is pretty much just for debugging. Remove eventually.
-						setNotification(<div className="p-4">
-							<p>{new Date().toString()}</p>
-						</div>);
 						setShowNotification(true);
 						setTimeout(() => {
 							setShowNotification(false)
