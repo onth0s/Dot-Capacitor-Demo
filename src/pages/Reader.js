@@ -18,6 +18,10 @@ export const Reader = () => {
 	const [backgroundColor, setBackgroundColor] = useState('white');
 	const [textColor, setTextColor] = useState('black');
 	const [textFont, setTextFont] = useState('Verdana');
+	
+	const [fontSize, setFontSize] = useState(0.6);
+	const [lineHeight, setLineHeight] = useState(0);
+	const [textMargin, setTextMargin] = useState(0);
 
 	const renderScore = (score_, classes, stopPropagation = false) => {
 		let score = [];
@@ -49,15 +53,25 @@ export const Reader = () => {
 		return tags;
 	}
 
-	const renderText = () => {
+	const renderText = (fontFamily = 'Verdana',) => {
 		return (<>
-			<p>
+			<p style={{
+				fontFamily,
+				fontSize: 0.7 * fontSize + 0.7 + 'rem',
+				lineHeight: (1 + lineHeight) * 100 + '%',
+			}}>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsu vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos.
-				</p><br />
-			<p>
+			</p><br />
+			<p style={{
+				fontFamily,
+				fontSize: 0.7 * fontSize + 0.7 + 'rem',
+			}}>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.g elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.
-				</p><br />
-			<p>
+			</p><br />
+			<p style={{
+				fontFamily,
+				fontSize: 0.7 * fontSize + 0.7 + 'rem',
+			}}>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis.
 			</p>
 		</>);
@@ -77,7 +91,7 @@ export const Reader = () => {
 		/>}
 
 		<ReaderSettings isVisible={showSettings} setIsVisible={setShowSettings}
-			setBackgroundColor={setBackgroundColor} setTextColor={setTextColor} setTextFont={setTextFont}
+			setBackgroundColor={setBackgroundColor} setTextColor={setTextColor} setTextFont={setTextFont} setFontSize={setFontSize} setLineHeight={setLineHeight}
 		/>
 
 		<div className="flex flex-col h-full overflow-auto relative"
@@ -116,10 +130,9 @@ export const Reader = () => {
 				Título aquí <br />y aquí si es muy largo
 			</p>
 
-			<div className="m-auto mt-8 mb-8 w-10/12 text-justify
-			"
-				style={{ color: textColor, fontFamily: textFont }}
-			>{renderText()}</div>
+			<div className="mt-8 mb-8 w-full text-justify"
+				style={{ color: textColor, padding: '0 '+ textMargin +'px'}}
+			>{renderText(textFont)}</div>
 
 			<div className="flex justify-between items-center px-6 mb-4"
 				style={{ color: textColor }}

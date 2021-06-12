@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { consts } from '../../resources/constants.js';
 import { icons } from '../../resources/icons.js';
 
-export const ReaderSettings = ({ isVisible, setBackgroundColor, setTextColor, setTextFont }) => {
+export const ReaderSettings = ({ isVisible, setBackgroundColor, setTextColor, setTextFont, setFontSize, setLineHeight }) => {
 	/* 
 		TODO
 		Para implementar el 'slider' se puede hacer un apaño haciendo que el contenido de la pastilla esté compuesto por 'muchos' <div/>, tal que cuando 'cliques' (o drag, touch, etc) en uno, se ilumine este y todos los que están debajo, creando así la sensación de 'slider'
@@ -59,7 +59,7 @@ export const ReaderSettings = ({ isVisible, setBackgroundColor, setTextColor, se
 	const [pills, setPills] = useState([
 		{
 			text: 'Tamaño',
-			value: 0.4,
+			value: 0.6,
 		},
 		{
 			text: 'Interliniado',
@@ -179,6 +179,18 @@ export const ReaderSettings = ({ isVisible, setBackgroundColor, setTextColor, se
 						onClick={() => {
 							el.value >= 1 ? el.value = 0 : el.value += 0.2;
 							setPills([...pills]); // TODO not sure why this works, gotta check that out
+
+							switch (i) {
+								case 0:
+									setFontSize(el.value);
+									break;
+								case 1:
+									setLineHeight(el.value);
+									break;
+								case 2:
+									console.log('margin'); 
+									break;
+							}
 						}}
 						className="flex flex-col items-center space-y-1 cursor-pointer">
 						<div className="w-14 h-32 rounded-full overflow-hidden flex items-end"
