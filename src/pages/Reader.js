@@ -20,7 +20,7 @@ export const Reader = () => {
 	const [textFont, setTextFont] = useState('Verdana');
 	
 	const [fontSize, setFontSize] = useState(0.6);
-	const [lineHeight, setLineHeight] = useState(0);
+	const [lineHeight, setLineHeight] = useState(0.6);
 	const [textMargin, setTextMargin] = useState(0);
 
 	const renderScore = (score_, classes, stopPropagation = false) => {
@@ -65,12 +65,14 @@ export const Reader = () => {
 			<p style={{
 				fontFamily,
 				fontSize: 0.7 * fontSize + 0.7 + 'rem',
+				lineHeight: (1 + lineHeight) * 100 + '%',
 			}}>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.g elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.
 			</p><br />
 			<p style={{
 				fontFamily,
 				fontSize: 0.7 * fontSize + 0.7 + 'rem',
+				lineHeight: (1 + lineHeight) * 100 + '%',
 			}}>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis.
 			</p>
@@ -91,7 +93,7 @@ export const Reader = () => {
 		/>}
 
 		<ReaderSettings isVisible={showSettings} setIsVisible={setShowSettings}
-			setBackgroundColor={setBackgroundColor} setTextColor={setTextColor} setTextFont={setTextFont} setFontSize={setFontSize} setLineHeight={setLineHeight}
+			setBackgroundColor={setBackgroundColor} setTextColor={setTextColor} setTextFont={setTextFont} setFontSize={setFontSize} setLineHeight={setLineHeight} setTextMargin={setTextMargin}
 		/>
 
 		<div className="flex flex-col h-full overflow-auto relative"
@@ -131,7 +133,7 @@ export const Reader = () => {
 			</p>
 
 			<div className="mt-8 mb-8 w-full text-justify"
-				style={{ color: textColor, padding: '0 '+ textMargin +'px'}}
+				style={{ color: textColor, padding: '0 '+ textMargin * 50 +'px'}}
 			>{renderText(textFont)}</div>
 
 			<div className="flex justify-between items-center px-6 mb-4"

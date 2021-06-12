@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { consts } from '../../resources/constants.js';
 import { icons } from '../../resources/icons.js';
 
-export const ReaderSettings = ({ isVisible, setBackgroundColor, setTextColor, setTextFont, setFontSize, setLineHeight }) => {
+export const ReaderSettings = ({ isVisible, setBackgroundColor, setTextColor, setTextFont, setFontSize, setLineHeight, setTextMargin }) => {
 	/* 
 		TODO
 		Para implementar el 'slider' se puede hacer un apaño haciendo que el contenido de la pastilla esté compuesto por 'muchos' <div/>, tal que cuando 'cliques' (o drag, touch, etc) en uno, se ilumine este y todos los que están debajo, creando así la sensación de 'slider'
@@ -63,7 +63,7 @@ export const ReaderSettings = ({ isVisible, setBackgroundColor, setTextColor, se
 		},
 		{
 			text: 'Interliniado',
-			value: 0.8,
+			value: 0.6,
 		},
 		{
 			text: 'Margen',
@@ -188,7 +188,7 @@ export const ReaderSettings = ({ isVisible, setBackgroundColor, setTextColor, se
 									setLineHeight(el.value);
 									break;
 								case 2:
-									console.log('margin'); 
+									setTextMargin(el.value)
 									break;
 							}
 						}}
