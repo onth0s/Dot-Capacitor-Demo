@@ -51,9 +51,10 @@ export const Map = () => {
 	const [showNotification, setShowNotification] = useState(false);
 
 	const [notification, setNotification] = useState(
-		<div className="p-8 space-y-1">
+		<div className="p-8 space-y-1 w-screen">
 			<p className="text-yellow-600">Nuevo texto conseguido!</p>
-			<p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p>
+			{/* <p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p> */}
+			<p>¡Échale un vistazo desde tu biblioteca!</p>
 		</div>
 	);
 	if (false) setNotification();
@@ -112,6 +113,13 @@ export const Map = () => {
 								if (!stopsStatus[i]) { // TODO here goes the 'media' fetching
 									getFables().then(val => {
 										console.log(val);
+
+										setShowNotification(true);
+										const timeoutID_ = setTimeout(() => {
+											setShowNotification(false);
+										}, 4000);
+
+										setTimeoutID(timeoutID_);
 									});
 								}
 
@@ -125,13 +133,6 @@ export const Map = () => {
 					}}
 
 					onClick={() => { // TODO Everything here is pretty much just for debugging. Remove eventually.
-						setShowNotification(true);
-						const timeoutID_ = setTimeout(() => {
-							setShowNotification(false);
-						}, 4000);
-
-						setTimeoutID(timeoutID_);
-
 						getLocation().then(val => {
 							setCurrentPosition({ lat: val.lat, lng: val.lng })
 						});
