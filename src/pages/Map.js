@@ -11,10 +11,11 @@ import {
 
 import { MapUI } from '../components/Map/MapUI.js';
 
-
 import stops from '../resources/h6-stops-v1.json';
 
 import { Notification } from '../components/common/Notification.js';
+
+import { getFables } from '../utils/serverQueries.js';
 
 export const Map = () => {
 	useEffect(() => {
@@ -108,16 +109,23 @@ export const Map = () => {
 							);
 
 							if (measure_ < 35) {
+								if (!stopsStatus[i]) { // TODO here goes the 'media' fetching
+									getFables().then(val => {
+										console.log(val);
+									});
+								}
+
 								const arr = stopsStatus;
 								arr[i] = true;
 								setStopsStatus([...arr]);
-								// break;
+
+								// break; // TODO ← if this is enabled, then it only checks the first stop one it compares
 							}
 						};
 					}}
 
 					onClick={() => { // TODO Everything here is pretty much just for debugging. Remove eventually.
-						// setShowNotification(true);
+						setShowNotification(true);
 						const timeoutID_ = setTimeout(() => {
 							setShowNotification(false);
 						}, 4000);
