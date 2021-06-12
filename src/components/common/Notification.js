@@ -4,12 +4,13 @@ import { Lightbox } from '../common/Lightbox.js'
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
 
-export const Notification = ({ isVisible, setIsVisible, children }) => {
+export const Notification = ({ isVisible, setIsVisible, children, timeoutID }) => {
 	return (isVisible ? <>
 		<Lightbox
 			hidden
 			onClick={() => {
 				setIsVisible(false);
+				clearTimeout(timeoutID);
 			}}
 		/>
 

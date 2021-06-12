@@ -21,7 +21,7 @@ export const Reader = () => {
 	
 	const [fontSize, setFontSize] = useState(0.6);
 	const [lineHeight, setLineHeight] = useState(0.6);
-	const [textMargin, setTextMargin] = useState(0);
+	const [textMargin, setTextMargin] = useState(0.6);
 
 	const renderScore = (score_, classes, stopPropagation = false) => {
 		let score = [];

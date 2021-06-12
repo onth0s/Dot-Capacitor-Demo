@@ -190,6 +190,7 @@ export const ReaderSettings = ({ isVisible, setBackgroundColor, setTextColor, se
 								case 2:
 									setTextMargin(el.value)
 									break;
+								default:
 							}
 						}}
 						className="flex flex-col items-center space-y-1 cursor-pointer">

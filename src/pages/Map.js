@@ -4,7 +4,7 @@ import { GoogleMap, Marker, Circle } from '@react-google-maps/api';
 import { mapStyles, containerStyle } from '../resources/mapSettings.js';
 
 import {
-	// measure,
+	measure,
 	getLocation,
 	stopsLockedIcon, stopsUnlockedIcon, currentPositionIcon,
 } from '../utils/mapUtils.js';
@@ -54,10 +54,14 @@ export const Map = () => {
 		<p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p>
 	</div>);
 
+	const [timeoutID, setTimeoutID] = useState(0);
+
+	const renderStopIcon = (i) => {
+		return stopsLockedIcon;
+	}
+
 	return (<>
-		<Notification isVisible={showNotification} setIsVisible={setShowNotification}>
-			{notification}
-		</Notification>
+		<Notification isVisible={showNotification} setIsVisible={setShowNotification} timeoutID={timeoutID}>{notification}</Notification>
 
 		<div>
 			<GoogleMap
@@ -86,13 +90,32 @@ export const Map = () => {
 					onDragStart={(e) => {
 						// TODO remove this
 					}}
-					onDragEnd={(e) => setCurrentPosition({ lat: e.latLng.lat(), lng: e.latLng.lng(), })}
+					onDragEnd={(e) => {
+						setCurrentPosition({ lat: e.latLng.lat(), lng: e.latLng.lng() });
+
+						for (let i = 0; i < stops.length; i++) {
+							const measure_ = measure(
+								e.latLng.lat(),
+								e.latLng.lng(),
+
+								stops[i].lat,
+								stops[i].lng,
+							);
+
+							if (measure_ < 35) {
+								console.log('INSIDE');
+								break;
+							}
+						};
+					}}
 
 					onClick={() => { // TODO Everything here is pretty much just for debugging. Remove eventually.
 						setShowNotification(true);
-						setTimeout(() => {
-							setShowNotification(false)
+						const timeoutID_ = setTimeout(() => {
+							setShowNotification(false);
 						}, 4000);
+
+						setTimeoutID(timeoutID_);
 
 						getLocation().then(val => {
 							setCurrentPosition({ lat: val.lat, lng: val.lng })
@@ -103,7 +126,7 @@ export const Map = () => {
 				{stops.map((el, i) => {
 					return (<div key={i}>
 						{/* TODO ↓ remove this, just for debugging */}
-						<Circle 
+						<Circle
 							center={el}
 							options={{
 								strokeWeight: 0,
@@ -119,8 +142,9 @@ export const Map = () => {
 						/>
 
 						<Marker position={el}
-							icon={i % 2 === 0 ? stopsLockedIcon : stopsUnlockedIcon}
-							zIndex={5} />
+							icon={stopsLockedIcon}
+							zIndex={5}
+						/>
 					</div>)
 				})}
 			</GoogleMap>
