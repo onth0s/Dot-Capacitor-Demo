@@ -23,6 +23,7 @@ const icons_noext = {
 	search: 'Library/search',
 	search_input: 'Library/search-input',
 	filter: 'Library/filter',
+	shelf_empty: 'Library/shelf-empty-state',
 	// ↓ Reader
 	settings: 'Reader/settings',
 	bookmark_on: 'Reader/bookmark_on',

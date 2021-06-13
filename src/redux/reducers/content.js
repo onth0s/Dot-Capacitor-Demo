@@ -1,13 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const { actions, reducer } = createSlice({
-	name: 'content_name',
-	initialState: {
-		username: '',
-		password: '',
+	name: 'content-name',
+	
+	shelfItems: [
+		{
+			title: 'Título de la obraaa',
+			author: 'Autor',
+			icon: icons.romance,
+			time_ago: 3,
+			time_lenght: 5,
+		},
+	],
 
-		showPassword: false,
-	},
 	reducers: {
 		setUsername: (state, { payload }) => {
 			state.username = payload;

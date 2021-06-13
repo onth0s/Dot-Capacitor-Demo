@@ -111,92 +111,7 @@ export const Library = () => {
 		},
 	]
 
-	const shelfList = [
-		{
-			title: 'Título de la obraaa',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obraxxx',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obra',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obra',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obra',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obra',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obra',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obra',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obra',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obra',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obra',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-		{
-			title: 'Título de la obra',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-	]
+	const shelfList = [];
 
 	const favoritesList = [
 		{
@@ -292,7 +207,7 @@ export const Library = () => {
 	const renderTabs = (i) => {
 		switch (i) {
 			case 0:
-				return (shelfList.map((el, i) => (
+				return (shelfList.length > 0 ? shelfList.map((el, i) => (
 					<Link to={'/reader/' + i} transition='glide-top' key={i}>
 						<div className="flex h-20 pl-8 w-full cursor-pointer"
 							style={{ borderBottom: '1px solid grey' }}
@@ -310,7 +225,13 @@ export const Library = () => {
 							</div>
 						</div>
 					</Link>
-				)));
+				)) : <div className="bg-gray-100 h-full flex flex-col items-center justify-center text-center -mt-12">
+					<img src={icons.shelf_empty} alt="empty state" className="w-1/6 mb-4" />
+					<div className="w-3/5 space-y-4">
+						<p>Ups!! Parece que todavía no conseguiste ningún texto.</p>
+						<p>No olvides pasarte por una parada.</p>
+					</div>
+				</div>);
 			case 1:
 				return (<>
 					<p className="text-2xl pt-2 pl-2">Catálogo semanal</p>
@@ -415,7 +336,7 @@ export const Library = () => {
 			<LibrarySearch isVisible={isSearchVisible} setIsVisible={setIsSearchVisible} />
 
 			<div className="flex w-full h-10"
-				style={{marginTop: '22vh'}}
+				style={{ marginTop: '22vh' }}
 			>
 				<div className="
 					flex
@@ -456,7 +377,7 @@ export const Library = () => {
 			</div>
 
 			<div className="
-				 overflow-auto
+				 overflow-auto h-full
 			"
 			>{renderTabs(tabCurrentIndex)}</div>
 		</div>
