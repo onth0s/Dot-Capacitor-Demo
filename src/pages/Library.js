@@ -7,11 +7,11 @@ import { icons } from '../resources/icons.js';
 import { backgrounds } from '../resources/backgrounds.js';
 
 import { consts } from '../resources/constants.js';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { Menu } from "../components/common/Menu.js";
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
 	getShelfItems,
 } from '../redux/reducers/content.js';
@@ -21,25 +21,8 @@ glide({ name: 'glide-bottom', direction: 'bottom' });
 //dsgasdf
 export const Library = () => {
 	// TODO ↓ redux stuff
-	const dispatch = useDispatch();
-
 	const shelfItems = useSelector(getShelfItems);
-
-	console.log('shelfItems:');
-	console.log(shelfItems);
-
-	// useEffect(() => {
-	// 	dispatch(addShelfItem({
-	// 		title: 'Segundo texto de prueba',
-	// 		author: 'Moisés II',
-	// 		icon: icons.romance,
-	// 		time_ago: 99,
-	// 		time_lenght: 5,
-	// 	}));
-	// }, []);
-
 	// TODO ↑ redux stuff
-
 
 	const tabList = ['Estantería', 'Catálogo', 'Favoritos'];
 

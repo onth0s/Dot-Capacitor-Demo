@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { icons } from '../../resources/icons.js';
-
 const { actions, reducer } = createSlice({
 	name: 'test',
 
