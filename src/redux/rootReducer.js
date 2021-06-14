@@ -1,9 +1,7 @@
 import { combineReducers } from "redux";
 
-import userCredentials from './reducers/userCredentials.js';
+import content from './reducers/content.js';
 
 export const rootReducer = combineReducers({
-	userCredentials,
+	content,
 });
-
-export default rootReducer;

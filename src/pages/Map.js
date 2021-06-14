@@ -11,13 +11,20 @@ import {
 
 import { MapUI } from '../components/Map/MapUI.js';
 
+import {icons} from '../resources/icons.js';
+
 import stops from '../resources/h6-stops-v1.json';
 
 import { Notification } from '../components/common/Notification.js';
 
 import { getFables } from '../utils/serverQueries.js';
 
+import { useDispatch } from 'react-redux';
+import { addShelfItem } from '../redux/reducers/content.js';
+
 export const Map = () => {
+	const dispatch = useDispatch();
+
 	useEffect(() => {
 		// TODO ↓ temporary "fix" (not even that)
 		(function () {
@@ -110,9 +117,10 @@ export const Map = () => {
 							);
 
 							if (measure_ < 35) {
-								if (!stopsStatus[i]) { // TODO here goes the 'media' fetching
+								if (!stopsStatus[i]) { // TODO here goes the 'content' fetching
 									getFables().then(val => {
 										console.log(val);
+										console.log('Fable added: \'' + val.fable.title + '\'');
 
 										setShowNotification(true);
 										const timeoutID_ = setTimeout(() => {
@@ -120,6 +128,16 @@ export const Map = () => {
 										}, 4000);
 
 										setTimeoutID(timeoutID_);
+
+										// ↓ redux
+										dispatch(addShelfItem({
+											title: val.fable.title,
+											author: 'Esopo',
+											icon: icons.fable,
+											time_ago: 99,
+											time_lenght: 5,
+											text: val.fable.text
+										}));
 									});
 								}
 

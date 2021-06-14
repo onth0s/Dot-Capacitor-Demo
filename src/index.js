@@ -8,6 +8,9 @@ import 'react-tiger-transition/styles/main.min.css';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
+import { Provider } from 'react-redux';
+import store from './redux/store.js';
+
 const theme = createMuiTheme({
 	palette: {
 		primary: {
@@ -20,8 +23,10 @@ const theme = createMuiTheme({
 });
 
 ReactDOM.render(
-	<ThemeProvider theme={theme}>
-		<App />
-	</ThemeProvider>
+	<Provider store={store}>
+		<ThemeProvider theme={theme}>
+			<App />
+		</ThemeProvider>
+	</Provider>
 	, document.getElementById('root')
 );

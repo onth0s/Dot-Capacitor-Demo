@@ -7,15 +7,41 @@ import { icons } from '../resources/icons.js';
 import { backgrounds } from '../resources/backgrounds.js';
 
 import { consts } from '../resources/constants.js';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Menu } from "../components/common/Menu.js";
+
+import { useSelector, useDispatch } from 'react-redux';
+import {
+	getShelfItems,
+} from '../redux/reducers/content.js';
 
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
 //dsgasdf
 export const Library = () => {
-	const tabList = ['Estantería', 'Catálogo', 'Favoritos']
+	// TODO ↓ redux stuff
+	const dispatch = useDispatch();
+
+	const shelfItems = useSelector(getShelfItems);
+
+	console.log('shelfItems:');
+	console.log(shelfItems);
+
+	// useEffect(() => {
+	// 	dispatch(addShelfItem({
+	// 		title: 'Segundo texto de prueba',
+	// 		author: 'Moisés II',
+	// 		icon: icons.romance,
+	// 		time_ago: 99,
+	// 		time_lenght: 5,
+	// 	}));
+	// }, []);
+
+	// TODO ↑ redux stuff
+
+
+	const tabList = ['Estantería', 'Catálogo', 'Favoritos'];
 
 	const catalogItems = [
 		{
@@ -111,7 +137,7 @@ export const Library = () => {
 		},
 	]
 
-	const shelfList = [];
+	// const shelfList = [];
 
 	const favoritesList = [
 		{
@@ -207,12 +233,12 @@ export const Library = () => {
 	const renderTabs = (i) => {
 		switch (i) {
 			case 0:
-				return (shelfList.length > 0 ? shelfList.map((el, i) => (
+				return (shelfItems && shelfItems.length ? shelfItems.map((el, i) => (
 					<Link to={'/reader/' + i} transition='glide-top' key={i}>
 						<div className="flex h-20 pl-8 w-full cursor-pointer"
 							style={{ borderBottom: '1px solid grey' }}
 						>
-							<img className="w-9 mr-8" src={icons.fable} alt="genre" />
+							<img className="w-9 mr-8" src={el.icon} alt="genre" />
 
 							<div className="flex flex-col justify-center items-start w-8/12 h-20">
 								<p className="font-semibold">{el.title}</p>
@@ -227,7 +253,7 @@ export const Library = () => {
 					</Link>
 				)) : <div className="bg-gray-100 h-full flex flex-col items-center justify-center text-center -mt-12">
 					<img src={icons.shelf_empty} alt="empty state" className="w-1/6 mb-4" />
-					<div className="w-3/5 space-y-4">
+					<div className="w-3/5 space-y-4 font-light">
 						<p>Ups!! Parece que todavía no conseguiste ningún texto.</p>
 						<p>No olvides pasarte por una parada.</p>
 					</div>

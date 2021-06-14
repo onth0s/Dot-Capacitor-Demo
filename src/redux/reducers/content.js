@@ -1,39 +1,32 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+
+import { icons } from '../../resources/icons.js';
 
 const { actions, reducer } = createSlice({
-	name: 'content-name',
-	
-	shelfItems: [
-		{
-			title: 'Título de la obraaa',
-			author: 'Autor',
-			icon: icons.romance,
-			time_ago: 3,
-			time_lenght: 5,
-		},
-	],
+	name: 'test',
+
+	initialState: {
+		shelfItems: [],
+	},
 
 	reducers: {
-		setUsername: (state, { payload }) => {
-			state.username = payload;
-		},
-		setPassword: (state, { payload }) => {
-			state.password = payload;
-		},
+		addShelfItem: (state, { payload }) => {
+			console.log('addItem() called');
 
-		toggleShowPassword: (state) => {
-			state.showPassword = !state.showPassword;
-		}
+			const arr = state.shelfItems;
+			arr.unshift(payload);
+
+			state.shelfItems = arr;
+		},
 	}
 })
 
-export const getUsername = (state) => {
-	return state.userCredentials.username;
+export const getShelfItems = (state) => {
+	return state.content.shelfItems;
 }
 
 export default reducer;
 
 export const {
-	setUsername, setPassword,
-	toggleShowPassword
+	addShelfItem,
 } = actions;
