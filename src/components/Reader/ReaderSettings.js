@@ -101,11 +101,11 @@ export const ReaderSettings = ({ isVisible, setBackgroundColor, setTextColor, se
 				setTextColor('black');
 				break;
 			case 1:
-				setBackgroundColor('antiquewhite');
+				setBackgroundColor('#FFC');
 				setTextColor('black');
 				break;
 			case 2:
-				setBackgroundColor('grey');
+				setBackgroundColor('#445');
 				setTextColor('white');
 				break;
 			case 3:

@@ -69,14 +69,16 @@ export const Reader = () => {
 	];
 
 	const renderText = (fontFamily = 'Verdana',) => {
-		return (<div className={`space-y-${(fontSize + 1) * 10 / 2 - 4}`}>
-			{testP.map((el, i) => (
+		return ((shelfItems.length !== 0) ? <div className={`space-y-${(fontSize + 1) * 10 / 2 - 4}`}>
+			{shelfItems[readerIndex].text.map((el, i) => (
 				<p key={i} style={{
 					fontFamily,
 					fontSize: 0.7 * fontSize + 0.7 + 'rem',
 					lineHeight: (1 + lineHeight) * 100 + '%',
 				}}>{el}</p>
 			))}
+		</div> : <div>
+			<p>no texts unlocked, no clue how you got here</p>
 		</div>);
 		// return (shelfItems ? <>
 		// 	{/* {shelfItems[readerIndex].text.map((el, i) => { */}
@@ -163,7 +165,7 @@ export const Reader = () => {
 			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12 mb-0"
 				style={{ color: textColor }}
 			>
-				Título aquí <br />y aquí si es muy largo
+				{(shelfItems.length !== 0) ? <div>{shelfItems[readerIndex].title}</div> : <div>b</div>}
 			</p>
 
 			<div className="mt-8 mb-8 w-full text-justify"
