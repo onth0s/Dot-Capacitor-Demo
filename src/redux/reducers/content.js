@@ -5,17 +5,21 @@ const { actions, reducer } = createSlice({
 
 	initialState: {
 		shelfItems: [],
+
+		readerIndex: 0,
 	},
 
 	reducers: {
 		addShelfItem: (state, { payload }) => {
-			console.log('addItem() called');
-
 			const arr = state.shelfItems;
 			arr.unshift(payload);
 
 			state.shelfItems = arr;
 		},
+
+		setReaderIndex: (state, { payload }) => {
+			state.readerIndex = payload;
+		}
 	}
 })
 
@@ -23,8 +27,13 @@ export const getShelfItems = (state) => {
 	return state.content.shelfItems;
 }
 
+export const getReaderIndex = (state) => {
+	return state.content.readerIndex;
+}
+
 export default reducer;
 
 export const {
 	addShelfItem,
+	setReaderIndex,
 } = actions;

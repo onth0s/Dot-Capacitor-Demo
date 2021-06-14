@@ -119,8 +119,8 @@ export const Map = () => {
 							if (measure_ < 35) {
 								if (!stopsStatus[i]) { // TODO here goes the 'content' fetching
 									getFables().then(val => {
-										console.log(val);
 										console.log('Fable added: \'' + val.fable.title + '\'');
+										console.log(val);
 
 										setShowNotification(true);
 										const timeoutID_ = setTimeout(() => {

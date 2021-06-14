@@ -7,10 +7,19 @@ import { useState } from 'react';
 
 import { ReaderSettings } from '../components/Reader/ReaderSettings.js';
 
+import { useSelector } from 'react-redux';
+import {
+	getShelfItems,
+	getReaderIndex,
+} from '../redux/reducers/content.js';
+
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
 //sads 	
 export const Reader = () => {
+	const shelfItems = useSelector(getShelfItems);
+	const readerIndex = useSelector(getReaderIndex);
+
 	const [isBookmarked, setIsBookmarked] = useState(false);
 
 	const [showSettings, setShowSettings] = useState(false);
@@ -18,7 +27,7 @@ export const Reader = () => {
 	const [backgroundColor, setBackgroundColor] = useState('white');
 	const [textColor, setTextColor] = useState('black');
 	const [textFont, setTextFont] = useState('Verdana');
-	
+
 	const [fontSize, setFontSize] = useState(0.6);
 	const [lineHeight, setLineHeight] = useState(0.6);
 	const [textMargin, setTextMargin] = useState(0.6);
@@ -53,30 +62,55 @@ export const Reader = () => {
 		return tags;
 	}
 
+	const testP = [
+		'first paragraph first paragraph first paragraph first paragraph first paragraph first paragraph first paragraph first paragraph first paragraph first paragraph',
+		'second paragraph second paragraph second paragraph second paragraph second paragraph second paragraph second paragraph second paragraph second paragraph second paragraph',
+		'third paragraph third paragraph third paragraph third paragraph third paragraph third paragraph third paragraph third paragraph third paragraph third paragraph'
+	];
+
 	const renderText = (fontFamily = 'Verdana',) => {
-		return (<>
-			<p style={{
-				fontFamily,
-				fontSize: 0.7 * fontSize + 0.7 + 'rem',
-				lineHeight: (1 + lineHeight) * 100 + '%',
-			}}>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsu vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos.
-			</p><br />
-			<p style={{
-				fontFamily,
-				fontSize: 0.7 * fontSize + 0.7 + 'rem',
-				lineHeight: (1 + lineHeight) * 100 + '%',
-			}}>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.g elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.
-			</p><br />
-			<p style={{
-				fontFamily,
-				fontSize: 0.7 * fontSize + 0.7 + 'rem',
-				lineHeight: (1 + lineHeight) * 100 + '%',
-			}}>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis.
-			</p>
-		</>);
+		return (<div className={`space-y-${(fontSize + 1) * 10 / 2 - 4}`}>
+			{testP.map((el, i) => (
+				<p key={i} style={{
+					fontFamily,
+					fontSize: 0.7 * fontSize + 0.7 + 'rem',
+					lineHeight: (1 + lineHeight) * 100 + '%',
+				}}>{el}</p>
+			))}
+		</div>);
+		// return (shelfItems ? <>
+		// 	{/* {shelfItems[readerIndex].text.map((el, i) => { */}
+		// 	{shelfItems[2].text.map((el, i) => (
+		// 		<p key={i} style={{
+		// 			fontFamily,
+		// 			fontSize: 0.7 * fontSize + 0.7 + 'rem',
+		// 			lineHeight: (1 + lineHeight) * 100 + '%',
+		// 		}}>{el}</p>
+		// 	))}
+		// 	{/* <p style={{
+		// 		fontFamily,
+		// 		fontSize: 0.7 * fontSize + 0.7 + 'rem',
+		// 		lineHeight: (1 + lineHeight) * 100 + '%',
+		// 	}}>
+		// 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsu vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos.
+		// 	</p><br />
+		// 	<p style={{
+		// 		fontFamily,
+		// 		fontSize: 0.7 * fontSize + 0.7 + 'rem',
+		// 		lineHeight: (1 + lineHeight) * 100 + '%',
+		// 	}}>
+		// 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.g elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.
+		// 	</p><br />
+		// 	<p style={{
+		// 		fontFamily,
+		// 		fontSize: 0.7 * fontSize + 0.7 + 'rem',
+		// 		lineHeight: (1 + lineHeight) * 100 + '%',
+		// 	}}>
+		// 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis.
+		// 	</p> */}
+		// </> : <div>
+		// 	<p>something went wrong!</p>
+		// </div>);
 	}
 
 	const [showUI, setShowUI] = useState(true);
@@ -126,14 +160,14 @@ export const Reader = () => {
 				/>
 			</>}
 
-			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12"
+			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12 mb-0"
 				style={{ color: textColor }}
 			>
 				Título aquí <br />y aquí si es muy largo
 			</p>
 
 			<div className="mt-8 mb-8 w-full text-justify"
-				style={{ color: textColor, padding: '0 '+ textMargin * 50 +'px'}}
+				style={{ color: textColor, padding: '0 ' + textMargin * 50 + 'px' }}
 			>{renderText(textFont)}</div>
 
 			<div className="flex justify-between items-center px-6 mb-4"
