@@ -1,6 +1,13 @@
 {
-  "appId": "com.dotdotapp.www",
-  "appName": "Dot.",
-  "webDir": "build",
-  "bundledWebRuntime": false
+	"appId": "com.dotdotapp.www",
+	"appName": "Dot.",
+	"webDir": "build",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0,
+			"androidScaleType": "CENTER_CROP"
+		}
+	},
+	"cordova": {}
 }
