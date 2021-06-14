@@ -86,8 +86,8 @@ export const Map = () => {
 					disableDefaultUI: true,
 					styles: mapStyles,
 					gestureHandling: "greedy",
-					// minZoom: 15.5, maxZoom: 22,
-					minZoom: 10, maxZoom: 22,
+					minZoom: 15.5, maxZoom: 22,
+					// minZoom: 10, maxZoom: 22,
 					rotateControl: true,
 				}}
 
