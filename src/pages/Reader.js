@@ -7,10 +7,10 @@ import { useState } from 'react';
 
 import { ReaderSettings } from '../components/Reader/ReaderSettings.js';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
 	getShelfItems,
-	getReaderIndex,
+	getReaderIndex, addFavoriteItem
 } from '../redux/reducers/content.js';
 
 glide({ name: 'glide-top', direction: 'top' });
@@ -78,6 +78,8 @@ export const Reader = () => {
 
 	const [showUI, setShowUI] = useState(true);
 
+	const dispatch = useDispatch();
+
 	return (<>
 		{showUI && <SVG route={'../' + icons.settings}
 			size={['12vw']} maxContent
@@ -118,7 +120,26 @@ export const Reader = () => {
 					style={{ backgroundColor: consts.colors.secondary, borderRadius: '100%' }}
 					onClick={(e) => {
 						e.stopPropagation();
-						setIsBookmarked(!isBookmarked)
+						setIsBookmarked(!isBookmarked);
+
+						const bm = shelfItems[readerIndex];
+
+						dispatch(addFavoriteItem(
+							// {
+							// 	icon: icons.romance,
+							// 	image: icons.mountain_placeholder,
+							// 	title: 'Título de la obraaa',
+							// 	author: 'Autor',
+							// 	score: 0.85
+							// },
+							{
+								icon: bm.icon,
+								image: icons.mountain_placeholder,
+								title: bm.title,
+								author: bm.author,
+								score: 0.49,
+							}
+						));
 					}}
 				/>
 			</>}
