@@ -13,7 +13,7 @@ import { Menu } from "../components/common/Menu.js";
 
 import { useDispatch, useSelector } from 'react-redux';
 import {
-	getShelfItems, setReaderIndex, getReaderIndex
+	getShelfItems, setReaderIndex, getReaderIndex, getFavoriteItems
 } from '../redux/reducers/content.js';
 
 glide({ name: 'glide-top', direction: 'top' });
@@ -22,6 +22,7 @@ glide({ name: 'glide-bottom', direction: 'bottom' });
 export const Library = () => {
 	// TODO ↓ redux stuff
 	const shelfItems = useSelector(getShelfItems);
+	const favoriteItems = useSelector(getFavoriteItems);
 
 	const dispatch = useDispatch();
 	// TODO ↑ redux stuff
@@ -122,81 +123,6 @@ export const Library = () => {
 		},
 	]
 
-	// const shelfList = [];
-
-	const favoritesList = [
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-		{
-			icon: icons.romance,
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Autor',
-			score: 0.85
-		},
-	]
-
 	const renderScore = (score_, classes) => {
 		let score = [];
 
@@ -244,7 +170,11 @@ export const Library = () => {
 							</div>
 						</div>
 					</Link>
-				)) : <div className="bg-gray-100 h-full flex flex-col items-center justify-center text-center -mt-12">
+				)) : <div className="bg-gray-100 flex flex-col items-center justify-center text-center -mt-12"
+					style={{
+						height: '79.12vh',
+					}}
+				>
 					<img src={icons.shelf_empty} alt="empty state" className="w-1/6 mb-4" />
 					<div className="w-3/5 space-y-4 font-light">
 						<p>Ups!! Parece que todavía no conseguiste ningún texto.</p>
@@ -280,7 +210,7 @@ export const Library = () => {
 					</div>
 				</>);
 			case 2:
-				return (favoritesList.map((el, i) => (
+				return (favoriteItems.length > 0 ? favoriteItems.map((el, i) => (
 					<div className="flex cursor-pointer" key={i}>
 						<img className="w-28 h-32 bg-gray-400 bg-opacity-60 p-4" src={icons.mountain_placeholder} alt="content related"
 						/>
@@ -298,7 +228,17 @@ export const Library = () => {
 
 						<img className="mr-6" src={icons.fable} alt="genre" />
 					</div>
-				)));
+				)) : <div className="bg-gray-100 flex flex-col items-center justify-center text-center -mt-12"
+					style={{
+						height: '79.12vh',
+					}}
+				>
+					<img src={icons.shelf_empty} alt="empty state" className="w-1/6 mb-4" />
+					<div className="w-3/5 space-y-4 font-light">
+						<p>Parece que no guardaste nada en favoritos.</p>
+						<p>Recuerda guardarlos para tener tus historias favoritas más cerca.</p>
+					</div>
+				</div>);
 			default:
 				break;
 		}
