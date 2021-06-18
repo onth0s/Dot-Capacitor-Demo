@@ -62,12 +62,6 @@ export const Reader = () => {
 		return tags;
 	}
 
-	const testP = [
-		'first paragraph first paragraph first paragraph first paragraph first paragraph first paragraph first paragraph first paragraph first paragraph first paragraph',
-		'second paragraph second paragraph second paragraph second paragraph second paragraph second paragraph second paragraph second paragraph second paragraph second paragraph',
-		'third paragraph third paragraph third paragraph third paragraph third paragraph third paragraph third paragraph third paragraph third paragraph third paragraph'
-	];
-
 	const renderText = (fontFamily = 'Verdana',) => {
 		return ((shelfItems.length !== 0) ? <div className={`space-y-${(fontSize + 1) * 10 / 2 - 4}`}>
 			{shelfItems[readerIndex].text.map((el, i) => (
@@ -80,39 +74,6 @@ export const Reader = () => {
 		</div> : <div>
 			<p>no texts unlocked, no clue how you got here</p>
 		</div>);
-		// return (shelfItems ? <>
-		// 	{/* {shelfItems[readerIndex].text.map((el, i) => { */}
-		// 	{shelfItems[2].text.map((el, i) => (
-		// 		<p key={i} style={{
-		// 			fontFamily,
-		// 			fontSize: 0.7 * fontSize + 0.7 + 'rem',
-		// 			lineHeight: (1 + lineHeight) * 100 + '%',
-		// 		}}>{el}</p>
-		// 	))}
-		// 	{/* <p style={{
-		// 		fontFamily,
-		// 		fontSize: 0.7 * fontSize + 0.7 + 'rem',
-		// 		lineHeight: (1 + lineHeight) * 100 + '%',
-		// 	}}>
-		// 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsu vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos.
-		// 	</p><br />
-		// 	<p style={{
-		// 		fontFamily,
-		// 		fontSize: 0.7 * fontSize + 0.7 + 'rem',
-		// 		lineHeight: (1 + lineHeight) * 100 + '%',
-		// 	}}>
-		// 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis, dicta nostrum maiores? Similique, dolores error. Ipsum illum sint inventore eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.g elit. Aspernatur quod nisi omnis. Facere vero ipsa et, praesentium quia culpa mollitia impedit, excepturi officiis nihil expedita vel esse. Eum, eos tempora.
-		// 	</p><br />
-		// 	<p style={{
-		// 		fontFamily,
-		// 		fontSize: 0.7 * fontSize + 0.7 + 'rem',
-		// 		lineHeight: (1 + lineHeight) * 100 + '%',
-		// 	}}>
-		// 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit dolorum sequi omnis quaerat hic, vitae vero perspiciatis, veritatis.
-		// 	</p> */}
-		// </> : <div>
-		// 	<p>something went wrong!</p>
-		// </div>);
 	}
 
 	const [showUI, setShowUI] = useState(true);
