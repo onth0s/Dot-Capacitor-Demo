@@ -18,6 +18,7 @@ const { actions, reducer } = createSlice({
 		},
 
 		setReaderIndex: (state, { payload }) => {
+			console.log('payload:', payload);
 			state.readerIndex = payload;
 		}
 	}

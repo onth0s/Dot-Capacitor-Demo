@@ -11,9 +11,9 @@ import { useState } from "react";
 
 import { Menu } from "../components/common/Menu.js";
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-	getShelfItems,
+	getShelfItems, setReaderIndex, getReaderIndex
 } from '../redux/reducers/content.js';
 
 glide({ name: 'glide-top', direction: 'top' });
@@ -22,6 +22,8 @@ glide({ name: 'glide-bottom', direction: 'bottom' });
 export const Library = () => {
 	// TODO ↓ redux stuff
 	const shelfItems = useSelector(getShelfItems);
+
+	const dispatch = useDispatch();
 	// TODO ↑ redux stuff
 
 	const tabList = ['Estantería', 'Catálogo', 'Favoritos'];
@@ -213,6 +215,8 @@ export const Library = () => {
 		setTabCurrentIndex(i);
 	}
 
+	const readerIndex = useSelector(getReaderIndex);
+
 	const renderTabs = (i) => {
 		switch (i) {
 			case 0:
@@ -220,7 +224,12 @@ export const Library = () => {
 					<Link to={'/reader/' + i} transition='glide-top' key={i}>
 						<div className="flex h-20 pl-8 w-full cursor-pointer"
 							style={{ borderBottom: '1px solid grey' }}
-							onClick={() => console.log('text no: ' + i + ' clicked')}
+							onClick={() => {
+								console.log('text no: ' + i + ' clicked');
+
+								dispatch(setReaderIndex(i));
+								console.log('readerIndex:', readerIndex);
+							}}
 						>
 							<img className="w-9 mr-8" src={el.icon} alt="genre" />
 
