@@ -6,6 +6,10 @@
 	font-family: Minion Pro;
 	src: url('./fonts/MinionPro-Regular.otf');
 }
+@font-face {
+	font-family: Verdana;
+	src: url('./fonts/verdana.ttf');
+}
 
 * {
 	font-family: Roboto; 

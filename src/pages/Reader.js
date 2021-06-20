@@ -7,6 +7,8 @@ import { useState } from 'react';
 
 import { ReaderSettings } from '../components/Reader/ReaderSettings.js';
 
+import _ from 'lodash';
+
 import { useDispatch, useSelector } from 'react-redux';
 import {
 	getShelfItems,
@@ -124,22 +126,27 @@ export const Reader = () => {
 
 						const bm = shelfItems[readerIndex];
 
-						dispatch(addFavoriteItem(
-							// {
-							// 	icon: icons.romance,
-							// 	image: icons.mountain_placeholder,
-							// 	title: 'Título de la obraaa',
-							// 	author: 'Autor',
-							// 	score: 0.85
-							// },
-							{
-								icon: bm.icon,
-								image: icons.mountain_placeholder,
-								title: bm.title,
-								author: bm.author,
-								score: 0.49,
+						shelfItems.forEach((el, i) => {
+							console.log(_.isEqual(bm, el));
+							if (!_.isEqual(bm, el)) {
+								dispatch(addFavoriteItem(
+									// {
+									// 	icon: icons.romance,
+									// 	image: icons.mountain_placeholder,
+									// 	title: 'Título de la obraaa',
+									// 	author: 'Autor',
+									// 	score: 0.85
+									// },
+									{
+										icon: bm.icon,
+										image: icons.mountain_placeholder,
+										title: bm.title,
+										author: bm.author,
+										score: 0.49,
+									}
+								));
 							}
-						));
+						});
 					}}
 				/>
 			</>}

@@ -150,12 +150,7 @@ export const Library = () => {
 					<Link to={'/reader/' + i} transition='glide-top' key={i}>
 						<div className="flex h-20 pl-8 w-full cursor-pointer"
 							style={{ borderBottom: '1px solid grey' }}
-							onClick={() => {
-								console.log('text no: ' + i + ' clicked');
-
-								dispatch(setReaderIndex(i));
-								console.log('readerIndex:', readerIndex);
-							}}
+							onClick={() => dispatch(setReaderIndex(i))}
 						>
 							<img className="w-9 mr-8" src={el.icon} alt="genre" />
 
