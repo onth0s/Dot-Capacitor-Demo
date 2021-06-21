@@ -25,7 +25,7 @@ export const MapUI = ({
 		setCurrentCenter({ lat: currentPosition.lat, lng: currentPosition.lng });
 	}
 
-	const isUserLocked = false; // TODO ← hardcoded, to implement
+	// const isUserLocked = false; // TODO ← hardcoded, to implement
 	const [watchID, setWatchID] = useState(0);
 
 	const handleLocationToggle = () => {
