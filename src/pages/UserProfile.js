@@ -78,12 +78,12 @@ export const UserProfile = () => {
 
 	const [showMenu, setShowMenu] = useState(false);
 
-	return (<div className="w-screen h-screen">
+	return (<>
 		{showMenu && <div className="w-full h-full absolute top-0 z-20"
 			onClick={() => setShowMenu(false)}
 		/>}
 
-		<div className="bg-gradient-to-t from-yellow-500 to-yellow-600 w-full absolute top-0" style={{ zIndex: -1, height: '45vh' }}>
+		<div className="bg-gradient-to-t from-yellow-500 to-yellow-600 w-full absolute top-0" style={{ zIndex: -1, height: '280px' }}>
 
 		</div>
 
@@ -127,7 +127,7 @@ export const UserProfile = () => {
 			</div>
 		</div>
 
-		<div className="w-full h-full bg-white rounded-t-3xl overflow-hidden">
+		<div className="w-full h-full bg-white rounded-t-3xl overflow-auto">
 			<div className="p-6 pb-0">
 				<p className="mb-2">TUS GUSTOS</p>
 				<div className="flex justify-center space-x-5 mb-6">{genres.map((el, i) => (
@@ -146,6 +146,8 @@ export const UserProfile = () => {
 					<div className="flex">{renderScore(4.5, "w-4", i)}</div>
 				</div>
 			))}
+
+			<p className="opacity-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio dicta esse, quas, dolor natus repellat molestias, incidunt est minima neque animi sequi quisquam eos id obcaecati. Labore suscipit aperiam possimus voluptate iusto expedita ratione recusandae veniam, amet, architecto minima mollitia reiciendis vel omnis ipsam temporibus. Obcaecati, facere. Vel quaerat eaque cum explicabo laboriosam doloremque enim dicta dolor quis veniam aliquid temporibus corporis officiis architecto tempora fugit, cumque eius! Dignissimos aliquid ea maiores autem illo sapiente molestiae repudiandae.</p>
 		</div>
-	</div>);
+	</>);
 }
