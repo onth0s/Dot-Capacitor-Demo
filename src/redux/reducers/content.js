@@ -50,6 +50,14 @@ const { actions, reducer } = createSlice({
 
 			state.favoriteItems = arr;
 		},
+		removeFavoriteItem: (state, { payload }) => {
+			// const arr = state.favoriteItems;
+			// arr.unshift(payload);
+
+			// state.favoriteItems = arr;
+
+			console.log('removing favorite item code here...');
+		}, // TODO not sure this is necessary
 
 		setReaderIndex: (state, { payload }) => {
 			console.log('payload:', payload);
@@ -72,6 +80,7 @@ export const getReaderIndex = (state) => {
 export default reducer;
 
 export const {
-	addShelfItem, addFavoriteItem,
+	addShelfItem, 
+	addFavoriteItem, removeFavoriteItem,
 	setReaderIndex,
 } = actions;

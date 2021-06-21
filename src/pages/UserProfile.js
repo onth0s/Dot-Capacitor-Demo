@@ -28,7 +28,7 @@ export const UserProfile = () => {
 		{
 			genre: icons.fantasia,
 			title: 'Las Tres Hilanderas',
-			author: '...',
+			author: 'Herm...',
 		},
 		{
 			genre: icons.sci_fi,
@@ -37,13 +37,40 @@ export const UserProfile = () => {
 		},
 	]
 
-	const renderScore = (score, classes) => {
+	const renderScore = (score, classes, i) => {
 		let score_ = []; // TODO implement stars filled in funcion of score
 
-		for (let i = 0; i < 5; i++) {
-			score_.push(
-				<img key={i} className={classes} src={icons.star} alt="star" />
-			);
+		switch (i) {
+			case 0:
+				for (let i = 0; i < 5; i++) {
+					score_.push(
+						<img key={i} className={classes} src={icons.star_on} alt="star" />
+					);
+				}
+				break;
+			case 1:
+				for (let i = 0; i < 3; i++) {
+					score_.push(
+						<img key={i} className={classes} src={icons.star_on} alt="star" />
+					);
+				}
+				for (let i = 0; i < 2; i++) {
+					score_.push(
+						<img key={i} className={classes} src={icons.star} alt="star" />
+					);
+				}
+				break;
+			case 2:
+				for (let i = 0; i < 4; i++) {
+					score_.push(
+						<img key={i} className={classes} src={icons.star_on} alt="star" />
+					);
+				}
+				score_.push(
+					<img key={i} className={classes} src={icons.star} alt="star" />
+				);
+				break;
+			default: break;
 		}
 
 		return score_;
@@ -86,7 +113,7 @@ export const UserProfile = () => {
 		</div>
 
 		<div className="w-full flex justify-center pt-12 pb-2">
-			<img src={'./assets/UserProfile/user-profile-pic.jpg'} alt="user profile" className="rounded-full w-28 shadow-lg border-4" style={{borderColor: consts.colors.primary_light}} />
+			<img src={'./assets/UserProfile/user-profile-pic.jpg'} alt="user profile" className="rounded-full w-28 shadow-lg border-4" style={{ borderColor: consts.colors.primary_light }} />
 		</div>
 
 		<p className="w-8/12 text-center mx-auto">Marialala</p>
@@ -96,7 +123,7 @@ export const UserProfile = () => {
 			<div className="bg-white rounded-full h-16 w-0.5" />
 			<div className="w-1/2 flex justify-center space-x-1">
 				<p className="text-center">54</p>
-				<img src={icons.bookmark_solo} alt=""  className=" items-center" style={{width: '9px', marginTop: '-1px'}}/>
+				<img src={icons.bookmark_solo} alt="" className=" items-center" style={{ width: '9px', marginTop: '-1px' }} />
 			</div>
 		</div>
 
@@ -119,7 +146,7 @@ export const UserProfile = () => {
 					</div>
 
 					<div className="flex">
-						{renderScore(4.5, "w-4")}
+						{renderScore(4.5, "w-4", i)}
 					</div>
 				</div>
 			))}
