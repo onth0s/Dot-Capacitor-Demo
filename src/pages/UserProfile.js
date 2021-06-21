@@ -143,36 +143,9 @@ export const UserProfile = () => {
 						{el.title} — {el.author}
 					</div>
 
-					<div className="flex">
-						{renderScore(4.5, "w-4", i)}
-					</div>
+					<div className="flex">{renderScore(4.5, "w-4", i)}</div>
 				</div>
 			))}
 		</div>
-
-		{/* <div className="w-full bg-white absolute bottom-0 rounded-t-2xl"
-			style={{ height: '63.5vh', boxShadow: '0 0 15px rgba(0,0,0,0.1)' }}
-		>
-			<div className="p-8">
-				<p className="mb-2">TUS GUSTOS</p>
-				<div className="flex justify-center space-x-5 mb-6">{genres.map((el, i) => (
-					<img key={i} className="w-20 cursor-pointer" src={el} alt="genres" />
-				))}</div>
-				<p>VALORACIONES</p>
-			</div>
-
-			{valorations.map((el, i) => (
-				<div key={i} className="bg-gradient-to-t from-gray-200 to-white w-full flex items-center h-16 px-6 space-x-3">
-					<img className="w-8" src={el.genre} alt="genre" />
-					<div className="h-6 w-56 flex overflow-hidden space-x-3">
-						{el.title} — {el.author}
-					</div>
-
-					<div className="flex">
-						{renderScore(4.5, "w-4", i)}
-					</div>
-				</div>
-			))}
-		</div> */}
 	</div>);
 }
