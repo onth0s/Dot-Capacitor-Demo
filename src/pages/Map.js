@@ -3,11 +3,7 @@ import { useState, useCallback, useEffect } from "react";
 import { GoogleMap, Marker } from '@react-google-maps/api';
 import { mapStyles, containerStyle } from '../resources/mapSettings.js';
 
-import {
-	measure,
-	getLocation,
-	stopsLockedIcon, stopsUnlockedIcon, currentPositionIcon,
-} from '../utils/mapUtils.js';
+import { measure, getLocation, stopsLockedIcon, stopsUnlockedIcon, currentPositionIcon } from '../utils/mapUtils.js';
 
 import { MapUI } from '../components/Map/MapUI.js';
 

@@ -1,0 +1,28 @@
+<svg id="Componente_69_1" data-name="Componente 69 – 1" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a093ee;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke-width: 6px;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #a093ee;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke-width: 7px;
+      }
+    </style>
+  </defs>
+  <rect id="Rectángulo_333" data-name="Rectángulo 333" class="cls-1" width="160" height="160" rx="80"/>
+  <path id="Trazado_297" data-name="Trazado 297" class="cls-2" d="M-366.868,451.809s-25.637,12.173-39.676,12.173c-14.649,0-39.676-12.173-39.676-12.173-4.029,0-7.325,3.652-7.325,8.115v43.958c0,28.64,21.15,52.073,47,52.073h0c25.851,0,47-23.433,47-52.073V459.924C-359.543,455.461-362.839,451.809-366.868,451.809Zm-61.563,27.051c6.053-2.018,7.568-3.894,8.115-5.225M-440.3,487.661s10.1,9.985,19.959,0c.332-.337-2.118,9.459-9.641,9.459S-440.3,487.661-440.3,487.661Zm59.01,9.459c-7.524,0-10.318-9.459-10.318-9.459s10.1,9.985,19.959,0C-371.321,487.324-373.77,497.119-381.293,497.119Zm-10.446-23.484c1.933,2.816,2.063,3.207,8.115,5.225" transform="translate(486.545 -423.809)"/>
+  <path id="Trazado_298" data-name="Trazado 298" class="cls-3" d="M-413.632,527.713c-.348-14.2,21.15-14.1,21.348,0" transform="translate(483.553 -428.51)"/>
+</svg>

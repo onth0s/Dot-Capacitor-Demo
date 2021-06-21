@@ -1,0 +1,23 @@
+<svg id="Componente_70_1" data-name="Componente 70 – 1" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a093ee;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_574" data-name="Grupo 574">
+    <rect id="Rectángulo_307" data-name="Rectángulo 307" class="cls-1" width="160" height="160" rx="80"/>
+  </g>
+  <g id="Grupo_575" data-name="Grupo 575" transform="translate(28 29)">
+    <g id="Grupo_348" data-name="Grupo 348" transform="translate(0)">
+      <path id="Trazado_180" data-name="Trazado 180" class="cls-2" d="M1209.553,40.851c17.484,0,32.719,8.418,40.76,20.883,0-.16.016-.317.016-.477a40.443,40.443,0,0,0-80.883-.518C1177.644,48.821,1192.536,40.851,1209.553,40.851Z" transform="translate(-1169.432 -20.809)"/>
+      <path id="Trazado_181" data-name="Trazado 181" class="cls-2" d="M1269.656,109.056,1245.62,85.019a40.249,40.249,0,0,0,4.691-18.417c-8.2,11.915-23.09,19.883-40.1,19.883-17.486,0-32.723-8.42-40.763-20.888,0,.161-.013.32-.013.481a40.442,40.442,0,0,0,61.872,34.3l23.513,23.513a10.524,10.524,0,0,0,14.839,0h0A10.524,10.524,0,0,0,1269.656,109.056Z" transform="translate(-1169.431 -24.709)"/>
+    </g>
+    <ellipse id="Elipse_107" data-name="Elipse 107" class="cls-2" cx="9.839" cy="9.839" rx="9.839" ry="9.839" transform="translate(30.898 31.874)"/>
+  </g>
+</svg>

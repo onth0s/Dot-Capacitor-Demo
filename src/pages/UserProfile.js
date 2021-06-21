@@ -13,26 +13,26 @@ glide({ name: 'glide-bottom', direction: 'bottom' });
 // TODO
 export const UserProfile = () => {
 	const genres = [
-		icons.fable,
-		icons.fable,
-		icons.fable,
+		icons.tragedia_l,
+		icons.suspense_l,
+		icons.fabula_l,
 	]
 
 	// TODO solo se mostrarán las 3 más recientes
 	const valorations = [
 		{
-			genre: icons.fable,
-			title: 'El Gato que está triste y azul',
+			genre: icons.suspense,
+			title: 'El Gato Negro — Edgar Allan...',
 			author: 'Edgar Allan Poe',
 		},
 		{
-			genre: icons.fable,
-			title: 'El Gato Negro',
-			author: 'Edgar Allan Poe',
+			genre: icons.fantasia,
+			title: 'Las Tres Hilanderas',
+			author: '...',
 		},
 		{
-			genre: icons.fable,
-			title: 'El Gato Negro',
+			genre: icons.sci_fi,
+			title: 'Viaje al Centro de la Tierra',
 			author: 'Edgar Allan Poe',
 		},
 	]
@@ -69,32 +69,35 @@ export const UserProfile = () => {
 			/>
 		</Link>
 		<div className="relative">
-			<SVG route={icons.three_dots} alt={'three dots'}
+			{/* <SVG route={icons.three_dots} alt={'three dots'}
 				size={[consts.corner_btn.size.width]}
 				position={'RIGHT'}
 				right={consts.corner_btn.right}
 				top={consts.corner_btn.top}
 
 				onClick={() => setShowMenu(true)}
-			/>
+			/> */}
 
-			<Menu isVisible={showMenu} list={['Cerrar sesión']} position={{top: '4vh', right: '8vw'}} icon={icons.logout} clickHandlers={[
+			<Menu isVisible={showMenu} list={['Cerrar sesión']} position={{ top: '4vh', right: '8vw' }} icon={icons.logout} clickHandlers={[
 				() => {
 					console.log('cerrando sesion');
 				}
-			]}/>
+			]} />
 		</div>
 
 		<div className="w-full flex justify-center pt-12 pb-2">
-			<img src={'./assets/UserProfile/user-profile-pic.jpg'} alt="user profile" className="rounded-full w-3/12" />
+			<img src={'./assets/UserProfile/user-profile-pic.jpg'} alt="user profile" className="rounded-full w-28 shadow-lg border-4" style={{borderColor: consts.colors.primary_light}} />
 		</div>
 
 		<p className="w-8/12 text-center mx-auto">Marialala</p>
 
 		<div className="flex justify-center items-center mt-2 w-11/12 mx-auto">
-			<p className="w-1/2 text-center">43 Km</p>
+			<p className="w-1/2 text-center">43.7 Km</p>
 			<div className="bg-white rounded-full h-16 w-0.5" />
-			<p className="w-1/2 text-center">54</p>
+			<div className="w-1/2 flex justify-center space-x-1">
+				<p className="text-center">54</p>
+				<img src={icons.bookmark_solo} alt=""  className=" items-center" style={{width: '9px', marginTop: '-1px'}}/>
+			</div>
 		</div>
 
 		<div className="w-full bg-white absolute bottom-0 rounded-t-2xl"

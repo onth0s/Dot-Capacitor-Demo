@@ -4,6 +4,7 @@ const icons_noext = {
 	// ↓ commor 
 	arrow_left: 'common/arrow-left',
 	star: 'Library/star-library',
+	star_on: 'common/star-on',
 	// ↓ genres
 	romance: 'common/genres/romance',
 	sci_fi: 'common/genres/sci-fi',
@@ -11,6 +12,10 @@ const icons_noext = {
 	suspense: 'common/genres/suspense',
 	historica: 'common/genres/historica',
 	fantasia: 'common/genres/fantasia',
+	
+	fabula_l: 'common/genres/fabula-light',
+	suspense_l: 'common/genres/suspense-light',
+	tragedia_l: 'common/genres/tragedia-light',
 	// ↓ Map -----------------------------------------------
 	current_position: 'Map/current-position',
 	current_position_circle: 'Map/current-position-circle',
@@ -38,6 +43,7 @@ const icons_noext = {
 	selected_circle: 'Reader/selected-circle',
 	// ↓ UserProfile
 	three_dots: 'UserProfile/three-dots',
+	bookmark_solo: 'UserProfile/bookmark-solo',
 	logout: 'UserProfile/logout',
 }
 export const icons = {}
