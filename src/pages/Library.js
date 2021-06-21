@@ -12,9 +12,7 @@ import { useState } from "react";
 import { Menu } from "../components/common/Menu.js";
 
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	getShelfItems, setReaderIndex, getReaderIndex, getFavoriteItems
-} from '../redux/reducers/content.js';
+import { getShelfItems, setReaderIndex, getFavoriteItems } from '../redux/reducers/content.js';
 
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
@@ -94,8 +92,6 @@ export const Library = () => {
 		setTabCurrentIndex(i);
 	}
 
-	const readerIndex = useSelector(getReaderIndex);
-
 	const renderTabs = (i) => {
 		switch (i) {
 			case 0:
@@ -156,7 +152,7 @@ export const Library = () => {
 			case 2:
 				return (favoriteItems.length > 0 ? favoriteItems.map((el, i) => (
 					<div className="flex cursor-pointer" key={i}>
-						<img className="w-28 h-32 bg-gray-400 bg-opacity-60 p-4" src={icons.mountain_placeholder} alt="content related"
+						<img className={`w-28 h-32 ${el.image ? ' ' : 'bg-gray-400 bg-opacity-60 p-4'}`} src={el.image ? el.image : icons.mountain_placeholder} alt="content related"
 						/>
 
 						<div className="flex flex-col flex-grow justify-between py-4 pl-4">
@@ -170,7 +166,7 @@ export const Library = () => {
 							</div>
 						</div>
 
-						<img className="mr-6" src={icons.fable} alt="genre" />
+						<img className="mr-6 w-14" src={el.genre} alt="genre" />
 					</div>
 				)) : <div className="bg-gray-100 flex flex-col items-center justify-center text-center -mt-12"
 					style={{
@@ -183,8 +179,7 @@ export const Library = () => {
 						<p>Recuerda guardarlos para tener tus historias favoritas más cerca.</p>
 					</div>
 				</div>);
-			default:
-				break;
+			default: break;
 		}
 	}
 
@@ -196,7 +191,7 @@ export const Library = () => {
 		'Alfabéticamente',
 		'Autor',
 		'Puntuación',
-		'Histórica?',
+		'Histórica',
 	];
 
 	const [showFilters, setShowFilters] = useState(false);
@@ -279,9 +274,7 @@ export const Library = () => {
 				</div>
 			</div>
 
-			<div className="
-				 overflow-auto h-full
-			"
+			<div className="overflow-auto h-full"
 			>{renderTabs(tabCurrentIndex)}</div>
 		</div>
 	);

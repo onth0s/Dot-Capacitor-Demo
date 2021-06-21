@@ -101,9 +101,6 @@ export const Map = () => {
 					icon={currentPositionIcon}
 					zIndex={10}
 
-					onDragStart={(e) => {
-						// TODO remove this
-					}}
 					onDragEnd={(e) => {
 						setCurrentPosition({ lat: e.latLng.lat(), lng: e.latLng.lng() });
 
@@ -159,22 +156,6 @@ export const Map = () => {
 
 				{stops.map((el, i) => {
 					return (<div key={i}>
-						{/* TODO ↓ remove this, just for debugging */}
-						{/* <Circle
-							center={el}
-							options={{
-								strokeWeight: 0,
-								fillColor: '#000',
-								fillOpacity: 0.1,
-								clickable: false,
-								draggable: false,
-								editable: false,
-								visible: true,
-								radius: 35,
-								zIndex: 1,
-							}}
-						/> */}
-
 						<Marker position={el}
 							icon={renderStopIcon(i)}
 							zIndex={5}

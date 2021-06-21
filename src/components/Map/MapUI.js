@@ -9,6 +9,7 @@ import { icons } from '../../resources/icons.js';
 import {
 	showGeolocationError,
 } from '../../utils/mapUtils.js';
+import { consts } from '../../resources/constants.js';
 
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
@@ -58,7 +59,10 @@ export const MapUI = ({
 			pointer-events-none
 		">
 			<Link to="/user-profile" transition='glide-top'>
-				<SVG route={isUserLocked ? icons.user_map_locked : icons.user_map} isIcon
+				<SVG
+					// route={isUserLocked ? icons.user_map_locked : icons.user_map}
+					route={'./assets/Map/profile-pic.png'}
+					isIcon style={{ border: `4px solid ${consts.colors.primary}`, borderRadius: '100%' }}
 					position={'LEFT'}
 					size={['15vw']} maxSize={['80px']}
 					top={'5vw'} left={'5vw'}
