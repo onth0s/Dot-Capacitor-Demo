@@ -131,15 +131,17 @@ export const Library = () => {
 
 					<div className="grid grid-cols-2 gap-4 p-4">
 						{catalogItems.map((el, i) => (
-							<div key={i} className="w-full h-56 relative bg-red-100 rounded-xl shadow-md cursor-pointer overflow-hidden">
+							<div key={i} className="w-full relative bg-red-600x rounded-xl shadow-md cursor-pointer overflow-hidden" style={{ height: '57vw' }}>
 								<img className="w-full -mt-6" src={el.image} alt="mountain placeholder" />
 
 								<div className="flex w-full h-20 p-2 space-x-2 absolute bottom-0   rounded-xl  bg-white">
 									<div className="flex flex-col w-9/12">
-										<div className="w-full h-6">
+										<div className="w-full h-6 bg-blue-400x overflow-hidden">
 											<p className="font-semibold">{el.title}</p>
 										</div>
-										<p className="text-sm">{el.author}</p>
+										<div className="w-full h-6 bg-blue-400x overflow-hidden">
+											<p className="text-sm">{el.author}</p>
+										</div>
 										<p className="text-xs">{el.tipology}</p>
 									</div>
 
