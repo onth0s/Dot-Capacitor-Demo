@@ -1,0 +1,17 @@
+<svg id="Componente_84_1" data-name="Componente 84 – 1" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3e3b8a;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_568" data-name="Grupo 568">
+    <rect id="Rectángulo_307" data-name="Rectángulo 307" class="cls-1" width="160" height="160" rx="80" transform="translate(0)"/>
+  </g>
+  <path id="Trazado_305" data-name="Trazado 305" class="cls-2" d="M407.609,20.809a48.825,48.825,0,0,0-48.825,48.825c0,26.966,32.4,64.589,49.043,64.589,15.765,0,48.606-37.623,48.606-64.589A48.825,48.825,0,0,0,407.609,20.809ZM378.1,95.017c-13.971-3.1-15.264-18.369-5.692-23.026s21.474,5.434,30.788,21.733A46.775,46.775,0,0,1,378.1,95.017Zm59.2,0a46.77,46.77,0,0,1-25.095-1.293c9.313-16.3,21.215-26.389,30.787-21.733S451.273,91.912,437.3,95.017Z" transform="translate(-327.719 -0.239)"/>
+</svg>

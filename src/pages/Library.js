@@ -31,95 +31,48 @@ export const Library = () => {
 
 	const catalogItems = [
 		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
+			image: './assets/Library/Catalog/cat.png',
+			title: 'El Gato Negro',
+			author: 'Edgar Allan Poe',
+			tipology: 'Relato',
+			genre: icons.suspense
 		},
 		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
+			image: './assets/Library/Catalog/abstract.png',
+			title: '1984',
+			author: 'George Orwell',
+			tipology: 'Novela',
+			genre: icons.sci_fi
 		},
 		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
+			image: './assets/Library/Catalog/janne.png',
+			title: 'Juana de Arco',
+			author: 'Mark Twain',
+			tipology: 'Novela',
+			genre: icons.historica
 		},
 		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
+			image: './assets/Library/Catalog/b&w.png',
+			// title: 'Las Tres Hilanderas',
+			title: 'Las Tres Hilan...',
+			author: 'Hermanos Grimm',
+			tipology: 'Microrelato',
+			genre: icons.fantasia
 		},
 		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
+			image: './assets/Library/Catalog/fantasy.png',
+			// title: 'Viaje al Centro de la Tierra',
+			title: 'Viaje al Centro...',
+			author: 'Julio Verne',
+			tipology: 'Novela',
+			genre: icons.sci_fi
 		},
 		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
-		},
-		{
-			image: icons.mountain_placeholder,
-			title: 'Título de la obra',
-			author: 'Nombre Author',
-			tipology: 'Tipología',
-			genre: icons.fable
+			image: './assets/Library/Catalog/chaplin.png',
+			title: 'El Gran Dictador',
+			author: 'Charlie Chaplin',
+			tipology: 'Guion',
+			genre: icons.historica
 		},
 	]
 
@@ -178,27 +131,23 @@ export const Library = () => {
 				</div>);
 			case 1:
 				return (<>
-					<p className="text-2xl pt-2 pl-2">Catálogo semanal</p>
+					<p className="text-2xl pt-4 pl-2">Catálogo semanal</p>
 
-					<div className="
-						grid grid-cols-2 gap-4
-						p-4
-					">
+					<div className="grid grid-cols-2 gap-4 p-4">
 						{catalogItems.map((el, i) => (
-							<div key={i} className="w-full h-48 relative bg-red-100 rounded-xl shadow-md cursor-pointer overflow-hidden">
-								<img className="w-full p-12 -mt-6 bg-gray-400 opacity-60
-								" src={icons.mountain_placeholder} alt="mountain placeholder" />
+							<div key={i} className="w-full h-56 relative bg-red-100 rounded-xl shadow-md cursor-pointer overflow-hidden">
+								<img className="w-full -mt-6" src={el.image} alt="mountain placeholder" />
 
 								<div className="flex w-full h-20 p-2 space-x-2 absolute bottom-0   rounded-xl  bg-white">
-									<div className="flex flex-col">
-										<p className="font-semibold">{el.title}</p>
+									<div className="flex flex-col w-9/12">
+										<div className="w-full h-6">
+											<p className="font-semibold">{el.title}</p>
+										</div>
 										<p className="text-sm">{el.author}</p>
 										<p className="text-xs">{el.tipology}</p>
 									</div>
 
-									<img className="
-										w-9
-									" src={icons.fable} alt="genre" />
+									<img className="w-9" src={el.genre} alt="genre" />
 								</div>
 							</div>
 						))}

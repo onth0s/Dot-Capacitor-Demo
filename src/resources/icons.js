@@ -6,7 +6,11 @@ const icons_noext = {
 	star: 'Library/star-library',
 	// ↓ genres
 	romance: 'common/genres/romance',
+	sci_fi: 'common/genres/sci-fi',
 	fable: 'common/genres/fable',
+	suspense: 'common/genres/suspense',
+	historica: 'common/genres/historica',
+	fantasia: 'common/genres/fantasia',
 	// ↓ Map -----------------------------------------------
 	current_position: 'Map/current-position',
 	current_position_circle: 'Map/current-position-circle',
