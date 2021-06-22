@@ -82,30 +82,30 @@ const { actions, reducer } = createSlice({
 			},
 		],
 		favoriteItems: [
-			{
-				image: './assets/Library/Catalog/janne.png',
-				title: 'Juana de Arco',
-				author: 'Mark Twain',
-				genre: icons.historica,
-			},
-			{
-				image: './assets/Library/Catalog/abstract.png',
-				title: '1984',
-				author: 'George Orwell',
-				genre: icons.sci_fi,
-			},
-			{
-				image: './assets/Library/Catalog/b&w.png',
-				title: 'Las Tres Hilanderas',
-				author: 'Hermanos Grimm',
-				genre: icons.historica,
-			},
-			{
-				image: './assets/Library/Catalog/cat.png',
-				title: 'El Gato Negro',
-				author: 'Edgar Allan Poe',
-				genre: icons.suspense,
-			},
+			// {
+			// 	image: './assets/Library/Catalog/janne.png',
+			// 	title: 'Juana de Arco',
+			// 	author: 'Mark Twain',
+			// 	genre: icons.historica,
+			// },
+			// {
+			// 	image: './assets/Library/Catalog/abstract.png',
+			// 	title: '1984',
+			// 	author: 'George Orwell',
+			// 	genre: icons.sci_fi,
+			// },
+			// {
+			// 	image: './assets/Library/Catalog/b&w.png',
+			// 	title: 'Las Tres Hilanderas',
+			// 	author: 'Hermanos Grimm',
+			// 	genre: icons.historica,
+			// },
+			// {
+			// 	image: './assets/Library/Catalog/cat.png',
+			// 	title: 'El Gato Negro',
+			// 	author: 'Edgar Allan Poe',
+			// 	genre: icons.suspense,
+			// },
 		],
 
 		readerIndex: 0,
