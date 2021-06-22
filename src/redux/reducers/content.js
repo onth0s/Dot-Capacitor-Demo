@@ -4,6 +4,10 @@ import { icons } from '../../resources/icons.js';
 
 import verne from '../../resources/MPVContent/verne.json';
 import _1984 from '../../resources/MPVContent/_1984.json';
+import hilanderas from '../../resources/MPVContent/hilanderas.json';
+import janne from '../../resources/MPVContent/janne.json';
+import cat from '../../resources/MPVContent/cat.json';
+import dictador from '../../resources/MPVContent/dictador.json';
 
 const { actions, reducer } = createSlice({
 	name: 'test',
@@ -11,12 +15,48 @@ const { actions, reducer } = createSlice({
 	initialState: {
 		shelfItems: [
 			{
+				title: cat.title,
+				author: 'Edgar Allan Poe',
+				icon: icons.sci_fi,
+				time_ago: 0,
+				time_lenght: 8,
+				text: cat.text,
+
+				isNew: false,
+				isBookmarked: false,
+			},
+			{
+				title: hilanderas.title,
+				author: 'Hermanos Grimm',
+				icon: icons.fantasia,
+				time_ago: 0,
+				time_lenght: 8,
+				text: hilanderas.text,
+				
+				isNew: false,
+				isBookmarked: false,
+			},
+			{
 				title: verne.title,
 				author: 'Julio Verne',
 				icon: icons.sci_fi,
 				time_ago: 0,
 				time_lenght: 8,
-				text: verne.text
+				text: verne.text,
+				
+				isNew: false,
+				isBookmarked: false,
+			},
+			{
+				title: dictador.title,
+				author: 'Charles Chaplin',
+				icon: icons.historica,
+				time_ago: 0,
+				time_lenght: 1,
+				text: dictador.text,
+				
+				isNew: false,
+				isBookmarked: false,
 			},
 			{
 				title: _1984.title,
@@ -24,7 +64,21 @@ const { actions, reducer } = createSlice({
 				icon: icons.sci_fi,
 				time_ago: 0,
 				time_lenght: 8,
-				text: _1984.text
+				text: _1984.text,
+				
+				isNew: false,
+				isBookmarked: false,
+			},
+			{
+				title: janne.title,
+				author: 'Mark Twain',
+				icon: icons.historica,
+				time_ago: 0,
+				time_lenght: 8,
+				text: janne.text,
+				
+				isNew: false,
+				isBookmarked: false,
 			},
 		],
 		favoriteItems: [

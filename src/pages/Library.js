@@ -84,7 +84,7 @@ export const Library = () => {
 			);
 		}
 		return score;
-	}
+	} 
 
 	const [tabCurrentIndex, setTabCurrentIndex] = useState(0);
 
@@ -104,12 +104,13 @@ export const Library = () => {
 							<img className="w-9 mr-8" src={el.icon} alt="genre" />
 
 							<div className="flex flex-col justify-center items-start w-8/12 h-20">
-								<p className="font-semibold">{el.title}</p>
+								<p className="font-semibold" style={{lineHeight: el.title.length > 32 ? '1rem' : 'auto'}}>{el.title}</p>
 								<p>{el.author}</p>
 							</div>
 
 							<div className="flex flex-col justify-center space-y-2">
-								<p>{el.time_ago} h</p>
+								{/* <p>{el.time_ago} h</p> */}
+								<p className="opacity-0">{el.time_ago} h</p>
 								<p className="text-xs -ml-4">{el.time_lenght} min</p>
 							</div>
 						</div>
