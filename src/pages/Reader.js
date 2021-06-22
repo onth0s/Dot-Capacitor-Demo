@@ -97,6 +97,54 @@ export const Reader = () => {
 			setBackgroundColor={setBackgroundColor} setTextColor={setTextColor} setTextFont={setTextFont} setFontSize={setFontSize} setLineHeight={setLineHeight} setTextMargin={setTextMargin}
 		/>
 
+		{showUI && <>
+			<div onClick={(e) => e.stopPropagation()}>
+				<Link to="/library" transition='glide-bottom'>
+					<SVG route={'../' + icons.arrow_left}
+						size={[consts.corner_btn.size.width]} maxContent
+						top={consts.corner_btn.top}
+						left={consts.corner_btn.left}
+						style={{ backgroundColor: consts.colors.secondary, borderRadius: '100%' }}
+						zIndex={10}
+					/>
+				</Link>
+			</div>
+			<SVG route={isBookmarked ? '../' + icons.bookmark_on : '../' + icons.bookmark_off}
+				size={[consts.corner_btn.size.width]} maxContent
+				top={consts.corner_btn.top} zIndex={10}
+				right={consts.corner_btn.right}
+				style={{ backgroundColor: consts.colors.secondary, borderRadius: '100%' }}
+				onClick={(e) => {
+					e.stopPropagation();
+					setIsBookmarked(!isBookmarked);
+
+					const bm = shelfItems[readerIndex];
+
+					shelfItems.forEach((el, i) => {
+						console.log(_.isEqual(bm, el));
+						if (!_.isEqual(bm, el)) {
+							dispatch(addFavoriteItem(
+								// {
+								// 	icon: icons.romance,
+								// 	image: icons.mountain_placeholder,
+								// 	title: 'Título de la obraaa',
+								// 	author: 'Autor',
+								// 	score: 0.85
+								// },
+								{
+									icon: bm.icon,
+									image: icons.mountain_placeholder,
+									title: bm.title,
+									author: bm.author,
+									score: 0.49,
+								}
+							));
+						}
+					});
+				}}
+			/>
+		</>}
+
 		<div className="flex flex-col h-full overflow-auto relative"
 			style={{ backgroundColor }}
 			onClick={() => {
@@ -104,7 +152,7 @@ export const Reader = () => {
 				else setShowUI(!showUI);
 			}}
 		>
-			{showUI && <>
+			{/* {showUI && <>
 				<div onClick={(e) => e.stopPropagation()}>
 					<Link to="/library" transition='glide-bottom'>
 						<SVG route={'../' + icons.arrow_left}
@@ -149,7 +197,7 @@ export const Reader = () => {
 						});
 					}}
 				/>
-			</>}
+			</>} */}
 
 			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12 mb-0"
 				style={{ color: textColor }}

@@ -7,7 +7,7 @@ import { measure, getLocation, stopsLockedIcon, stopsUnlockedIcon, currentPositi
 
 import { MapUI } from '../components/Map/MapUI.js';
 
-import {icons} from '../resources/icons.js';
+import { icons } from '../resources/icons.js';
 
 import stops from '../resources/h6-stops-v1.json';
 
@@ -102,11 +102,8 @@ export const Map = () => {
 
 						for (let i = 0; i < stops.length; i++) {
 							const measure_ = measure(
-								e.latLng.lat(),
-								e.latLng.lng(),
-
-								stops[i].lat,
-								stops[i].lng,
+								e.latLng.lat(), e.latLng.lng(),
+								stops[i].lat, stops[i].lng,
 							);
 
 							if (measure_ < 35) {
@@ -127,8 +124,8 @@ export const Map = () => {
 											title: val.fable.title,
 											author: 'Esopo',
 											icon: icons.fable,
-											time_ago: 99,
-											time_lenght: 5,
+											time_ago: 0,
+											time_lenght: 1,
 											text: val.fable.text
 										}));
 									});

@@ -2,11 +2,31 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { icons } from '../../resources/icons.js';
 
+import verne from '../../resources/MPVContent/verne.json';
+import _1984 from '../../resources/MPVContent/_1984.json';
+
 const { actions, reducer } = createSlice({
 	name: 'test',
 
 	initialState: {
-		shelfItems: [],
+		shelfItems: [
+			{
+				title: verne.title,
+				author: 'Julio Verne',
+				icon: icons.sci_fi,
+				time_ago: 0,
+				time_lenght: 8,
+				text: verne.text
+			},
+			{
+				title: _1984.title,
+				author: 'George Orwell',
+				icon: icons.sci_fi,
+				time_ago: 0,
+				time_lenght: 8,
+				text: _1984.text
+			},
+		],
 		favoriteItems: [
 			{
 				image: './assets/Library/Catalog/janne.png',
@@ -60,7 +80,6 @@ const { actions, reducer } = createSlice({
 		}, // TODO not sure this is necessary
 
 		setReaderIndex: (state, { payload }) => {
-			console.log('payload:', payload);
 			state.readerIndex = payload;
 		}
 	}
@@ -80,7 +99,7 @@ export const getReaderIndex = (state) => {
 export default reducer;
 
 export const {
-	addShelfItem, 
+	addShelfItem,
 	addFavoriteItem, removeFavoriteItem,
 	setReaderIndex,
 } = actions;
