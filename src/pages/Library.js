@@ -153,28 +153,29 @@ export const Library = () => {
 					</div>
 				</>);
 			case 2:
-				return (favoriteItems.length > 0 ? favoriteItems.map((el, i) => {
+				return (favoriteItems.length > 0 ? shelfItems.map((el, i) => {
 					return (
-						<div className="flex cursor-pointer" key={i}>
-							<div className="w-28 h-32" style={{
-								backgroundImage: el.image ? 'url(' + el.image + ')' : 'url(' + icons.mountain_placeholder + ')', backgroundSize: '128px', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'
-							}}>
+						el.isBookmarked ? <Link to={'/reader/' + i} transition='glide-top'>
+							<div className="flex cursor-pointer" key={i} onClick={() => setReaderIndex(i)}>
+								<div className="w-28 h-32" style={{
+									backgroundImage: el.image ? 'url(' + el.image + ')' : 'url(' + icons.mountain_placeholder + ')', backgroundSize: '128px', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'
+								}}>
 
-							</div>
-
-							<div className="flex flex-col w-64 justify-between py-4 pl-4">
-								<div className="flex flex-col">
-									<p className="font-semibold">{el.title}</p>
-									<p>{el.author}</p>
 								</div>
 
-								<div className="flex">
-									{renderScore(el.score, "w-5")}
-								</div>
-							</div>
+								<div className="flex flex-col w-64 justify-between py-4 pl-4">
+									<div className="flex flex-col">
+										<p className="font-semibold">{el.title}</p>
+										<p>{el.author}</p>
+									</div>
 
-							<img className="mr-6 w-14" src={el.genre} alt="genre" />
-						</div>
+									<div className="flex">
+										{renderScore(el.score, "w-5")}
+									</div>
+								</div>
+
+								<img className="mr-6 w-14" src={el.genre} alt="genre" />
+							</div> </Link> : <></>
 					)
 				}) : <div className="bg-gray-100 flex flex-col items-center justify-center text-center -mt-12"
 					style={{

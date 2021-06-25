@@ -130,6 +130,7 @@ export const Reader = () => {
 								score: 0.49,
 
 								index: readerIndex,
+								
 							}));
 						}
 					});
