@@ -22,6 +22,8 @@ const { actions, reducer } = createSlice({
 				time_lenght: 8,
 				text: cat.text,
 
+				image: './assets/Library/Catalog/cat.png',
+
 				isNew: false,
 				isBookmarked: false,
 			},
@@ -32,7 +34,9 @@ const { actions, reducer } = createSlice({
 				time_ago: 0,
 				time_lenght: 8,
 				text: hilanderas.text,
-				
+
+				image: './assets/Library/Catalog/b&w.png',
+
 				isNew: false,
 				isBookmarked: false,
 			},
@@ -43,7 +47,9 @@ const { actions, reducer } = createSlice({
 				time_ago: 0,
 				time_lenght: 8,
 				text: verne.text,
-				
+
+				image: './assets/Library/Catalog/fantasy.png',
+
 				isNew: false,
 				isBookmarked: false,
 			},
@@ -54,7 +60,9 @@ const { actions, reducer } = createSlice({
 				time_ago: 0,
 				time_lenght: 1,
 				text: dictador.text,
-				
+
+				image: './assets/Library/Catalog/chaplin.png',
+
 				isNew: false,
 				isBookmarked: false,
 			},
@@ -65,7 +73,9 @@ const { actions, reducer } = createSlice({
 				time_ago: 0,
 				time_lenght: 8,
 				text: _1984.text,
-				
+
+				image: './assets/Library/Catalog/abstract.png',
+
 				isNew: false,
 				isBookmarked: false,
 			},
@@ -76,7 +86,9 @@ const { actions, reducer } = createSlice({
 				time_ago: 0,
 				time_lenght: 8,
 				text: janne.text,
-				
+
+				image: './assets/Library/Catalog/janne.png',
+
 				isNew: false,
 				isBookmarked: false,
 			},
@@ -118,11 +130,19 @@ const { actions, reducer } = createSlice({
 
 			state.shelfItems = arr;
 		},
+		setShelfItem: (state, { payload }) => {
+
+		},
 		addFavoriteItem: (state, { payload }) => {
 			const arr = state.favoriteItems;
 			arr.unshift(payload);
 
 			state.favoriteItems = arr;
+
+			state.shelfItems[payload.index] = {
+				...state.shelfItems[payload.index],
+				isBookmarked: !state.shelfItems[payload.index].isBookmarked,
+			}
 		},
 		removeFavoriteItem: (state, { payload }) => {
 			// const arr = state.favoriteItems;
@@ -153,7 +173,7 @@ export const getReaderIndex = (state) => {
 export default reducer;
 
 export const {
-	addShelfItem,
+	addShelfItem, setShelfItem,
 	addFavoriteItem, removeFavoriteItem,
 	setReaderIndex,
 } = actions;

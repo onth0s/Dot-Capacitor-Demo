@@ -12,7 +12,7 @@ import _ from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import {
 	getShelfItems,
-	getReaderIndex, addFavoriteItem
+	getReaderIndex, addFavoriteItem,
 } from '../redux/reducers/content.js';
 
 glide({ name: 'glide-top', direction: 'top' });
@@ -22,7 +22,6 @@ export const Reader = () => {
 	const shelfItems = useSelector(getShelfItems);
 	const readerIndex = useSelector(getReaderIndex);
 
-	const [isBookmarked, setIsBookmarked] = useState(false);
 
 	const [showSettings, setShowSettings] = useState(false);
 
@@ -109,36 +108,29 @@ export const Reader = () => {
 					/>
 				</Link>
 			</div>
-			<SVG route={isBookmarked ? '../' + icons.bookmark_on : '../' + icons.bookmark_off}
+			<SVG route={shelfItems[readerIndex].isBookmarked ? '../' + icons.bookmark_on : '../' + icons.bookmark_off}
 				size={[consts.corner_btn.size.width]} maxContent
 				top={consts.corner_btn.top} zIndex={10}
 				right={consts.corner_btn.right}
 				style={{ backgroundColor: consts.colors.secondary, borderRadius: '100%' }}
 				onClick={(e) => {
 					e.stopPropagation();
-					setIsBookmarked(!isBookmarked);
 
-					const bm = shelfItems[readerIndex];
+					shelfItems.forEach((el) => {
+						if (_.isEqual(shelfItems[readerIndex], el)) {
+							dispatch(addFavoriteItem({
+								title: shelfItems[readerIndex].title,
+								author: shelfItems[readerIndex].author,
 
-					shelfItems.forEach((el, i) => {
-						console.log(_.isEqual(bm, el));
-						if (!_.isEqual(bm, el)) {
-							dispatch(addFavoriteItem(
-								// {
-								// 	icon: icons.romance,
-								// 	image: icons.mountain_placeholder,
-								// 	title: 'Título de la obraaa',
-								// 	author: 'Autor',
-								// 	score: 0.85
-								// },
-								{
-									icon: bm.icon,
-									image: icons.mountain_placeholder,
-									title: bm.title,
-									author: bm.author,
-									score: 0.49,
-								}
-							));
+								icon: shelfItems[readerIndex].icon,
+								genre: shelfItems[readerIndex].icon,
+
+								image: shelfItems[readerIndex].image,
+
+								score: 0.49,
+
+								index: readerIndex,
+							}));
 						}
 					});
 				}}

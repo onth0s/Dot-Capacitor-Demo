@@ -84,7 +84,7 @@ export const Library = () => {
 			);
 		}
 		return score;
-	} 
+	}
 
 	const [tabCurrentIndex, setTabCurrentIndex] = useState(0);
 
@@ -104,7 +104,7 @@ export const Library = () => {
 							<img className="w-9 mr-8" src={el.icon} alt="genre" />
 
 							<div className="flex flex-col justify-center items-start w-8/12 h-20">
-								<p className="font-semibold" style={{lineHeight: el.title.length > 32 ? '1rem' : 'auto'}}>{el.title}</p>
+								<p className="font-semibold" style={{ lineHeight: el.title.length > 32 ? '1rem' : 'auto' }}>{el.title}</p>
 								<p>{el.author}</p>
 							</div>
 
@@ -153,25 +153,30 @@ export const Library = () => {
 					</div>
 				</>);
 			case 2:
-				return (favoriteItems.length > 0 ? favoriteItems.map((el, i) => (
-					<div className="flex cursor-pointer" key={i}>
-						<img className={`w-28 h-32 ${el.image ? ' ' : 'bg-gray-400 bg-opacity-60 p-4'}`} src={el.image ? el.image : icons.mountain_placeholder} alt="content related"
-						/>
+				return (favoriteItems.length > 0 ? favoriteItems.map((el, i) => {
+					return (
+						<div className="flex cursor-pointer" key={i}>
+							<div className="w-28 h-32" style={{
+								backgroundImage: el.image ? 'url(' + el.image + ')' : 'url(' + icons.mountain_placeholder + ')', backgroundSize: '128px', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'
+							}}>
 
-						<div className="flex flex-col flex-grow justify-between py-4 pl-4">
-							<div className="flex flex-col">
-								<p className="font-semibold">{el.title}</p>
-								<p>{el.author}</p>
 							</div>
 
-							<div className="flex">
-								{renderScore(el.score, "w-5")}
+							<div className="flex flex-col w-64 justify-between py-4 pl-4">
+								<div className="flex flex-col">
+									<p className="font-semibold">{el.title}</p>
+									<p>{el.author}</p>
+								</div>
+
+								<div className="flex">
+									{renderScore(el.score, "w-5")}
+								</div>
 							</div>
+
+							<img className="mr-6 w-14" src={el.genre} alt="genre" />
 						</div>
-
-						<img className="mr-6 w-14" src={el.genre} alt="genre" />
-					</div>
-				)) : <div className="bg-gray-100 flex flex-col items-center justify-center text-center -mt-12"
+					)
+				}) : <div className="bg-gray-100 flex flex-col items-center justify-center text-center -mt-12"
 					style={{
 						height: '79.12vh',
 					}}
