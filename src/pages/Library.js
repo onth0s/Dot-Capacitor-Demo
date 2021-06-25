@@ -20,7 +20,6 @@ glide({ name: 'glide-bottom', direction: 'bottom' });
 export const Library = () => {
 	// TODO ↓ redux stuff
 	const shelfItems = useSelector(getShelfItems);
-	const favoriteItems = useSelector(getFavoriteItems);
 
 	const dispatch = useDispatch();
 	// TODO ↑ redux stuff
@@ -153,41 +152,28 @@ export const Library = () => {
 					</div>
 				</>);
 			case 2:
-				return (favoriteItems.length > 0 ? shelfItems.map((el, i) => {
-					return (
-						el.isBookmarked ? <Link to={'/reader/' + i} transition='glide-top'>
-							<div className="flex cursor-pointer" key={i} onClick={() => setReaderIndex(i)}>
-								<div className="w-28 h-32" style={{
-									backgroundImage: el.image ? 'url(' + el.image + ')' : 'url(' + icons.mountain_placeholder + ')', backgroundSize: '128px', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'
-								}}>
+				return (shelfItems.map((el, i) => {
+					return (el.isBookmarked ? <Link to={'/reader/' + i} transition='glide-top'>
+						<div className="flex cursor-pointer" key={i} onClick={() => dispatch(setReaderIndex(i))}>
+							<div className="w-28 h-32" style={{
+								backgroundImage: el.image ? 'url(' + el.image + ')' : 'url(' + icons.mountain_placeholder + ')', backgroundSize: '128px', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'
+							}} />
 
+							<div className="flex flex-col w-64 justify-between py-4 pl-4">
+								<div className="flex flex-col">
+									<p className="font-semibold">{el.title}</p>
+									<p>{el.author}</p>
 								</div>
 
-								<div className="flex flex-col w-64 justify-between py-4 pl-4">
-									<div className="flex flex-col">
-										<p className="font-semibold">{el.title}</p>
-										<p>{el.author}</p>
-									</div>
-
-									<div className="flex">
-										{renderScore(el.score, "w-5")}
-									</div>
+								<div className="flex">
+									{renderScore(el.score, "w-5")}
 								</div>
+							</div>
 
-								<img className="mr-6 w-14" src={el.genre} alt="genre" />
-							</div> </Link> : <></>
+							<img className="mr-6 w-14" src={el.genre} alt="genre" />
+						</div> </Link> : <></>
 					)
-				}) : <div className="bg-gray-100 flex flex-col items-center justify-center text-center -mt-12"
-					style={{
-						height: '79.12vh',
-					}}
-				>
-					<img src={icons.shelf_empty} alt="empty state" className="w-1/6 mb-4" />
-					<div className="w-3/5 space-y-4 font-light">
-						<p>Parece que no guardaste nada en favoritos.</p>
-						<p>Recuerda guardarlos para tener tus historias favoritas más cerca.</p>
-					</div>
-				</div>);
+				}));
 			default: break;
 		}
 	}
