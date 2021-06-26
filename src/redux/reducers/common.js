@@ -20,7 +20,7 @@ const { actions, reducer } = createSlice({
 }); export default reducer;
 
 export const getLibraryTabIndex = (state) => {
-	return state.content.libraryTabIndex;
+	return state.common.libraryTabIndex;
 }
 
 export const {
