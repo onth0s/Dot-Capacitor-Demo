@@ -13,6 +13,7 @@ import { Menu } from "../components/common/Menu.js";
 
 import { useDispatch, useSelector } from 'react-redux';
 import { getShelfItems, setReaderIndex } from '../redux/reducers/content.js';
+import { getLibraryTabIndex, setLibraryTabIndex } from '../redux/reducers/common.js';
 
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
@@ -20,6 +21,9 @@ glide({ name: 'glide-bottom', direction: 'bottom' });
 export const Library = () => {
 	// TODO ↓ redux stuff
 	const shelfItems = useSelector(getShelfItems);
+	const libraryTabIndex = useSelector(getLibraryTabIndex);
+
+	console.log('libraryTabIndex:', libraryTabIndex);
 
 	const dispatch = useDispatch();
 	// TODO ↑ redux stuff
@@ -85,11 +89,7 @@ export const Library = () => {
 		return score;
 	}
 
-	const [tabCurrentIndex, setTabCurrentIndex] = useState(0);
-
-	const handleTabClick = (i) => {
-		setTabCurrentIndex(i);
-	}
+	const handleTabClick = (i) => dispatch(setLibraryTabIndex(i));
 
 	const renderTabs = (i) => {
 		switch (i) {
@@ -261,7 +261,7 @@ export const Library = () => {
 						"
 							onClick={() => handleTabClick(i)}
 						>{el}
-							{i === tabCurrentIndex && <div className="
+							{i === libraryTabIndex && <div className="
 								w-1/3 h-0.5
 								absolute bottom-0
 								bg-purple-600 
@@ -287,7 +287,7 @@ export const Library = () => {
 			</div>
 
 			<div className="overflow-auto h-full"
-			>{renderTabs(tabCurrentIndex)}</div>
+			>{renderTabs(libraryTabIndex)}</div>
 		</div>
 	);
 }
