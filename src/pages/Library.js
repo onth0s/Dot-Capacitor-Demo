@@ -23,8 +23,6 @@ export const Library = () => {
 	const shelfItems = useSelector(getShelfItems);
 	const libraryTabIndex = useSelector(getLibraryTabIndex);
 
-	console.log('libraryTabIndex:', libraryTabIndex);
-
 	const dispatch = useDispatch();
 	// TODO ↑ redux stuff
 
