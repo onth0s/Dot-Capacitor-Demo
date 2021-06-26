@@ -228,7 +228,7 @@ export const Library = () => {
 				</SVG>
 			</Link>
 
-			{/* <SVG route={icons.search} alt={'search'}
+			<SVG route={icons.search} alt={'search'}
 				size={['13vw']}
 				position={'RIGHT'}
 				right={'10vw'} bottom={'8vh'}
@@ -239,7 +239,7 @@ export const Library = () => {
 					// TODO document.querySelector('#test-01').classList.add('animate__animated');
 					setIsSearchVisible(true);
 				}}
-			/> */}
+			/>
 
 			<LibrarySearch isVisible={isSearchVisible} setIsVisible={setIsSearchVisible} />
 
@@ -276,9 +276,9 @@ export const Library = () => {
 					flex items-center justify-center
 					w-2/12 h-10 relative
 				">
-					{/* <img className="cursor-pointer w-6 p-2 box-content" src={icons.filter} alt="filter"
+					<img className="cursor-pointer w-6 p-2 box-content" src={icons.filter} alt="filter"
 						onClick={() => setShowFilters(true)}
-					/> */}
+					/>
 
 					<Menu isVisible={showFilters} list={filters} />
 				</div>

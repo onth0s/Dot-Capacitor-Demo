@@ -93,17 +93,22 @@ export const UserProfile = () => {
 				position={'LEFT'}
 				left={consts.corner_btn.left}
 				top={consts.corner_btn.top}
+
+				style={{ backgroundColor: 'blue', borderRadius: '100%' }} // TODO remove this
+
 			/>
 		</Link>
 		<div className="relative">
-			{/* <SVG route={icons.three_dots} alt={'three dots'}
+			<SVG route={icons.three_dots} alt={'three dots'}
 				size={[consts.corner_btn.size.width]}
 				position={'RIGHT'}
 				right={consts.corner_btn.right}
-				top={consts.corner_btn.top}
+				top={consts.corner_btn.top}	
+				
+				style={{ backgroundColor: 'blue', borderRadius: '100%' }} // TODO remove this
 
 				onClick={() => setShowMenu(true)}
-			/> */}
+			/>
 
 			<Menu isVisible={showMenu} list={['Cerrar sesión']} position={{ top: '4vh', right: '8vw' }} icon={icons.logout} clickHandlers={[
 				() => {
