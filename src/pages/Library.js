@@ -12,7 +12,7 @@ import { useState } from "react";
 import { Menu } from "../components/common/Menu.js";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getShelfItems, setReaderIndex, getFavoriteItems } from '../redux/reducers/content.js';
+import { getShelfItems, setReaderIndex } from '../redux/reducers/content.js';
 
 glide({ name: 'glide-top', direction: 'top' });
 glide({ name: 'glide-bottom', direction: 'bottom' });
@@ -152,11 +152,16 @@ export const Library = () => {
 					</div>
 				</>);
 			case 2:
-				return (shelfItems.map((el, i) => {
-					return (el.isBookmarked ? <Link to={'/reader/' + i} transition='glide-top'>
+				let counterFavs = 0;
+				for (let i = 0; i < shelfItems.length; i++) {
+					if (shelfItems[i].isBookmarked) counterFavs++;
+				}
+
+				if (counterFavs > 0) {
+					return (shelfItems.map((el, i) => (el.isBookmarked ? <Link to={'/reader/' + i} transition='glide-top'>
 						<div className="flex cursor-pointer" key={i} onClick={() => dispatch(setReaderIndex(i))}>
-							<div className="w-28 h-32" style={{
-								backgroundImage: el.image ? 'url(' + el.image + ')' : 'url(' + icons.mountain_placeholder + ')', backgroundSize: '128px', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'
+							<div className={`w-28 h-32 ${el.image ? '' : 'bg-opacity-60'}`} style={{
+								backgroundImage: el.image ? 'url(' + el.image + ')' : 'url(' + icons.mountain_placeholder + ')', backgroundSize: el.image ? '128px' : '60%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundColor: el.image ? 'white' : '#ffa75a',
 							}} />
 
 							<div className="flex flex-col w-64 justify-between py-4 pl-4">
@@ -172,8 +177,21 @@ export const Library = () => {
 
 							<img className="mr-6 w-14" src={el.genre} alt="genre" />
 						</div> </Link> : <></>
-					)
-				}));
+					)));
+				} else {
+					return <div className="bg-gray-100 flex flex-col items-center justify-center text-center -mt-12"
+						style={{
+							height: '79.12vh',
+						}}
+					>
+						<img src={icons.shelf_empty} alt="empty state" className="w-1/6 mb-4" />
+						<div className="w-3/5 space-y-4 font-light">
+							<p>Parece que no guardaste nada en favoritos.</p>
+							<p>Recuerda guardarlos para tener tus historias favoritas más cerca.</p>
+						</div>
+					</div>;
+				}
+
 			default: break;
 		}
 	}

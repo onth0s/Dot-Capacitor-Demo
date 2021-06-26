@@ -124,6 +124,7 @@ export const Map = () => {
 											title: val.fable.title,
 											author: 'Esopo',
 											icon: icons.fable,
+											genre: icons.fable,
 											time_ago: 0,
 											time_lenght: 1,
 											text: val.fable.text
