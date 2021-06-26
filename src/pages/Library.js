@@ -191,7 +191,6 @@ export const Library = () => {
 						</div>
 					</div>;
 				}
-
 			default: break;
 		}
 	}
@@ -218,16 +217,16 @@ export const Library = () => {
 
 			<Link to="/" transition='glide-bottom'>
 				<SVG route={icons.arrow_left} alt={'go back arrow'} maxContent
-					size={[consts.corner_btn.size.width]} maxSize={['40px']}
+					size={[consts.corner_btn.size.width]}
+					// maxSize={['40px']}
 					position={'LEFT'}
 					top={consts.corner_btn.top}
 					left={consts.corner_btn.left}
-				>
-					<p className="
-						ml-2
-						text-lg
-						text-white
-					">Biblioteca</p>
+					innerStyle={{
+						// backgroundColor: 'cyan',
+						borderRadius: '100%',
+					}}
+				><p className="ml-2 text-2xl text-white">Biblioteca</p>
 				</SVG>
 			</Link>
 

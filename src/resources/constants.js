@@ -1,10 +1,10 @@
 export const consts = {
 	corner_btn: {
 		size: {
-			// width: '7vw',
-			// height: '7vw',
-			width: '32px',
-			height: '32px',
+			width: '10vw',
+			height: '10vw',
+			// width: '64px',
+			// height: '64px',
 		},
 		
 		top: '4vh', bottom: '4vh',
