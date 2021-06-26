@@ -226,7 +226,7 @@ export const Library = () => {
 						// backgroundColor: 'cyan',
 						borderRadius: '100%',
 					}}
-				><p className="ml-2 text-2xl text-white">Biblioteca</p>
+				><p className="pl-4 ml-2 text-2xl text-white">Biblioteca</p>
 				</SVG>
 			</Link>
 
