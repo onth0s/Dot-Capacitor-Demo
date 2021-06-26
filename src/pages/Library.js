@@ -162,7 +162,7 @@ export const Library = () => {
 								backgroundImage: el.image ? 'url(' + el.image + ')' : 'url(' + icons.mountain_placeholder + ')', backgroundSize: el.image ? '128px' : '60%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundColor: el.image ? 'white' : '#ffa75a',
 							}} />
 
-							<div className="flex flex-col w-64 justify-between py-4 pl-4">
+							<div className="flex flex-col justify-between py-4 pl-4" style={{ width: '60vw' }}>
 								<div className="flex flex-col">
 									<p className="font-semibold">{el.title}</p>
 									<p>{el.author}</p>
