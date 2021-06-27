@@ -94,7 +94,7 @@ export const UserProfile = () => {
 				left={consts.corner_btn.left}
 				top={consts.corner_btn.top}
 
-				style={{ backgroundColor: 'blue', borderRadius: '100%' }} // TODO remove this
+				// style={{ backgroundColor: 'blue', borderRadius: '100%' }} // TODO remove this
 
 			/>
 		</Link>
@@ -105,7 +105,7 @@ export const UserProfile = () => {
 				right={consts.corner_btn.right}
 				top={consts.corner_btn.top}	
 				
-				style={{ backgroundColor: 'blue', borderRadius: '100%' }} // TODO remove this
+				// style={{ backgroundColor: 'blue', borderRadius: '100%' }} // TODO remove this
 
 				onClick={() => setShowMenu(true)}
 			/>

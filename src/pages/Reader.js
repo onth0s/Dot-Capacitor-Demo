@@ -145,55 +145,8 @@ export const Reader = () => {
 				else setShowUI(!showUI);
 			}}
 		>
-			{/* {showUI && <>
-				<div onClick={(e) => e.stopPropagation()}>
-					<Link to="/library" transition='glide-bottom'>
-						<SVG route={'../' + icons.arrow_left}
-							size={[consts.corner_btn.size.width]} maxContent
-							top={consts.corner_btn.top}
-							left={consts.corner_btn.left}
-							style={{ backgroundColor: consts.colors.secondary, borderRadius: '100%' }}
-						/>
-					</Link>
-				</div>
-				<SVG route={isBookmarked ? '../' + icons.bookmark_on : '../' + icons.bookmark_off}
-					size={[consts.corner_btn.size.width]} maxContent
-					top={consts.corner_btn.top}
-					right={consts.corner_btn.right}
-					style={{ backgroundColor: consts.colors.secondary, borderRadius: '100%' }}
-					onClick={(e) => {
-						e.stopPropagation();
-						setIsBookmarked(!isBookmarked);
-
-						const bm = shelfItems[readerIndex];
-
-						shelfItems.forEach((el, i) => {
-							console.log(_.isEqual(bm, el));
-							if (!_.isEqual(bm, el)) {
-								dispatch(addFavoriteItem(
-									// {
-									// 	icon: icons.romance,
-									// 	image: icons.mountain_placeholder,
-									// 	title: 'Título de la obraaa',
-									// 	author: 'Autor',
-									// 	score: 0.85
-									// },
-									{
-										icon: bm.icon,
-										image: icons.mountain_placeholder,
-										title: bm.title,
-										author: bm.author,
-										score: 0.49,
-									}
-								));
-							}
-						});
-					}}
-				/>
-			</>} */}
-
-			<p className="text-2xl font-normal text-center w-8/12 m-auto mt-12 mb-0"
-				style={{ color: textColor }}
+			<p className="text-2xl font-normal text-center w-8/12 m-auto mb-0"
+				style={{ color: textColor, marginTop: '10vh', borderXXX: '1px solid blue' }}
 			>
 				{(shelfItems.length !== 0) ? <div>{shelfItems[readerIndex].title}</div> : <div>b</div>}
 			</p>

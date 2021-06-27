@@ -1,4 +1,4 @@
-<svg id="icono_menu_usuario" data-name="icono menu usuario" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+<svg id="icono_menu_usuario" data-name="icono menu usuario" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
   <defs>
     <style>
       .cls-1 {
@@ -10,6 +10,7 @@
       }
     </style>
   </defs>
-  <path id="Trazado_143" data-name="Trazado 143" class="cls-1" d="M0-.137H48v48H0Z" transform="translate(0 0.137)"/>
-  <path id="Trazado_144" data-name="Trazado 144" class="cls-2" d="M24,14.863a4.5,4.5,0,1,0-4.5-4.5A4.513,4.513,0,0,0,24,14.863Zm0,4.5a4.5,4.5,0,1,0,4.5,4.5A4.513,4.513,0,0,0,24,19.363Zm0,13.5a4.5,4.5,0,1,0,4.5,4.5A4.513,4.513,0,0,0,24,32.863Z" transform="translate(0 0.137)"/>
+  <path id="Trazado_143" data-name="Trazado 143" class="cls-1" d="M0-.137H48v48H0Z" transform="translate(6 7.137)"/>
+  <path id="Trazado_144" data-name="Trazado 144" class="cls-2" d="M24,14.863a4.5,4.5,0,1,0-4.5-4.5A4.513,4.513,0,0,0,24,14.863Zm0,4.5a4.5,4.5,0,1,0,4.5,4.5A4.513,4.513,0,0,0,24,19.363Zm0,13.5a4.5,4.5,0,1,0,4.5,4.5A4.513,4.513,0,0,0,24,32.863Z" transform="translate(8.5 8.137)"/>
+  <rect id="Rectángulo_363" data-name="Rectángulo 363" class="cls-1" width="64" height="64"/>
 </svg>

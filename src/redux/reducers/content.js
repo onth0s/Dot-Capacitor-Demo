@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { icons } from '../../resources/icons.js';
+// import { icons } from '../../resources/icons.js';
 
 // import verne from '../../resources/MPVContent/verne.json';
 // import _1984 from '../../resources/MPVContent/_1984.json';
@@ -150,14 +150,6 @@ const { actions, reducer } = createSlice({
 				isBookmarked: !state.shelfItems[payload.index].isBookmarked,
 			}
 		},
-		removeFavoriteItem: (state, { payload }) => {
-			// const arr = state.favoriteItems;
-			// arr.unshift(payload);
-
-			// state.favoriteItems = arr;
-
-			console.log('removing favorite item code here...');
-		}, // TODO not sure this is necessary
 
 		setReaderIndex: (state, { payload }) => {
 			state.readerIndex = payload;
@@ -180,6 +172,6 @@ export default reducer;
 
 export const {
 	addShelfItem, setShelfItem,
-	addFavoriteItem, removeFavoriteItem,
+	addFavoriteItem, 
 	setReaderIndex,
 } = actions;
