@@ -19,11 +19,19 @@ export const getFables = async () => {
 	}
 }
 
-export const getRandomContent = async () => {
+export const getRandomContent = async (shelfItems) => {
 	try {
+		const shelfItems_ = shelfItems.map(el => {
+			return {
+				title: el.title,
+				auhor: el.author,
+			};
+		});
+
 		const res = await axios({
-			method: 'GET',
+			method: 'POST',
 			url: joinURL(SERVER_URL, '/content/random'),
+			data: shelfItems_
 		});
 
 		// console.log(res.data);

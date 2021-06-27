@@ -18,12 +18,14 @@ import {
 	getRandomContent,
 } from '../utils/serverQueries.js';
 
-import { useDispatch } from 'react-redux';
-import { addShelfItem } from '../redux/reducers/content.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { addShelfItem, getShelfItems } from '../redux/reducers/content.js';
 
 let randomContentCounter = 0;
 
 export const Map = () => {
+	const shelfItems = useSelector(getShelfItems);
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -147,9 +149,7 @@ export const Map = () => {
 				{/* ↓ user current position */}
 				<Marker draggable
 					position={currentPosition}
-
-					icon={currentPositionIcon}
-					zIndex={10}
+					icon={currentPositionIcon} zIndex={10}
 
 					onDragEnd={(e) => {
 						setCurrentPosition({ lat: e.latLng.lat(), lng: e.latLng.lng() });
@@ -162,9 +162,11 @@ export const Map = () => {
 
 							if (measure_ < 35) {
 								if (!stopsStatus[i]) { // TODO here goes the 'content' fetching
-									getRandomContent().then(val => {
+									getRandomContent(shelfItems).then(val => {
 										console.log(`New Random Content Unlocked! (${randomContentCounter++})`);
+										// console.log(`New Random Content Unlocked!`);
 										console.log(val);
+
 
 										setNotification(<div className="p-8 space-y-1 w-screen">
 											<p className="text-yellow-600">Nuevo texto conseguido!</p>
@@ -200,29 +202,18 @@ export const Map = () => {
 							}
 						};
 					}}
-
-					onClick={() => { // TODO Everything here is pretty much just for debugging. Remove eventually.
-						getLocation().then(val => {
-							setCurrentPosition({ lat: val.lat, lng: val.lng })
-						});
-					}}
 				/>
 
 				{stops.map((el, i) => {
 					return (<div key={i}>
-						<Marker position={el}
-							icon={renderStopIcon(i)}
-							zIndex={5}
-						/>
+						<Marker position={el} icon={renderStopIcon(i)} zIndex={5} />
 					</div>)
 				})}
 			</GoogleMap>
 
-			<MapUI
-				map={map}
+			<MapUI map={map}
 				currentPosition={currentPosition} setCurrentPosition={setCurrentPosition}
-				setCurrentCenter={setCurrentCenter}
-			/>
+				setCurrentCenter={setCurrentCenter} />
 		</div>
 	</>);
 }
