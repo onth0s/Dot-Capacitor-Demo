@@ -21,6 +21,8 @@ import {
 import { useDispatch } from 'react-redux';
 import { addShelfItem } from '../redux/reducers/content.js';
 
+let randomContentCounter = 0;
+
 export const Map = () => {
 	const dispatch = useDispatch();
 
@@ -111,28 +113,6 @@ export const Map = () => {
 
 							if (measure_ < 35) {
 								if (!stopsStatus[i]) { // TODO here goes the 'content' fetching
-									// getFables().then(val => {
-									// 	console.log('Fable added: \'' + val.fable.title + '\'');
-									// 	console.log(val);
-
-									// 	setShowNotification(true);
-									// 	const timeoutID_ = setTimeout(() => {
-									// 		setShowNotification(false);
-									// 	}, 4000);
-
-									// 	setTimeoutID(timeoutID_);
-
-									// 	// ↓ redux
-									// 	dispatch(addShelfItem({
-									// 		title: val.fable.title,
-									// 		author: 'Esopo',
-									// 		icon: icons.fable,
-									// 		genre: icons.fable,
-									// 		time_ago: 0,
-									// 		time_lenght: 1,
-									// 		text: val.fable.text
-									// 	}));
-									// });
 									getRandomContent().then(val => {
 										// console.log('New text unlocked: \'' + val.fable.title + '\'');
 										// console.log(val);
@@ -155,7 +135,7 @@ export const Map = () => {
 										// 	text: val.fable.text
 										// }));
 
-										console.log('random content: ');
+										console.log(`New Random Content Unlocked! (${randomContentCounter++})`);
 										console.log(val);
 									}).catch(err => {
 										console.log('Error getting random content:');
@@ -164,10 +144,7 @@ export const Map = () => {
 								}
 
 								const arr = stopsStatus;
-								arr[i] = true;
-								setStopsStatus([...arr]);
-
-								// break; // TODO ← if this is enabled, then it only checks the first stop one it compares
+								arr[i] = true; setStopsStatus([...arr]);
 							}
 						};
 					}}
