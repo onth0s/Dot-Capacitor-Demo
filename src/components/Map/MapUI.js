@@ -28,6 +28,7 @@ export const MapUI = ({
 	// const isUserLocked = false; // TODO ← hardcoded, to implement
 	const [watchID, setWatchID] = useState(0);
 
+	let counterPos = 0;
 	const handleLocationToggle = () => {
 		setIsLocationEnabled(!isLocationEnabled);
 
@@ -37,6 +38,17 @@ export const MapUI = ({
 					lat: position.coords.latitude,
 					lng: position.coords.longitude,
 				});
+
+				console.log(`position changed... (${counterPos++})`);
+				// TODO
+				// TODO
+				// TODO
+				// TODO
+				// TODO
+				// TODO
+				// TODO
+				// TODO creo que aquí es donde va el 'for' eses que comprueba si estás de dentro del radio de una parada o no
+				// TODO creo 
 			}, (error) => {
 				showGeolocationError(error);
 			}, {
