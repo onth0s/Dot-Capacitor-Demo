@@ -13,7 +13,10 @@ import stops from '../resources/h6-stops-v1.json';
 
 import { Notification } from '../components/common/Notification.js';
 
-import { getFables } from '../utils/serverQueries.js';
+import {
+	// getFables,
+	getRandomContent,
+} from '../utils/serverQueries.js';
 
 import { useDispatch } from 'react-redux';
 import { addShelfItem } from '../redux/reducers/content.js';
@@ -108,27 +111,55 @@ export const Map = () => {
 
 							if (measure_ < 35) {
 								if (!stopsStatus[i]) { // TODO here goes the 'content' fetching
-									getFables().then(val => {
-										console.log('Fable added: \'' + val.fable.title + '\'');
+									// getFables().then(val => {
+									// 	console.log('Fable added: \'' + val.fable.title + '\'');
+									// 	console.log(val);
+
+									// 	setShowNotification(true);
+									// 	const timeoutID_ = setTimeout(() => {
+									// 		setShowNotification(false);
+									// 	}, 4000);
+
+									// 	setTimeoutID(timeoutID_);
+
+									// 	// ↓ redux
+									// 	dispatch(addShelfItem({
+									// 		title: val.fable.title,
+									// 		author: 'Esopo',
+									// 		icon: icons.fable,
+									// 		genre: icons.fable,
+									// 		time_ago: 0,
+									// 		time_lenght: 1,
+									// 		text: val.fable.text
+									// 	}));
+									// });
+									getRandomContent().then(val => {
+										// console.log('New text unlocked: \'' + val.fable.title + '\'');
+										// console.log(val);
+
+										// setShowNotification(true);
+										// const timeoutID_ = setTimeout(() => {
+										// 	setShowNotification(false);
+										// }, 4000);
+
+										// setTimeoutID(timeoutID_);
+
+										// // ↓ redux
+										// dispatch(addShelfItem({
+										// 	title: val.fable.title,
+										// 	author: 'Esopo',
+										// 	icon: icons.fable,
+										// 	genre: icons.fable,
+										// 	time_ago: 0,
+										// 	time_lenght: 1,
+										// 	text: val.fable.text
+										// }));
+
+										console.log('random content: ');
 										console.log(val);
-
-										setShowNotification(true);
-										const timeoutID_ = setTimeout(() => {
-											setShowNotification(false);
-										}, 4000);
-
-										setTimeoutID(timeoutID_);
-
-										// ↓ redux
-										dispatch(addShelfItem({
-											title: val.fable.title,
-											author: 'Esopo',
-											icon: icons.fable,
-											genre: icons.fable,
-											time_ago: 0,
-											time_lenght: 1,
-											text: val.fable.text
-										}));
+									}).catch(err => {
+										console.log('Error getting random content:');
+										console.log(err);
 									});
 								}
 
