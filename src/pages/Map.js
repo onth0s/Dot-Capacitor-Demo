@@ -177,12 +177,6 @@ export const Map = () => {
 											setShowNotification(false);
 										}, 4000); setTimeoutID(timeoutID_);
 
-
-										// const genreIcon = {
-										// 	icon: icons.fable,
-										// 	genre: icons.fable,
-										// }
-
 										const randomContent = {
 											title: val.title,
 											author: val.author,
@@ -194,8 +188,7 @@ export const Map = () => {
 											score: val.score,
 										};
 
-										// ↓ redux
-										dispatch(addShelfItem(randomContent));
+										dispatch(addShelfItem(randomContent)); // ← redux
 									}).catch(err => {
 										console.log('Error getting random content:');
 										console.log(err);
