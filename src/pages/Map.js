@@ -61,11 +61,9 @@ export const Map = () => {
 	const [notification, setNotification] = useState(
 		<div className="p-8 space-y-1 w-screen">
 			<p className="text-yellow-600">Nuevo texto conseguido!</p>
-			{/* <p>Haz clic aquí para leerlo o échale un vistazo desde tu biblioteca.</p> */}
 			<p>¡Échale un vistazo desde tu biblioteca!</p>
 		</div>
 	);
-	if (false) setNotification();
 
 	const [timeoutID, setTimeoutID] = useState(0);
 
@@ -73,6 +71,57 @@ export const Map = () => {
 
 	const renderStopIcon = (i) => {
 		return stopsStatus[i] ? stopsUnlockedIcon : stopsLockedIcon;
+	}
+
+	const getGenreIcon = (genre) => {
+		switch (genre) {
+			case 'FABULA':
+				return {
+					icon: icons.fable,
+					genre: icons.fable,
+				}
+			case 'SCIFI':
+				return {
+					icon: icons.sci_fi,
+					genre: icons.sci_fi,
+				}
+			case 'HISTORICA':
+				return {
+					icon: icons.historica,
+					genre: icons.historica,
+				}
+			case 'ROMANCE':
+				return {
+					icon: icons.romance,
+					genre: icons.romance,
+				}
+			case 'FANTASIA':
+				return {
+					icon: icons.fantasia,
+					genre: icons.fantasia,
+				}
+			case 'SUSPENSE':
+				return {
+					icon: icons.suspense,
+					genre: icons.suspense,
+				}
+			case 'COMEDIA':
+				return {
+					icon: icons.comedia,
+					genre: icons.comedia,
+				}
+			case 'TRAGEDIA':
+				return {
+					icon: icons.tragedia,
+					genre: icons.tragedia,
+				}
+			case 'ACTUALIDAD':
+				return {
+					icon: icons.actualidad,
+					genre: icons.actualidad,
+				}
+			default:
+		}
 	}
 
 	return (<>
@@ -114,29 +163,39 @@ export const Map = () => {
 							if (measure_ < 35) {
 								if (!stopsStatus[i]) { // TODO here goes the 'content' fetching
 									getRandomContent().then(val => {
-										// console.log('New text unlocked: \'' + val.fable.title + '\'');
-										// console.log(val);
-
-										// setShowNotification(true);
-										// const timeoutID_ = setTimeout(() => {
-										// 	setShowNotification(false);
-										// }, 4000);
-
-										// setTimeoutID(timeoutID_);
-
-										// // ↓ redux
-										// dispatch(addShelfItem({
-										// 	title: val.fable.title,
-										// 	author: 'Esopo',
-										// 	icon: icons.fable,
-										// 	genre: icons.fable,
-										// 	time_ago: 0,
-										// 	time_lenght: 1,
-										// 	text: val.fable.text
-										// }));
-
 										console.log(`New Random Content Unlocked! (${randomContentCounter++})`);
 										console.log(val);
+
+										setNotification(<div className="p-8 space-y-1 w-screen">
+											<p className="text-yellow-600">Nuevo texto conseguido!</p>
+											<p className="font-semiboldold italic">{val.title}</p>
+											<p>¡Échale un vistazo desde tu biblioteca!</p>
+										</div>);
+
+										setShowNotification(true);
+										const timeoutID_ = setTimeout(() => {
+											setShowNotification(false);
+										}, 4000); setTimeoutID(timeoutID_);
+
+
+										// const genreIcon = {
+										// 	icon: icons.fable,
+										// 	genre: icons.fable,
+										// }
+
+										const randomContent = {
+											title: val.title,
+											author: val.author,
+											...getGenreIcon(val.genre),
+											time_ago: 0, // TODO not sure how hard is this gonna be
+											time_lenght: Math.ceil(val.text.join(' ').split(' ').length / 250),
+											text: val.text,
+											image: val.image,
+											score: val.score,
+										};
+
+										// ↓ redux
+										dispatch(addShelfItem(randomContent));
 									}).catch(err => {
 										console.log('Error getting random content:');
 										console.log(err);

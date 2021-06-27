@@ -12,6 +12,9 @@ const icons_noext = {
 	suspense: 'common/genres/suspense',
 	historica: 'common/genres/historica',
 	fantasia: 'common/genres/fantasia',
+	tragedia: 'common/genres/tragedia',
+	comedia: 'common/genres/comedia',
+	actualidad: 'common/genres/actualidad',
 	
 	fabula_l: 'common/genres/fabula-light',
 	suspense_l: 'common/genres/suspense-light',

@@ -64,7 +64,11 @@ export const Reader = () => {
 	}
 
 	const renderText = (fontFamily = 'Verdana',) => {
-		return ((shelfItems.length !== 0) ? <div className={`space-y-${(fontSize + 1) * 10 / 2 - 4}`}>
+		return ((shelfItems.length !== 0) ? <div className={`break-allXXX space-y-${(fontSize + 1) * 10 / 2 - 4}`}
+			style={{
+				hyphens: 'auto', textIndentXXX: '10%'
+			}}
+		>
 			{shelfItems[readerIndex].text.map((el, i) => (
 				<p key={i} style={{
 					fontFamily,
@@ -130,7 +134,6 @@ export const Reader = () => {
 								score: 0.49,
 
 								index: readerIndex,
-								
 							}));
 						}
 					});
